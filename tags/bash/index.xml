@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Erwin Kurniawan&#39;s Blog</title>
+    <link>https://rootshaxor.github.io/tags/bash/</link>
+    <description>Recent content in Bash on Erwin Kurniawan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Sep 2018 18:32:41 +0700</lastBuildDate>
+    
+	<atom:link href="https://rootshaxor.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Management Service Server</title>
+      <link>https://rootshaxor.github.io/post/management-service-server/</link>
+      <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
+      
+      <guid>https://rootshaxor.github.io/post/management-service-server/</guid>
+      <description> Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS MSS adalah tools yang digunakan untuk mengatur service server pada linux
+ Fitur  Start Service Stop Service Restart Service Status Service Add Service to conf/service.list List Service on conf/service.list Remove Service on conf/service.list using nano  Install MSS  git clone https://github.com/rootshaxor/MSS.git cd MSS &amp;amp;&amp;amp; chmod +x management-service-server.sh sudo ./management-service-server.sh  Screenshot          </description>
+    </item>
+    
+  </channel>
+</rss>

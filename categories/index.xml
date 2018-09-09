@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Erwin Kurniawan&#39;s Blog</title>
+    <link>https://rootshaxor.github.io/categories/</link>
+    <description>Recent content in Categories on Erwin Kurniawan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://rootshaxor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shell Script</title>
+      <link>https://rootshaxor.github.io/categories/shell-script/</link>
+      <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
+      
+      <guid>https://rootshaxor.github.io/categories/shell-script/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
