@@ -15,17 +15,19 @@ body, body.pushable {
 }
 
 </style><title>
-Management Service Server
+
+Category | server
+
 </title><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="Erwin Kurniawan" />
-	<meta name="description" content="Mengatur service Server lebih Cepat" />
+	<meta name="description" content="Belajar Golang dan Opensource" />
 <meta name="generator" content="Hugo 0.48" />
 
 <link rel="shortcut icon" href="/img/go.png">
 
-<link rel="canonical" href="https://rootshaxor.github.io/post/management-service-server/" />
+<link rel="canonical" href="https://rootshaxor.github.io/categories/server/" />
 <link rel="alternative" href="/index.xml" title="Erwin Kurniawan&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
 <style>
 body.pushable {
@@ -168,16 +170,22 @@ var bodyBgSwitchIndex = 0;var gradients = [
 			<i class="inverted big link cubes icon" title="All Categories"></i>
 		</a>
     </div>
-	<div class="ui container tablet computer only grid">
-		<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
-			<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
-		</div>
+	
+	<div class="item">
+		
+		<i class="disabled inverted big chevron circle left icon" title="Previous page"></i>
+  	
+  </div>
+	<div class="item">	
+		<i class="disabled inverted big chevron circle right icon" title="Next page"></i>
+		
 	</div>
 	
 </nav>
 
 <div class="ui centered grid">
-	<div class="sixteen wide mobile only column"><div class="ui inverted accordion">
+	<div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+		<div class="ui inverted accordion">
 	<div id="header" class="ui inverted segment column box">
 		<header id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
 	<img src="/img/go.png">
@@ -186,10 +194,10 @@ var bodyBgSwitchIndex = 0;var gradients = [
 	<div class="sub header">Berbagi Selagi Bisa</div>
 </h3>
 </header>
-		<div class=" title header-title"><div id="tag-category-pop" class="ui red right corner label">		
-				<i class="hand point icon down"title="Click this to pop tags and categories"></i>		
+		<div class="active title header-title"><div id="tag-category-pop" class="ui red right corner label">		
+				<i class="hand point icon up"title="Click this to pop tags and categories"></i>		
 			</div></div>
-		<div id="tag-category" class=" content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
+		<div id="tag-category" class="active content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
 <a class="ui label" href="/tags/bash" title="bash">bash</a>
 
 <a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
@@ -239,119 +247,33 @@ var bodyBgSwitchIndex = 0;var gradients = [
     
 <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></footer>
 	</div>
-</div></div>
-	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
-		<section class="ui secondary top attached black segment post-head">
-			<h1 class="post-title">
-				Management Service Server
-			</h1>
-			<div class="sub header">
-					<div><span><i class="calendar outline icon"></i>Sep 9, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://rootshaxor.github.io/post/management-service-server/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="f742f622c638fd4d0d3f7e79019cf991"></a></span></div>
-					<div><span><i class="clock outline icon"></i>1 min read</span></div>
-					<div><span><i class="angle double up icon"></i>Last updated on Sep 9, 2018</span></div>
-			</div>
-			<hr><div class="toc"><nav id="TableOfContents">
-<ul>
-<li><a href="#mengatur-menghidupkan-mematikan-restart-status-service-server-linux-dengan-mudah-menggunakan-mss">Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS</a></li>
-</ul>
-</nav></div>
-			
-			
-			<article class="post-content twemoji">
-				
-
-<h1 id="mengatur-menghidupkan-mematikan-restart-status-service-server-linux-dengan-mudah-menggunakan-mss">Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS&nbsp;<a class="anchor" href="#mengatur-menghidupkan-mematikan-restart-status-service-server-linux-dengan-mudah-menggunakan-mss"><i class="small linkify icon"></i></a> </h1>
-
-<p>MSS adalah tools yang digunakan untuk mengatur service server pada linux</p>
-
-<ul>
-<li>Fitur
-
-<ul>
-<li>Start Service</li>
-<li>Stop Service</li>
-<li>Restart Service</li>
-<li>Status Service</li>
-<li>Add Service to <code>conf/service.list</code></li>
-<li>List Service on <code>conf/service.list</code></li>
-<li>Remove Service on <code>conf/service.list</code> using nano</li>
-</ul></li>
-<li>Install MSS
-
-<ul>
-<li><code>git clone https://github.com/rootshaxor/MSS.git</code></li>
-<li><code>cd MSS &amp;&amp; chmod +x management-service-server.sh</code></li>
-<li><code>sudo ./management-service-server.sh</code></li>
-</ul></li>
-<li>Screenshot
-
-<ul>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/1_main-menu.png" alt="gambar1" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/2_running-status.png" alt="gambar2" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/3.1_add-service.png" alt="gambar3" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/3.2_add-not-found-service.png" alt="gambar4" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/4_service-list.png" alt="gambar5" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/5_remove-service-manualy.png" alt="gambar6" /></li>
-</ul></li>
-</ul>
-
-			</article>
-		</section>
-		<section class="ui secondary attached segment dream-tags">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
-
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
-
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
-
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
-
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
-
-
-		</section><section class="ui secondary  attached segment share row box">
-	
-
-<div class="author">
-	<img class="avatar" src="/img/go.png">
-	
 </div>
-<div class="info grow flexbox">
-	<p class="name">Erwin Kurniawan</p>
-	<p class="desc">Berbagi Selagi Bisa</p>		
-</div>
-<section class="buttons row box">
-	<div class="facebook none flexbox" href="#" onclick="window.open(
-			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-			'facebook-share-dialog',
-			'width=626,height=436'); return false;">
-		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
 	</div>
-	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Management Service Server  https:\/\/rootshaxor.github.io\/post\/management-service-server\/','_self')">
-		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
-	</div>
-</section>
-</section>
-		<section class="ui secondary attached segment copyright">
+	<div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+		<div class="cards row box">
 			
-		</section>
-		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
-<script>
-	var disqus_config = function () {
-		this.page.url = 'https:\/\/rootshaxor.github.io\/post\/management-service-server\/';
-		this.page.identifier = 'f742f622c638fd4d0d3f7e79019cf991';
-	};
-	(function() {
-   	var d = document, s = d.createElement('script');
-   	s.src = 'https://' + 'dream-plus' + '.disqus.com/embed.js';
-   	s.setAttribute('data-timestamp', +new Date());
-   	(d.head || d.body).appendChild(s);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+	<article class="blog-card none flexbox" style="background-image: url(/img/bg-dns.jpg)">
+<img class="image" src="/img/bg-dns.jpg"></img>
+<div class="title-content twemoji">
+	<h3><a class="title" href=https://rootshaxor.github.io/post/dns-master-slave-debian9/>Dns Master Slave Debian9</a></h3>
+	<div class="intro twemoji">Konfigurasi DNS MASTER &amp; SLAVE di Debian 9 ( VirtualBox )</div>
 </div>
+<div class="utility-info">
+	<ul class="utility-list">
 		
+		<div><i class="comment icon"></i><span class="disqus-comment-count" data-disqus-identifier="d0acfdb71741b4791f2b2f5144895837"></span></div>
+		
+		<div><span><i class="calendar icon"></i>Oct 7, 2018</span></div>
+		<div><span><i class="clock icon"></i>2 min read</span></div>
+	</ul>
+</div>
+<div class="color-overlay"></div>
+</article>
+
+	
+
+
+		</div>
 	</div>
 </div>
 

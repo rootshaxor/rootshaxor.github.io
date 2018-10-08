@@ -6,13 +6,24 @@
     <description>Recent content on Erwin Kurniawan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Sep 2018 18:32:41 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 07 Oct 2018 09:28:15 +0700</lastBuildDate>
     
 	<atom:link href="https://rootshaxor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Management Service Server Dengan MSS</title>
+      <title>Dns Master Slave Debian9</title>
+      <link>https://rootshaxor.github.io/post/dns-master-slave-debian9/</link>
+      <pubDate>Sun, 07 Oct 2018 09:28:15 +0700</pubDate>
+      
+      <guid>https://rootshaxor.github.io/post/dns-master-slave-debian9/</guid>
+      <description>Persiapan Server Debian  Dua VM server Debian satu network ( menggunakan HOST Only Adapter ) IP VM-Master : 192.168.0.3 /26 IP VM-Slave : 192.168.0.4 /26 Install bind9 dnsutils  Konfigurasi VM-Master 1 Install bind9 &amp;amp; dnsutils
+ apt-get install bind9 dnsutils -y  2 Jika sudah terinstall , sekarang masuk di directory /etc/bind
+ cd /etc/bind  3 isikan konfigurasi di file named.conf.local dengan editor kesukaan anda seperti di bawah</description>
+    </item>
+    
+    <item>
+      <title>Management Service Server</title>
       <link>https://rootshaxor.github.io/post/management-service-server/</link>
       <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
       
@@ -36,9 +47,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://rootshaxor.github.io/about/</guid>
-      <description>So, Who Am I? 
-I’m just another teenager who likes writing, programming and making stuff. Even setting the title as Who Am I for this article is reminding me of whoami in Linux. I feel the inner urge to contribute something to the Internet because I love writing and I believe posting something online enables users all around the globe to see your work and suggest improvements.
-Recently I&amp;rsquo;ve also started taking interest in web designing and hosting the fruitful results of which these site and blogs are!</description>
+      <description>Siapa Saya? 
+Saya seorang pelajar yang haus pengetahuan mengenai GNU/LINUX , FLOSS , Programming GO &amp;amp; Shell Script, dan SERVER , walaupun saya masih newbie saya tidak takut dengan ejekan tersebut bahwa dasarnya semua MASTAH PERNAH NEWBIE
+Jika Ada yang dipertanyakan anda dapat menghubungi :
+  Mail rootshaxor@gmail.com   Facebook Erwin Kurniawan   WhatsApp +6285791309271   </description>
     </item>
     
   </channel>

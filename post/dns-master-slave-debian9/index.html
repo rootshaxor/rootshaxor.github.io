@@ -15,17 +15,17 @@ body, body.pushable {
 }
 
 </style><title>
-Management Service Server
+Dns Master Slave Debian9
 </title><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="Erwin Kurniawan" />
-	<meta name="description" content="Mengatur service Server lebih Cepat" />
+	<meta name="description" content="Konfigurasi DNS MASTER &amp; SLAVE di Debian 9 ( VirtualBox )" />
 <meta name="generator" content="Hugo 0.48" />
 
 <link rel="shortcut icon" href="/img/go.png">
 
-<link rel="canonical" href="https://rootshaxor.github.io/post/management-service-server/" />
+<link rel="canonical" href="https://rootshaxor.github.io/post/dns-master-slave-debian9/" />
 <link rel="alternative" href="/index.xml" title="Erwin Kurniawan&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
 <style>
 body.pushable {
@@ -243,16 +243,24 @@ var bodyBgSwitchIndex = 0;var gradients = [
 	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
 		<section class="ui secondary top attached black segment post-head">
 			<h1 class="post-title">
-				Management Service Server
+				Dns Master Slave Debian9
 			</h1>
 			<div class="sub header">
-					<div><span><i class="calendar outline icon"></i>Sep 9, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://rootshaxor.github.io/post/management-service-server/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="f742f622c638fd4d0d3f7e79019cf991"></a></span></div>
-					<div><span><i class="clock outline icon"></i>1 min read</span></div>
-					<div><span><i class="angle double up icon"></i>Last updated on Sep 9, 2018</span></div>
+					<div><span><i class="calendar outline icon"></i>Oct 7, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://rootshaxor.github.io/post/dns-master-slave-debian9/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="d0acfdb71741b4791f2b2f5144895837"></a></span></div>
+					<div><span><i class="clock outline icon"></i>2 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Oct 7, 2018</span></div>
 			</div>
 			<hr><div class="toc"><nav id="TableOfContents">
 <ul>
-<li><a href="#mengatur-menghidupkan-mematikan-restart-status-service-server-linux-dengan-mudah-menggunakan-mss">Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS</a></li>
+<li><a href="#persiapan-server-debian">Persiapan Server Debian</a></li>
+<li><a href="#konfigurasi">Konfigurasi</a>
+<ul>
+<li>
+<ul>
+<li><a href="#vm-master">VM-Master</a></li>
+<li><a href="#vm-slave">VM-Slave</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav></div>
 			
@@ -260,40 +268,124 @@ var bodyBgSwitchIndex = 0;var gradients = [
 			<article class="post-content twemoji">
 				
 
-<h1 id="mengatur-menghidupkan-mematikan-restart-status-service-server-linux-dengan-mudah-menggunakan-mss">Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS&nbsp;<a class="anchor" href="#mengatur-menghidupkan-mematikan-restart-status-service-server-linux-dengan-mudah-menggunakan-mss"><i class="small linkify icon"></i></a> </h1>
-
-<p>MSS adalah tools yang digunakan untuk mengatur service server pada linux</p>
+<h1 id="persiapan-server-debian">Persiapan Server Debian&nbsp;<a class="anchor" href="#persiapan-server-debian"><i class="small linkify icon"></i></a> </h1>
 
 <ul>
-<li>Fitur
-
-<ul>
-<li>Start Service</li>
-<li>Stop Service</li>
-<li>Restart Service</li>
-<li>Status Service</li>
-<li>Add Service to <code>conf/service.list</code></li>
-<li>List Service on <code>conf/service.list</code></li>
-<li>Remove Service on <code>conf/service.list</code> using nano</li>
-</ul></li>
-<li>Install MSS
-
-<ul>
-<li><code>git clone https://github.com/rootshaxor/MSS.git</code></li>
-<li><code>cd MSS &amp;&amp; chmod +x management-service-server.sh</code></li>
-<li><code>sudo ./management-service-server.sh</code></li>
-</ul></li>
-<li>Screenshot
-
-<ul>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/1_main-menu.png" alt="gambar1" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/2_running-status.png" alt="gambar2" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/3.1_add-service.png" alt="gambar3" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/3.2_add-not-found-service.png" alt="gambar4" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/4_service-list.png" alt="gambar5" /></li>
-<li><img src="https://raw.githubusercontent.com/rootshaxor/MSS/master/screenshot/5_remove-service-manualy.png" alt="gambar6" /></li>
-</ul></li>
+<li>Dua VM server Debian satu network ( menggunakan HOST Only Adapter )</li>
+<li>IP VM-Master : 192.168.0.3 /26</li>
+<li>IP VM-Slave  : 192.168.0.4 /26</li>
+<li>Install <code>bind9</code> <code>dnsutils</code></li>
 </ul>
+
+<h1 id="konfigurasi">Konfigurasi&nbsp;<a class="anchor" href="#konfigurasi"><i class="small linkify icon"></i></a> </h1>
+
+<h3 id="vm-master">VM-Master&nbsp;<a class="anchor" href="#vm-master"><i class="small linkify icon"></i></a> </h3>
+
+<p>1 Install bind9 &amp; dnsutils</p>
+
+<pre><code>    apt-get install bind9 dnsutils -y
+</code></pre>
+
+<p>2 Jika sudah terinstall , sekarang masuk di directory <code>/etc/bind</code></p>
+
+<pre><code>    cd /etc/bind
+</code></pre>
+
+<p>3 isikan konfigurasi di  file <code>named.conf.local</code> dengan editor kesukaan anda seperti di bawah</p>
+
+<pre><code>    zone &quot;erwin.org&quot; {
+        type master;
+        allow-transfer { 192.168.0.4; };
+        file &quot;/etc/bind/erwin&quot;;
+    };
+    
+    zone &quot;0.168.192.in-addr.arpa&quot; {
+        type master;
+        allow-transfer { 192.168.0.4; };
+        file &quot;/etc/bind/ip&quot;;
+    };
+</code></pre>
+
+<p>4 kemudian buat file <code>erwin</code> &amp; <code>ip</code> dari <em>db.local</em> dan <em>db.127</em></p>
+
+<pre><code>    cp db.local erwin; cp db.127 ip
+</code></pre>
+
+<p>5 Edit file <code>erwin</code> dan isikan seperti di gambar
+    <center> <img src="/img/dns/master-slave/master-file-erwin.png" /> </center></p>
+
+<p>6 Edit file <code>ip</code> dan Isikan seperti di gambar
+    <center> <img src="/img/dns/master-slave/master-file-ip.png" /> </center></p>
+
+<p>7 Kemudian restart service<code>bind9</code></p>
+
+<pre><code>    service bind9 restart
+</code></pre>
+
+<p>8 Selanjutnya tambahkan nameserver di <code>/etc/resolv.conf</code></p>
+
+<pre><code>    echo -e &quot;nameserver 192.168.0.3\nnameserver 192.168.0.4&quot; &gt; /etc/resolv.conf
+</code></pre>
+
+<p>9 Jika sudah cek dengan perintah nslookup pada kedua ip dari masing masing VM</p>
+
+<pre><code>    nslookup 192.168.0.3
+    nslookup 192.168.0.4
+</code></pre>
+
+<p>10 Apabila sudah muncul domain yang di arahkan ke ip masing masing VM maka konfigurasi di VM-Master sudah berhasil</p>
+
+<h3 id="vm-slave">VM-Slave&nbsp;<a class="anchor" href="#vm-slave"><i class="small linkify icon"></i></a> </h3>
+
+<p>1 Install bind9 &amp; dnsutils</p>
+
+<pre><code>    apt-get install bind9 dnsutils -y
+</code></pre>
+
+<p>2 Jika sudah terinstall , sekarang masuk di directory <code>/etc/bind</code></p>
+
+<pre><code>    cd /etc/bind
+</code></pre>
+
+<p>3 isikan konfigurasi di  file <code>named.conf.local</code> dengan editor kesukaan anda seperti di bawah</p>
+
+<pre><code>    zone &quot;erwin.org&quot; {
+        type slave;
+        masters { 192.168.0.3; };
+        file &quot;erwin&quot;;
+    };
+    
+    zone &quot;0.168.192.in-addr.arpa&quot; {
+        type slave;
+        masters { 192.168.0.3; };
+        file &quot;ip&quot;;
+    };
+</code></pre>
+
+<p>4 Kemudian restart service<code>bind9</code></p>
+
+<pre><code>    service bind9 restart
+</code></pre>
+
+<p>5 Selanjutnya tambahkan nameserver di <code>/etc/resolv.conf</code></p>
+
+<pre><code>    echo -e &quot;nameserver 192.168.0.3\nnameserver 192.168.0.4&quot; &gt; /etc/resolv.conf
+</code></pre>
+
+<p>6 Jika sudah cek dengan perintah nslookup pada kedua ip dari masing masing VM</p>
+
+<pre><code>    nslookup 192.168.0.3
+    nslookup 192.168.0.4
+</code></pre>
+
+<p>7 Apabila sudah muncul domain yang di arahkan ke ip masing masing VM maka konfigurasi di VM-Slave sudah berhasil</p>
+
+<p>8 Selanjutnya cek di directory <code>/var/cache/bind9</code></p>
+
+<pre><code>    ls /var/cache/bind9
+</code></pre>
+
+<p>9 apabila muncul file <code>erwin</code> &amp; <code>ip</code> maka konfigurasi DNS Master Slave sudah Berhasil.</p>
 
 			</article>
 		</section>
@@ -327,7 +419,7 @@ var bodyBgSwitchIndex = 0;var gradients = [
 			'width=626,height=436'); return false;">
 		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
 	</div>
-	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Management Service Server  https:\/\/rootshaxor.github.io\/post\/management-service-server\/','_self')">
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Dns Master Slave Debian9  https:\/\/rootshaxor.github.io\/post\/dns-master-slave-debian9\/','_self')">
 		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
 	</div>
 </section>
@@ -338,8 +430,8 @@ var bodyBgSwitchIndex = 0;var gradients = [
 		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
 <script>
 	var disqus_config = function () {
-		this.page.url = 'https:\/\/rootshaxor.github.io\/post\/management-service-server\/';
-		this.page.identifier = 'f742f622c638fd4d0d3f7e79019cf991';
+		this.page.url = 'https:\/\/rootshaxor.github.io\/post\/dns-master-slave-debian9\/';
+		this.page.identifier = 'd0acfdb71741b4791f2b2f5144895837';
 	};
 	(function() {
    	var d = document, s = d.createElement('script');
