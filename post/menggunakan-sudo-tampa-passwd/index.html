@@ -15,17 +15,17 @@ body, body.pushable {
 }
 
 </style><title>
-All Tags
+Menggunakan Sudo Tanpa Passwd
 </title><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="Erwin Kurniawan" />
-	<meta name="description" content="Belajar Golang dan Opensource" />
+	<meta name="description" content="Menggunakan command sudo tanpa memasukan password" />
 <meta name="generator" content="Hugo 0.48" />
 
 <link rel="shortcut icon" href="/img/go.png">
 
-<link rel="canonical" href="https://rootshaxor.github.io/tags/" />
+<link rel="canonical" href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/" />
 <link rel="alternative" href="/index.xml" title="Erwin Kurniawan&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
 <style>
 body.pushable {
@@ -165,34 +165,38 @@ var bodyBgSwitchIndex = 0;var gradients = [
 		<div class="flipper">
 			<div class="front">
 <nav class="ui top secondary menu bar">
-	<div id="surrico" class="item">
-		<i id="ico" class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
-	</div>
 	<div class="item">
-		<a href="/"><i id="ico" class="inverted big link home icon" title="Home"></i></a>
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div><div class="item">
+		<a href="/">
+			<i class="inverted big link home icon" title="Home"></i>
+		</a>
 	</div>
-
-	
 	<div class="item">
 		<a href="/post">
-			<i id="ico" class="inverted big link archive icon" title="Archive"></i>
+			<i class="inverted big link archive icon" title="Archive"></i>
 		</a>
 	</div>
-	
-
-	
+	<div class="item">
+		<a href="/tags">
+			<i class="inverted big link tags icon" title="All Tags"></i>
+		</a>
+	</div>
 	<div class="item">
 		<a href="/categories">
-			<i id="ico" class="inverted big link cubes icon" title="All Categories"></i>
+			<i class="inverted big link cubes icon" title="All Categories"></i>
 		</a>
+    </div>
+	<div class="ui container tablet computer only grid">
+		<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+			<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+		</div>
 	</div>
 	
-
 </nav>
 
 <div class="ui centered grid">
-	<div class="sixteen wide mobile fifteen wide tablet four wide computer column">
-		<div class="ui inverted accordion">
+	<div class="sixteen wide mobile only column"><div class="ui inverted accordion">
 	<div id="header" class="ui inverted segment column box">
 		<header id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
 	<img src="/img/go.png">
@@ -201,10 +205,10 @@ var bodyBgSwitchIndex = 0;var gradients = [
 	<div class="sub header">Berbagi Selagi Bisa</div>
 </h3>
 </header>
-		<div class="active title header-title"><div id="tag-category-pop" class="ui red right corner label">		
-				<i class="hand point icon up"title="Click this to pop tags and categories"></i>		
+		<div class=" title header-title"><div id="tag-category-pop" class="ui red right corner label">		
+				<i class="hand point icon down"title="Click this to pop tags and categories"></i>		
 			</div></div>
-		<div id="tag-category" class="active content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
+		<div id="tag-category" class=" content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
 <a class="ui label" href="/tags/bash" title="bash">bash</a>
 
 <a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
@@ -273,96 +277,122 @@ var bodyBgSwitchIndex = 0;var gradients = [
     
 <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></footer>
 	</div>
+</div></div>
+	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+		<section class="ui secondary top attached black segment post-head">
+			<h1 class="post-title">
+				Menggunakan Sudo Tanpa Passwd
+			</h1>
+			<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>Nov 6, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="3324b0ad3c52a2657baf08a0379fb31c"></a></span></div>
+					<div><span><i class="clock outline icon"></i>1 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Nov 6, 2018</span></div>
+			</div>
+			<hr><div class="toc"><nav id="TableOfContents">
+<ul>
+<li><a href="#menggunakan-command-sudo-tanpa-harus-memasukan-password">Menggunakan Command <code>sudo</code> tanpa harus memasukan password</a>
+<ul>
+<li>
+<ul>
+<li><a href="#masuk-sebagai-super-user">Masuk Sebagai Super User</a></li>
+<li><a href="#konfigurasi">Konfigurasi</a></li>
+<li><a href="#selamat-mencoba">Selamat Mencoba</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+			
+			
+			<article class="post-content twemoji">
+				
+
+<h1 id="menggunakan-command-sudo-tanpa-harus-memasukan-password">Menggunakan Command <code>sudo</code> tanpa harus memasukan password&nbsp;<a class="anchor" href="#menggunakan-command-sudo-tanpa-harus-memasukan-password"><i class="small linkify icon"></i></a> </h1>
+
+<h3 id="masuk-sebagai-super-user">Masuk Sebagai Super User&nbsp;<a class="anchor" href="#masuk-sebagai-super-user"><i class="small linkify icon"></i></a> </h3>
+
+<p>Pertama Login menggunakan super user pada terminal<br>
+<em>command:</em> <code>sudo su</code></p>
+
+<h3 id="konfigurasi">Konfigurasi&nbsp;<a class="anchor" href="#konfigurasi"><i class="small linkify icon"></i></a> </h3>
+
+<ul>
+<li><p>Buat sebuah file di dalam directory <code>/etc/sudousers.d</code> <br>
+<em>command:</em> <code>touch /etc/sudousers.d/erwin</code><br>
+Ubah <code>erwin</code> dengan username anda / nama yang lain</p></li>
+
+<li><p>Edit file <code>/etc/sudousers.d/erwin</code> dengan editor kesukaan masing masing <br>
+<em>command:</em> <code>nano /etc/sudousers.d/erwin</code></p></li>
+
+<li><p>Isikan file <code>/etc/sudousers.d/erwin</code> seperti berikut<br> <code>
+erwin ALL=(ALL) NOPASSWD: ALL
+</code>
+<br>
+<code>erwin</code> adalah username pada komputer saya , jadi sesuaikan dengan username anda masing masing</p></li>
+</ul>
+
+<h3 id="selamat-mencoba">Selamat Mencoba&nbsp;<a class="anchor" href="#selamat-mencoba"><i class="small linkify icon"></i></a> </h3>
+
+			</article>
+		</section>
+		<section class="ui secondary attached segment dream-tags">
+<a class="ui label" href="/tags/bash" title="bash">bash</a>
+
+<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
+
+<a class="ui label" href="/tags/dns" title="dns">dns</a>
+
+<a class="ui label" href="/tags/linux" title="linux">linux</a>
+
+<a class="ui label" href="/tags/programming" title="programming">programming</a>
+
+<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
+
+<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
+
+
+		</section><section class="ui secondary  attached segment share row box">
+	
+
+<div class="author">
+	<img class="avatar" src="/img/go.png">
+	
 </div>
+<div class="info grow flexbox">
+	<p class="name">Erwin Kurniawan</p>
+	<p class="desc">Berbagi Selagi Bisa</p>		
+</div>
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
 	</div>
-	<div class="sixteen wide mobile fifteen wide tablet eleven wide computer column post-list">
-		<div class="ui inverted segment">
-			<h2 class="ui header">All Tags<hr />
-</h2>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Menggunakan Sudo Tanpa Passwd  https:\/\/rootshaxor.github.io\/post\/menggunakan-sudo-tampa-passwd\/','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
+</section>
+</section>
+		<section class="ui secondary attached segment copyright">
 			
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/bash/">bash</a>
-				-  (1 article)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/management-service-server/">Management Service Server</a></li>
-				
-			</ul>
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/debian9/">debian9</a>
-				-  (1 article)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">Dns Master Slave Debian9</a></li>
-				
-			</ul>
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/dns/">dns</a>
-				-  (1 article)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">Dns Master Slave Debian9</a></li>
-				
-			</ul>
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/linux/">linux</a>
-				-  (3 articles)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">Menggunakan Sudo Tanpa Passwd</a></li>
-				
-				<li><a href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">Dns Master Slave Debian9</a></li>
-				
-				<li><a href="https://rootshaxor.github.io/post/management-service-server/">Management Service Server</a></li>
-				
-			</ul>
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/programming/">programming</a>
-				-  (1 article)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/management-service-server/">Management Service Server</a></li>
-				
-			</ul>
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/sudo/">sudo</a>
-				-  (1 article)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">Menggunakan Sudo Tanpa Passwd</a></li>
-				
-			</ul>
-			
-			
-			<h3 class="ui header">
-				<a href="/tags/sudousers/">sudousers</a>
-				-  (1 article)
-			</h3>
-			<ul>
-				
-				<li><a href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">Menggunakan Sudo Tanpa Passwd</a></li>
-				
-			</ul>
-			
-		</div>
+		</section>
+		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = 'https:\/\/rootshaxor.github.io\/post\/menggunakan-sudo-tampa-passwd\/';
+		this.page.identifier = '3324b0ad3c52a2657baf08a0379fb31c';
+	};
+	(function() {
+   	var d = document, s = d.createElement('script');
+   	s.src = 'https://' + 'dream-plus' + '.disqus.com/embed.js';
+   	s.setAttribute('data-timestamp', +new Date());
+   	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+		
 	</div>
 </div>
 
