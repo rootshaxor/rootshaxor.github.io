@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Erwin Kurniawan&#39;s Blog</title>
+    <link>https://rootshaxor.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Erwin Kurniawan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Nov 2018 23:34:37 +0700</lastBuildDate>
+    
+	<atom:link href="https://rootshaxor.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Menggunkan Hugo Ala Blogger</title>
+      <link>https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/</link>
+      <pubDate>Sat, 10 Nov 2018 23:34:37 +0700</pubDate>
+      
+      <guid>https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/</guid>
+      <description>#Menggunakan Hugo Ala Blogger dengan forestry (github)
+Pendahuluan forestry adalah CMS yang dapat digunakan sebagai editor Jekyll, Hugo atau VuePress Anda.  Bagaimana menggunakannya Kasus kali ini saya deploy site saya di github, jadi di asumsikan menggunakan github
+ Kunjungi https://forestry.io dan lakukan login menggunakan github Jika sudah melakukan login , klik button add site , pilih Hugo dan klik button NEXT   Selanjutnya pilih github dan klik button NEXT   Kemudian Pilih repository blognya , pilih Branch master dan klik button NEXT</description>
+    </item>
+    
+  </channel>
+</rss>

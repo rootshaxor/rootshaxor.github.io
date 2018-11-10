@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Blog</title>
+      <link>https://rootshaxor.github.io/tags/blog/</link>
+      <pubDate>Sat, 10 Nov 2018 23:34:37 +0700</pubDate>
+      
+      <guid>https://rootshaxor.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Debian9</title>
       <link>https://rootshaxor.github.io/tags/debian9/</link>
       <pubDate>Sun, 07 Oct 2018 09:28:15 +0700</pubDate>
@@ -35,6 +44,15 @@
       <pubDate>Sun, 07 Oct 2018 09:28:15 +0700</pubDate>
       
       <guid>https://rootshaxor.github.io/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://rootshaxor.github.io/tags/hugo/</link>
+      <pubDate>Sat, 10 Nov 2018 23:34:37 +0700</pubDate>
+      
+      <guid>https://rootshaxor.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
