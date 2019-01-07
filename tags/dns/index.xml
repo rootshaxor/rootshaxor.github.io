@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dns on Erwin Kurniawan&#39;s Blog</title>
-    <link>https://rootshaxor.github.io/tags/dns/</link>
-    <description>Recent content in Dns on Erwin Kurniawan&#39;s Blog</description>
+    <title>Dns on </title>
+    <link>/tags/dns/</link>
+    <description>Recent content in Dns on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <lastBuildDate>Sun, 07 Oct 2018 09:28:15 +0700</lastBuildDate>
     
-	<atom:link href="https://rootshaxor.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dns Master Slave Debian9</title>
-      <link>https://rootshaxor.github.io/post/dns-master-slave-debian9/</link>
+      <link>/post/dns-master-slave-debian9/</link>
       <pubDate>Sun, 07 Oct 2018 09:28:15 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/post/dns-master-slave-debian9/</guid>
+      <guid>/post/dns-master-slave-debian9/</guid>
       <description>Persiapan Server Debian  Dua VM server Debian satu network ( menggunakan HOST Only Adapter ) IP VM-Master : 192.168.0.3 /26 IP VM-Slave : 192.168.0.4 /26 Install bind9 dnsutils  Konfigurasi VM-Master 1 Install bind9 &amp;amp; dnsutils
  apt-get install bind9 dnsutils -y  2 Jika sudah terinstall , sekarang masuk di directory /etc/bind
  cd /etc/bind  3 isikan konfigurasi di file named.conf.local dengan editor kesukaan anda seperti di bawah</description>

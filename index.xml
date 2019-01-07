@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Erwin Kurniawan&#39;s Blog</title>
-    <link>https://rootshaxor.github.io/</link>
-    <description>Recent content on Erwin Kurniawan&#39;s Blog</description>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <lastBuildDate>Sat, 10 Nov 2018 23:34:37 +0700</lastBuildDate>
     
-	<atom:link href="https://rootshaxor.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Menggunakan Hugo Ala Blogger</title>
-      <link>https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/</link>
+      <link>/post/menggunakan-hugo-ala-blogger/</link>
       <pubDate>Sat, 10 Nov 2018 23:34:37 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/</guid>
+      <guid>/post/menggunakan-hugo-ala-blogger/</guid>
       <description>#Menggunakan Hugo Ala Blogger dengan forestry (github)
 Pendahuluan forestry adalah CMS yang dapat digunakan sebagai editor Jekyll, Hugo atau VuePress Anda.  Bagaimana menggunakannya Kasus kali ini saya deploy site saya di github, jadi di asumsikan menggunakan github
  Kunjungi https://forestry.io dan lakukan login menggunakan github Jika sudah melakukan login , klik button add site , pilih Hugo dan klik button NEXT   Selanjutnya pilih github dan klik button NEXT   Kemudian Pilih repository blognya , pilih Branch master dan klik button NEXT</description>
@@ -24,10 +24,10 @@ Pendahuluan forestry adalah CMS yang dapat digunakan sebagai editor Jekyll, Hugo
     
     <item>
       <title>Menggunakan Sudo Tanpa Passwd</title>
-      <link>https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/</link>
+      <link>/post/menggunakan-sudo-tanpa-passwd/</link>
       <pubDate>Tue, 06 Nov 2018 11:13:44 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/</guid>
+      <guid>/post/menggunakan-sudo-tanpa-passwd/</guid>
       <description>Menggunakan Command sudo tanpa harus memasukan password Masuk Sebagai Super User Pertama Login menggunakan super user pada terminal
 command: sudo su
 Konfigurasi  Buat sebuah file di dalam directory /etc/sudousers.d command: touch /etc/sudousers.d/erwin
@@ -39,10 +39,10 @@ Ubah erwin dengan username anda / nama yang lain
     
     <item>
       <title>Dns Master Slave Debian9</title>
-      <link>https://rootshaxor.github.io/post/dns-master-slave-debian9/</link>
+      <link>/post/dns-master-slave-debian9/</link>
       <pubDate>Sun, 07 Oct 2018 09:28:15 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/post/dns-master-slave-debian9/</guid>
+      <guid>/post/dns-master-slave-debian9/</guid>
       <description>Persiapan Server Debian  Dua VM server Debian satu network ( menggunakan HOST Only Adapter ) IP VM-Master : 192.168.0.3 /26 IP VM-Slave : 192.168.0.4 /26 Install bind9 dnsutils  Konfigurasi VM-Master 1 Install bind9 &amp;amp; dnsutils
  apt-get install bind9 dnsutils -y  2 Jika sudah terinstall , sekarang masuk di directory /etc/bind
  cd /etc/bind  3 isikan konfigurasi di file named.conf.local dengan editor kesukaan anda seperti di bawah</description>
@@ -50,33 +50,30 @@ Ubah erwin dengan username anda / nama yang lain
     
     <item>
       <title>Management Service Server</title>
-      <link>https://rootshaxor.github.io/post/management-service-server/</link>
+      <link>/post/management-service-server/</link>
       <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/post/management-service-server/</guid>
+      <guid>/post/management-service-server/</guid>
       <description> Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS MSS adalah tools yang digunakan untuk mengatur service server pada linux
  Fitur  Start Service Stop Service Restart Service Status Service Add Service to conf/service.list List Service on conf/service.list Remove Service on conf/service.list using nano  Install MSS  git clone https://github.com/rootshaxor/MSS.git cd MSS &amp;amp;&amp;amp; chmod +x management-service-server.sh sudo ./management-service-server.sh  Screenshot          </description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://rootshaxor.github.io/404/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>About me</title>
+      <link>/about/</link>
+      <pubDate>Tue, 14 Apr 2015 22:17:00 +0000</pubDate>
       
-      <guid>https://rootshaxor.github.io/404/</guid>
-      <description> Error 404: Page Not Found It seems that the page that you&amp;rsquo;re trying to access doesn&amp;rsquo;t exist. 😟 If you&amp;rsquo;re sure that it exists, chances are it might have been moved to a new link! You may search for it on the home page. </description>
+      <guid>/about/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Yow !</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://rootshaxor.github.io/about/</link>
+      <link>/404/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rootshaxor.github.io/about/</guid>
-      <description>Siapa Saya? 
-Saya seorang pelajar yang haus pengetahuan mengenai GNU/LINUX , FLOSS , Programming GO &amp;amp; Shell Script, dan SERVER , walaupun saya masih newbie saya tidak takut dengan ejekan tersebut bahwa dasarnya semua MASTAH PERNAH NEWBIE
-Jika Ada yang dipertanyakan anda dapat menghubungi :
-  Mail rootshaxor@gmail.com   Facebook Erwin Kurniawan   WhatsApp +6285791309271   </description>
+      <guid>/404/</guid>
+      <description> Error 404: Page Not Found It seems that the page that you&amp;rsquo;re trying to access doesn&amp;rsquo;t exist. :worried: If you&amp;rsquo;re sure that it exists, chances are it might have been moved to a new link! You may search for it on the home page. </description>
     </item>
     
   </channel>

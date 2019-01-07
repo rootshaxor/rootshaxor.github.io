@@ -3,130 +3,131 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/</loc>
+    <loc>/post/menggunakan-hugo-ala-blogger/</loc>
     <lastmod>2018-11-10T23:34:37+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/</loc>
+    <loc>/post/menggunakan-sudo-tanpa-passwd/</loc>
     <lastmod>2018-11-06T11:13:44+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/post/dns-master-slave-debian9/</loc>
+    <loc>/post/dns-master-slave-debian9/</loc>
     <lastmod>2018-10-07T09:28:15+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/post/management-service-server/</loc>
+    <loc>/post/management-service-server/</loc>
     <lastmod>2018-09-09T18:32:41+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/404/</loc>
+    <loc>/about/</loc>
+    <lastmod>2015-04-14T22:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/tags/bash/</loc>
-    <lastmod>2018-09-09T18:32:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/tags/blog/</loc>
+    <loc>/</loc>
     <lastmod>2018-11-10T23:34:37+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>/404/</loc>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/tags/debian9/</loc>
-    <lastmod>2018-10-07T09:28:15+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/tags/dns/</loc>
-    <lastmod>2018-10-07T09:28:15+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/</loc>
-    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/categories/golang/</loc>
-    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/tags/hugo/</loc>
-    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/tags/linux/</loc>
-    <lastmod>2018-11-06T11:13:44+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/categories/linux/</loc>
-    <lastmod>2018-11-06T11:13:44+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/post/</loc>
-    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://rootshaxor.github.io/tags/programming/</loc>
+    <loc>/tags/bash/</loc>
     <lastmod>2018-09-09T18:32:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/categories/server/</loc>
+    <loc>/tags/blog/</loc>
+    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/debian9/</loc>
     <lastmod>2018-10-07T09:28:15+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/categories/shell-script/</loc>
+    <loc>/tags/dns/</loc>
+    <lastmod>2018-10-07T09:28:15+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/golang/</loc>
+    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2018-11-06T11:13:44+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/linux/</loc>
+    <lastmod>2018-11-06T11:13:44+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2018-11-10T23:34:37+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/programming/</loc>
     <lastmod>2018-09-09T18:32:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/tags/sudo/</loc>
+    <loc>/categories/server/</loc>
+    <lastmod>2018-10-07T09:28:15+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/shell-script/</loc>
+    <lastmod>2018-09-09T18:32:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sudo/</loc>
     <lastmod>2018-11-06T11:13:44+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/tags/sudousers/</loc>
+    <loc>/tags/sudousers/</loc>
     <lastmod>2018-11-06T11:13:44+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://rootshaxor.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2018-09-09T18:32:41+07:00</lastmod>
     <priority>0</priority>
   </url>

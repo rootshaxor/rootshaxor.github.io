@@ -1,350 +1,128 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<head><style>
-body {
-	display: block;
-	--colorBG: "#40e0d0, #ff8c00, #ff0080";background: linear-gradient(to right, var(--colorBG)) !important;
-	
-}
+    <title>Dns Master Slave Debian9 &middot; </title>
 
-body, body.pushable {
-	background-repeat: no-repeat;
-  	background-attachment: fixed;
-  	background-size: cover !important;
-}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</style><title>
-Dns Master Slave Debian9
-</title><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="author" content="Erwin Kurniawan" />
-	<meta name="description" content="Konfigurasi DNS MASTER &amp; SLAVE di Debian 9 ( VirtualBox )" />
-<meta name="generator" content="Hugo 0.48" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="canonical" href="/post/dns-master-slave-debian9/" />
 
-<link rel="shortcut icon" href="/img/go.png">
+     <meta name="description" content="Konfigurasi DNS MASTER &amp; SLAVE di Debian 9 ( VirtualBox )" /> 
 
-<link rel="canonical" href="https://rootshaxor.github.io/post/dns-master-slave-debian9/" />
-<link rel="alternative" href="/index.xml" title="Erwin Kurniawan&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
-<style>
-body.pushable {
-	display: block;background: linear-gradient(to right, var(--colorBG)) !important;
-	 ;
-}
-</style>
-<link rel="stylesheet" type="text/css" href="/css/site.css">
-<script>
-	var colorBG =  true 
-	var enabledPost = true
-	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
-	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
-</script>
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="/img/bg-dns.jpg"/>
+    
+ 
+    <meta name="twitter:title" content="Dns Master Slave Debian9"/>
+    <meta name="twitter:description" content="Konfigurasi DNS MASTER &amp; SLAVE di Debian 9 ( VirtualBox )"/>
+    <meta name="twitter:url" content="/post/dns-master-slave-debian9/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Dns Master Slave Debian9 &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/dns-master-slave-debian9/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Konfigurasi DNS MASTER &amp; SLAVE di Debian 9 ( VirtualBox )" />
+
+    <meta property="article:published_time" content="2018-10-07T09:28:15&#43;07:00" />
+    <meta property="article:tag" content="debian9" /><meta property="article:tag" content="linux" /><meta property="article:tag" content="dns" />
+
+    <meta property="og:image" content="/img/bg-dns.jpg"/>
+
+
+    <meta name="generator" content="Hugo 0.47.1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
 </head>
 
-<body><script>
-var prevBgIndex = 0;
-var bodyBgSwitchIndex = 0;var gradients = [
-	  [],
-	  ['#40e0d0', '#ff8c00', '#ff0080'], 
-	  ['#3e5151', '#decba4'], 
-	  ['#11998e', '#38ef7d'], 
-	  ['#108dc7', '#ef8e38'], 
-	  ['#fc5c7d', '#6a82fb'], 
-	  ['#fc466b', '#3f5efb'], 
-	  ['#c94b4b', '#4b134f'], 
-	  ['#23074d', '#cc5333'] 
-	]
-	document.body.style.setProperty('--colorBG', connect(gradients[getRandomInt(0, gradients.length)]))
-	function getRandomInt(min, max) {
-	  min = Math.ceil(min)
-	  max = Math.floor(max)
-	  var random
-	  while (1) {
-	    random = Math.floor(Math.random() * (max - min)) + min
-	    if (random !== prevBgIndex) {
-	      prevBgIndex = random
-	      break
-	    }
-	  }
-	  return random
-	}
 
-	function connect(arr) {
-	  var str = ''
-	  for (var i = 0; i < arr.length; i++) {
-	    if (i !== arr.length - 1) {
-	      str += arr[i] + ', '
-	    } else {
-	      str += arr[i]
-	    }
-	  }
-	  return str
-	}
-</script><div id="sidebar" class="ui sidebar inverted vertical menu">
-	<section id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
-	<img src="/img/go.png">
-</div>
-<h3 class="ui header">Erwin Kurniawan
-	<div class="sub header">Berbagi Selagi Bisa</div>
-</h3>
-</section><section class="ui attached center aligned inverted segment sidebar-dream-tags">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
+<body class="post-template">
+  <div class="site-wrapper"> 
 
-<a class="ui label" href="/tags/blog" title="blog">blog</a>
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
 
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
 
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
 
-<a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
 
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
+                    
 
-<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
+                    
+        </div>  
+            
+      </div>
 
-<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
+    </nav>  
 
-</section>	
-	
-	<section class="ui attached inverted segment sidebar-dream-categories both flexbox">
-		<div class="ui inverted accordion">
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/golang">golang</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Hugo Ala Blogger</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/linux">linux</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Sudo Tanpa Passwd</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/server">server</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Dns Master Slave Debian9</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/shell-script">shell-script</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/management-service-server/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Management Service Server</p>
-		</div>
-	</a>
-
-</div>
-
-</div>
-	</section>
-	
-	
-	<section id="footer" class="ui bottom attached center aligned inverted segment">
-<p>© 2018 Erwin Kurniawan&#39;s Blog</p>
-    
-<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></section>
-</div>
-<div class="pusher">
-		<div class="flipper">
-			<div class="front">
-<nav class="ui top secondary menu bar">
-	<div class="item">
-		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
-	</div><div class="item">
-		<a href="/">
-			<i class="inverted big link home icon" title="Home"></i>
-		</a>
-	</div>
-	<div class="item">
-		<a href="/post">
-			<i class="inverted big link archive icon" title="Archive"></i>
-		</a>
-	</div>
-	<div class="item">
-		<a href="/tags">
-			<i class="inverted big link tags icon" title="All Tags"></i>
-		</a>
-	</div>
-	<div class="item">
-		<a href="/categories">
-			<i class="inverted big link cubes icon" title="All Categories"></i>
-		</a>
-    </div>
-	<div class="ui container tablet computer only grid">
-		<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
-			<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
-		</div>
-	</div>
-	
-</nav>
-
-<div class="ui centered grid">
-	<div class="sixteen wide mobile only column"><div class="ui inverted accordion">
-	<div id="header" class="ui inverted segment column box">
-		<header id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
-	<img src="/img/go.png">
-</div>
-<h3 class="ui header">Erwin Kurniawan
-	<div class="sub header">Berbagi Selagi Bisa</div>
-</h3>
+  </div>
 </header>
-		<div class=" title header-title"><div id="tag-category-pop" class="ui red right corner label">		
-				<i class="hand point icon down"title="Click this to pop tags and categories"></i>		
-			</div></div>
-		<div id="tag-category" class=" content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
 
-<a class="ui label" href="/tags/blog" title="blog">blog</a>
-
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
-
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
-
-<a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
-
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
-
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
-
-<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
-
-<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
-
-</section><section class="ui attached inverted segment dream-categories both flexbox">
-			<div class="inverted accordion">
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/golang">golang</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Hugo Ala Blogger</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/linux">linux</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Sudo Tanpa Passwd</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/server">server</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Dns Master Slave Debian9</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/shell-script">shell-script</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/management-service-server/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Management Service Server</p>
-		</div>
-	</a>
-
-</div>
-
-</div>
-			</section></div>
-		<footer class="ui bottom attached center aligned inverted segment">
-<p>© 2018 Erwin Kurniawan&#39;s Blog</p>
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
     
-<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></footer>
-	</div>
-</div></div>
-	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
-		<section class="ui secondary top attached black segment post-head">
-			<h1 class="post-title">
-				Dns Master Slave Debian9
-			</h1>
-			<div class="sub header">
-					<div><span><i class="calendar outline icon"></i>Oct 7, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://rootshaxor.github.io/post/dns-master-slave-debian9/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="d0acfdb71741b4791f2b2f5144895837"></a></span></div>
-					<div><span><i class="clock outline icon"></i>2 min read</span></div>
-					<div><span><i class="angle double up icon"></i>Last updated on Oct 7, 2018</span></div>
-			</div>
-			<hr><div class="toc"><nav id="TableOfContents">
-<ul>
-<li><a href="#persiapan-server-debian">Persiapan Server Debian</a></li>
-<li><a href="#konfigurasi">Konfigurasi</a>
-<ul>
-<li>
-<ul>
-<li><a href="#vm-master">VM-Master</a></li>
-<li><a href="#vm-slave">VM-Slave</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav></div>
-			
-			
-			<article class="post-content twemoji">
-				
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2018-10-07">7 October 2018</time>
+                <span class="date-divider">/</span> <a href="/tags/debian9/">#debian9</a>&nbsp;<a href="/tags/linux/">#linux</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Dns Master Slave Debian9</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/img/bg-dns.jpg)">
+    </figure>
 
-<h1 id="persiapan-server-debian">Persiapan Server Debian&nbsp;<a class="anchor" href="#persiapan-server-debian"><i class="small linkify icon"></i></a> </h1>
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        
+
+<h1 id="persiapan-server-debian">Persiapan Server Debian</h1>
 
 <ul>
 <li>Dua VM server Debian satu network ( menggunakan HOST Only Adapter )</li>
@@ -353,9 +131,9 @@ var bodyBgSwitchIndex = 0;var gradients = [
 <li>Install <code>bind9</code> <code>dnsutils</code></li>
 </ul>
 
-<h1 id="konfigurasi">Konfigurasi&nbsp;<a class="anchor" href="#konfigurasi"><i class="small linkify icon"></i></a> </h1>
+<h1 id="konfigurasi">Konfigurasi</h1>
 
-<h3 id="vm-master">VM-Master&nbsp;<a class="anchor" href="#vm-master"><i class="small linkify icon"></i></a> </h3>
+<h3 id="vm-master">VM-Master</h3>
 
 <p>1 Install bind9 &amp; dnsutils</p>
 
@@ -411,7 +189,7 @@ var bodyBgSwitchIndex = 0;var gradients = [
 
 <p>10 Apabila sudah muncul domain yang di arahkan ke ip masing masing VM maka konfigurasi di VM-Master sudah berhasil</p>
 
-<h3 id="vm-slave">VM-Slave&nbsp;<a class="anchor" href="#vm-slave"><i class="small linkify icon"></i></a> </h3>
+<h3 id="vm-slave">VM-Slave</h3>
 
 <p>1 Install bind9 &amp; dnsutils</p>
 
@@ -462,139 +240,249 @@ var bodyBgSwitchIndex = 0;var gradients = [
 </code></pre>
 
 <p>9 apabila muncul file <code>erwin</code> &amp; <code>ip</code> maka konfigurasi DNS Master Slave sudah Berhasil.</p>
+    
+        </div>
+    </section>
 
-			</article>
-		</section>
-		<section class="ui secondary attached segment dream-tags">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
-
-<a class="ui label" href="/tags/blog" title="blog">blog</a>
-
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
-
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
-
-<a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
-
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
-
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
-
-<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
-
-<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
-
-
-		</section><section class="ui secondary  attached segment share row box">
-	
-
-<div class="author">
-	<img class="avatar" src="/img/go.png">
-	
-</div>
-<div class="info grow flexbox">
-	<p class="name">Erwin Kurniawan</p>
-	<p class="desc">Berbagi Selagi Bisa</p>		
-</div>
-<section class="buttons row box">
-	<div class="facebook none flexbox" href="#" onclick="window.open(
-			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-			'facebook-share-dialog',
-			'width=626,height=436'); return false;">
-		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
-	</div>
-	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Dns Master Slave Debian9  https:\/\/rootshaxor.github.io\/post\/dns-master-slave-debian9\/','_self')">
-		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
-	</div>
-</section>
-</section>
-		<section class="ui secondary attached segment copyright">
-			
-		</section>
-		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
-<script>
-	var disqus_config = function () {
-		this.page.url = 'https:\/\/rootshaxor.github.io\/post\/dns-master-slave-debian9\/';
-		this.page.identifier = 'd0acfdb71741b4791f2b2f5144895837';
-	};
-	(function() {
-   	var d = document, s = d.createElement('script');
-   	s.src = 'https://' + 'dream-plus' + '.disqus.com/embed.js';
-   	s.setAttribute('data-timestamp', +new Date());
-   	(d.head || d.body).appendChild(s);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-</div>
-		
-	</div>
-</div>
-
-			</div>
-			<div class="back"><nav class="ui top secondary menu bar">
-	<div class="item">
-		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
-	</div><div class="item">
-	<a href="https://github.com/rootshaxor" target="_blank">
-		<i id="ico" class="inverted big link github icon" title="GitHub"></i>
-	</a>
-</div>
-<div class="item">
-	<a href="mailto:rootshaxor@gmail.com">
-		<i id="ico" class="inverted big link mail icon" title="Email"></i>
-	</a>
-</div>
-
-</nav>
-<div class="ui centered grid about">
-	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
-		<section class="ui stacked segments"><div class="ui inverted segment">
-	<article class="twemoji"><h1>Siapa Saya?</h1>
-
-<hr />
-
-<p><br></p>
-
-<p>Saya seorang pelajar yang haus pengetahuan mengenai GNU/LINUX , FLOSS , Programming GO &amp; Shell Script, dan SERVER , walaupun saya masih <em>newbie</em> saya tidak takut dengan ejekan tersebut bahwa dasarnya semua <strong>MASTAH</strong>  PERNAH <strong>NEWBIE</strong></p>
-
-<hr />
-
-<p>Jika Ada yang dipertanyakan anda dapat menghubungi :</p>
-
-<table>
-    <tr>
-        <td>Mail</td>
-        <td><a href="mailto:rootshaxor@gmail.com">rootshaxor@gmail.com</td>
-     </tr>
-     <tr>
-        <td>Facebook</td>
-        <td><a href="https://facebook.com/rootshaxor">Erwin Kurniawan</a></td>
-     </tr>
-     <tr>
-        <td>WhatsApp</td>
-        <td><a href="https://wa.me/6285791309271?text=Hay%20Erwin%20Saya%20tertarik%20dengan%20Postingan%20anda">+6285791309271</a></td>
-     </tr>
-</table>
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
 </article>
-</div></section>
-	</div>
-</div></div>
-		</div>
-	</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/site.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script><script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.6"></script>
-<script id="dsq-count-scr" src="//dream-plus.disqus.com/count.js" async></script>
+    
+    
+    
 
-<script>
-	(function () {
-	  console.log("Twemoji up and making stuff colourful!");
-	  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
-		twemoji.parse(b[a]);
-	  }
-	})();
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/debian9/">#debian9</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/management-service-server/">Management Service Server</a></li>            
+        
+          <li><a href="/post/menggunakan-hugo-ala-blogger/">Menggunakan Hugo Ala Blogger</a></li>            
+        
+                      
+        
+          <li><a href="/post/menggunakan-sudo-tanpa-passwd/">Menggunakan Sudo Tanpa Passwd</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/debian9/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/menggunakan-sudo-tanpa-passwd/">
+      <div class="post-card-image" style="background-image: url(/img/pass.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/menggunakan-sudo-tanpa-passwd/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #linux 
+              #sudo 
+              #sudousers  </span>
+              
+              <h2 class="post-card-title">Menggunakan Sudo Tanpa Passwd</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Menggunakan command sudo tanpa memasukan password</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/management-service-server/">
+      <div class="post-card-image" style="background-image: url(/img/mss.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/management-service-server/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #bash 
+              #linux 
+              #programming  </span>
+              
+              <h2 class="post-card-title">Management Service Server</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Mengatur service Server lebih Cepat</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Dns Master Slave Debian9</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Dns%20Master%20Slave%20Debian9&amp;url=%2fpost%2fdns-master-slave-debian9%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fdns-master-slave-debian9%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
 </script>
-
-</body>
-
-</html>
+</body></html>

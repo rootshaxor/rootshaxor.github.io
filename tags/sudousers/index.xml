@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sudousers on Erwin Kurniawan&#39;s Blog</title>
-    <link>https://rootshaxor.github.io/tags/sudousers/</link>
-    <description>Recent content in Sudousers on Erwin Kurniawan&#39;s Blog</description>
+    <title>Sudousers on </title>
+    <link>/tags/sudousers/</link>
+    <description>Recent content in Sudousers on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <lastBuildDate>Tue, 06 Nov 2018 11:13:44 +0700</lastBuildDate>
     
-	<atom:link href="https://rootshaxor.github.io/tags/sudousers/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sudousers/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Menggunakan Sudo Tanpa Passwd</title>
-      <link>https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/</link>
+      <link>/post/menggunakan-sudo-tanpa-passwd/</link>
       <pubDate>Tue, 06 Nov 2018 11:13:44 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/</guid>
+      <guid>/post/menggunakan-sudo-tanpa-passwd/</guid>
       <description>Menggunakan Command sudo tanpa harus memasukan password Masuk Sebagai Super User Pertama Login menggunakan super user pada terminal
 command: sudo su
 Konfigurasi  Buat sebuah file di dalam directory /etc/sudousers.d command: touch /etc/sudousers.d/erwin

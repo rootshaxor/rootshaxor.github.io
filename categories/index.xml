@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Erwin Kurniawan&#39;s Blog</title>
-    <link>https://rootshaxor.github.io/categories/</link>
-    <description>Recent content in Categories on Erwin Kurniawan&#39;s Blog</description>
+    <title>Categories on </title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     
-	<atom:link href="https://rootshaxor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Golang</title>
-      <link>https://rootshaxor.github.io/categories/golang/</link>
+      <link>/categories/golang/</link>
       <pubDate>Sat, 10 Nov 2018 23:34:37 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/categories/golang/</guid>
+      <guid>/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://rootshaxor.github.io/categories/linux/</link>
+      <link>/categories/linux/</link>
       <pubDate>Tue, 06 Nov 2018 11:13:44 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/categories/linux/</guid>
+      <guid>/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Server</title>
-      <link>https://rootshaxor.github.io/categories/server/</link>
+      <link>/categories/server/</link>
       <pubDate>Sun, 07 Oct 2018 09:28:15 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/categories/server/</guid>
+      <guid>/categories/server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shell Script</title>
-      <link>https://rootshaxor.github.io/categories/shell-script/</link>
+      <link>/categories/shell-script/</link>
       <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
       
-      <guid>https://rootshaxor.github.io/categories/shell-script/</guid>
+      <guid>/categories/shell-script/</guid>
       <description></description>
     </item>
     
