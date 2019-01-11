@@ -6,10 +6,20 @@
     <description>Recent content in Server on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 07 Oct 2018 09:28:15 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jan 2019 13:22:02 +0700</lastBuildDate>
     
 	<atom:link href="/categories/server/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit</title>
+      <link>/post/menggunakan-iso-dvd-sebagai-repo-lokal-kurang-dari-2-menit/</link>
+      <pubDate>Fri, 11 Jan 2019 13:22:02 +0700</pubDate>
+      
+      <guid>/post/menggunakan-iso-dvd-sebagai-repo-lokal-kurang-dari-2-menit/</guid>
+      <description>Membuat iso file dvd debian 9 sebagai repo local kurang dari 2 menit. Alat Dan Bahan - debian-dvd-1.iso - debian-dvd-2.iso - debian-dvd-3.iso - Server yang terinstall debian  Langkah Pembuatan  masuk sebagai user root dan buat direktory sebagai mount point iso dvd.
+ mkdir -pv /media/{dvd1,dvd2,dvd3}  Selanjutnya diasumsikan ketiga iso file sudah di pindahkan ke debian server, pada kasus ini saya pindahkan iso debian di direktory /root/.</description>
+    </item>
     
     <item>
       <title>Dns Master Slave Debian9</title>
