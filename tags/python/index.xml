@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on </title>
-    <link>/tags/programming/</link>
-    <description>Recent content in Programming on </description>
+    <title>Python on </title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 11 Jan 2019 14:26:15 +0700</lastBuildDate>
     
-	<atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>/post/mencari-wildcard-dengan-python/</guid>
       <description>Mencari wildcard pada subnet mask ip Pendahuluan Mask Wildcard adalah mask bit yang menunjukkan bagian mana dari alamat IP yang tersedia untuk diperiksa. Di Cisco IOS , mereka digunakan di beberapa tempat, misalnya:
  Untuk menunjukkan ukuran jaringan atau subnet untuk beberapa protokol routing, seperti OSPF . Untuk menunjukkan alamat IP apa yang harus diizinkan atau ditolak dalam daftar kontrol akses (ACL).  Alat Dan Bahan  Laptop/PC terinstall python text editor  Tahap Pelaksanaan  Buka terminal linux dan ketikan perintah</description>
-    </item>
-    
-    <item>
-      <title>Management Service Server</title>
-      <link>/post/management-service-server/</link>
-      <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
-      
-      <guid>/post/management-service-server/</guid>
-      <description> Mengatur (menghidupkan, mematikan, restart, status service server linux) Dengan Mudah menggunakan MSS MSS adalah tools yang digunakan untuk mengatur service server pada linux
- Fitur  Start Service Stop Service Restart Service Status Service Add Service to conf/service.list List Service on conf/service.list Remove Service on conf/service.list using nano  Install MSS  git clone https://github.com/rootshaxor/MSS.git cd MSS &amp;amp;&amp;amp; chmod +x management-service-server.sh sudo ./management-service-server.sh  Screenshot          </description>
     </item>
     
   </channel>

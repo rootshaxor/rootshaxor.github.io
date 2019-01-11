@@ -59,7 +59,7 @@
     <item>
       <title>Linux</title>
       <link>/tags/linux/</link>
-      <pubDate>Fri, 11 Jan 2019 13:22:02 +0700</pubDate>
+      <pubDate>Fri, 11 Jan 2019 14:26:15 +0700</pubDate>
       
       <guid>/tags/linux/</guid>
       <description></description>
@@ -68,9 +68,18 @@
     <item>
       <title>Programming</title>
       <link>/tags/programming/</link>
-      <pubDate>Sun, 09 Sep 2018 18:32:41 +0700</pubDate>
+      <pubDate>Fri, 11 Jan 2019 14:26:15 +0700</pubDate>
       
       <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Fri, 11 Jan 2019 14:26:15 +0700</pubDate>
+      
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     

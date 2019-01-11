@@ -6,10 +6,20 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 11 Jan 2019 13:22:02 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jan 2019 14:26:15 +0700</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mencari Wildcard Dengan Python</title>
+      <link>/post/mencari-wildcard-dengan-python/</link>
+      <pubDate>Fri, 11 Jan 2019 14:26:15 +0700</pubDate>
+      
+      <guid>/post/mencari-wildcard-dengan-python/</guid>
+      <description>Mencari wildcard pada subnet mask ip Pendahuluan Mask Wildcard adalah mask bit yang menunjukkan bagian mana dari alamat IP yang tersedia untuk diperiksa. Di Cisco IOS , mereka digunakan di beberapa tempat, misalnya:
+ Untuk menunjukkan ukuran jaringan atau subnet untuk beberapa protokol routing, seperti OSPF . Untuk menunjukkan alamat IP apa yang harus diizinkan atau ditolak dalam daftar kontrol akses (ACL).  Alat Dan Bahan  Laptop/PC terinstall python text editor  Tahap Pelaksanaan  Buka terminal linux dan ketikan perintah</description>
+    </item>
     
     <item>
       <title>Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit</title>
