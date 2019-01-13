@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Port Di Jaringan Komputer &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/img/go.png" />
+    <link rel="canonical" href="/post/port-di-jaringan-komputer/" />
+
+     <meta name="description" content="A.Pendahuluan
+Dalam protokol jaringan TCP/IP, sebuah port adalah mekanisme yang mengizinkan sebuah komputer untuk mendukung beberapa sesi koneksi dengan kompute" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Port Di Jaringan Komputer"/>
+    <meta name="twitter:description" content="A.Pendahuluan
+Dalam protokol jaringan TCP/IP, sebuah port adalah mekanisme yang mengizinkan sebuah komputer untuk mendukung beberapa sesi koneksi dengan kompute"/>
+    <meta name="twitter:url" content="/post/port-di-jaringan-komputer/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Port Di Jaringan Komputer &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/port-di-jaringan-komputer/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A.Pendahuluan
+Dalam protokol jaringan TCP/IP, sebuah port adalah mekanisme yang mengizinkan sebuah komputer untuk mendukung beberapa sesi koneksi dengan kompute" />
+
+    <meta property="article:published_time" content="2017-08-24T01:17:00Z" />
+    <meta property="article:tag" content="BLC" />
+
+    <meta property="og:image" content="/img/header-blog.jpg"/>
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/blc">BLC Telkom</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/programming/">Programming</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2017-08-24">24 August 2017</time>
+                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Port Di Jaringan Komputer</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/defimg/2.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-fystNvYw5R8/WZ5Up-mxJ1I/AAAAAAAAA6I/pCbFkrYyKwYL1d3SUBE2euFQfWtDMqbUwCLcBGAs/s1600/po.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="101" data-original-width="581" height="55" src="https://1.bp.blogspot.com/-fystNvYw5R8/WZ5Up-mxJ1I/AAAAAAAAA6I/pCbFkrYyKwYL1d3SUBE2euFQfWtDMqbUwCLcBGAs/s320/po.png" width="320" /></a></div><br /><b>A.Pendahuluan</b><br /><ul style="text-align: left;"><li>Dalam protokol jaringan TCP/IP, sebuah <i><b>port</b></i> adalah mekanisme yang mengizinkan sebuah komputer untuk mendukung  beberapa sesi koneksi dengan komputer lainnya dan program di dalam  jaringan. Port dapat mengidentifikasikan aplikasi dan layanan yang  menggunakan koneksi di dalam jaringan TCP/IP. Sehingga, port juga  mengidentifikasikan sebuah proses tertentu di mana sebuah server dapat  memberikan sebuah layanan kepada klien atau bagaimana sebuah klien dapat  mengakses sebuah layanan yang ada dalam server. Port dapat dikenali  dengan angka 16-bit` (dua byte) yang disebut dengan <b>Port Number</b> dan diklasifikasikan dengan jenis protokol transport apa yang digunakan, ke dalam <b>Port TCP</b> dan <b>Port UDP</b>.  Karena memiliki angka 16-bit, maka total maksimum jumlah port untuk  setiap protokol transport yang digunakan adalah 65536 buah.</li></ul><b>B.Maksud Dan Tujuan</b><br /><ul style="text-align: left;"><li>Mengetahui nomor port jaringan komputer</li></ul><b>C.Penomoran Port TCP/UDP</b><br /><ul style="text-align: left;"><li>Penomoran port tcp/udp dibagi lagi menjadi tiga jenis</li><ul><li><i><b>Well-known Port</b></i>: yang pada awalnya berkisar antara 0  hingga 255 tetapi kemudian diperlebar untuk mendukung antara 0 hingga  1023. Port number yang termasuk ke dalam well-known port, selalu  merepresentasikan layanan jaringan yang sama, dan ditetapkan oleh Internet Assigned Number Authority (IANA).  Beberapa di antara port-port yang berada di dalam range Well-known port  masih belum ditetapkan dan direservasikan untuk digunakan oleh layanan  yang bakal ada pada masa depan. <i>Well-known port</i> didefinisikan dalam RFC 1060. <table border="color:red"><tbody><tr><th>Port</th><th>Jenis Port</th><th>Keyword</th><th>Digunakan oleh</th></tr><tr><td>0</td><td>TCP, UDP</td><td>T/A.</td><td>Dicadangkan, tidak digunakan.</td></tr><tr><td>1</td><td>TCP, UDP</td><td>TCPmux</td><td>TCP Port Service Multiplexer</td></tr><tr><td>2</td><td>TCP, UDP</td><td>compressnet</td><td>Management Utility</td></tr><tr><td>3</td><td>TCP, UDP</td><td>compressnet</td><td>Compression Process</td></tr><tr><td>4</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>5</td><td>TCP, UDP</td><td>rje</td><td>Remote Job Entry</td></tr><tr><td>6</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>7</td><td>TCP, UDP</td><td>echo</td><td>Echo</td></tr><tr><td>8</td><td>TCP, UDP</td><td>T/A</td><td><br /></td></tr><tr><td>9</td><td>TCP, UDP</td><td>discard</td><td>Discard;alias=sink null</td></tr><tr><td>10</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>11</td><td>TCP, UDP</td><td>systat</td><td>Active Users; alias = users</td></tr><tr><td>12</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>13</td><td>TCP, UDP</td><td>daytime</td><td>Daytime</td></tr><tr><td>14</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>15</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan (sebelumnya: netstat)</td></tr><tr><td>16</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>17</td><td>TCP, UDP</td><td>qotd</td><td>Quote of the Day; alias = quote</td></tr><tr><td>18</td><td>TCP, UDP</td><td>msp</td><td>Message Send Protocol</td></tr><tr><td>19</td><td>TCP, UDP</td><td>chargen</td><td>Character Generator; alias = ttytst source</td></tr><tr><td><b>20</b></td><td>TCP, UDP</td><td>ftp-data</td><td>File Transfer Protocol (default data)</td></tr><tr><td><b>21</b></td><td>TCP, UDP</td><td>ftp</td><td>File Transfer Protocol (control), connection dialog</td></tr><tr><td>22</td><td>TCP, UDP</td><td>SSH</td><td>Putty</td></tr><tr><td><b>23</b></td><td>TCP, UDP</td><td>telnet</td><td>Telnet</td></tr><tr><td>24</td><td>TCP, UDP</td><td><br /></td><td>Any private mail system</td></tr><tr><td><b>25</b></td><td>TCP, UDP</td><td>smtp</td><td>Simple Mail Transfer Protocol; alias = mail</td></tr><tr><td>26</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>27</td><td>TCP, UDP</td><td>nsw-fe</td><td>NSW User System FE</td></tr><tr><td>28</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>29</td><td>TCP, UDP</td><td>msg-icp</td><td>MSG ICP</td></tr><tr><td>30</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>31</td><td>TCP, UDP</td><td>msg-auth</td><td>MSG Authentication</td></tr><tr><td>32</td><td>TCP, UDP</td><td><br /></td><td>Belum ditetapkan</td></tr><tr><td>33</td><td>TCP, UDP</td><td>dsp</td><td>Display Support Protocol</td></tr><tr><td>34</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>35</td><td>TCP, UDP</td><td><br /></td><td>Any private printer server</td></tr><tr><td>36</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>37</td><td>TCP, UDP</td><td>time</td><td>Time; alias = timeserver</td></tr><tr><td>38</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>39</td><td>TCP, UDP</td><td>rlp</td><td>Resource Location Protocol; alias = resource</td></tr><tr><td>40</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>41</td><td>TCP, UDP</td><td>graphics</td><td>Graphics</td></tr><tr><td>42</td><td>TCP, UDP</td><td>nameserver</td><td>Host Name Server; alias = nameserver</td></tr><tr><td>43</td><td>TCP, UDP</td><td>nicname</td><td>Who Is; alias = nicname</td></tr><tr><td>44</td><td>TCP, UDP</td><td>mpm-flags</td><td>MPM FLAGS Protocol</td></tr><tr><td>45</td><td>TCP, UDP</td><td>mpm</td><td>Message Processing Module</td></tr><tr><td>46</td><td>TCP, UDP</td><td>mpm-snd</td><td>MPM (default send)</td></tr><tr><td>47</td><td>TCP, UDP</td><td>ni-ftp</td><td>NI FTP</td></tr><tr><td>48</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>49</td><td>TCP, UDP</td><td>login</td><td>Login Host Protocol</td></tr><tr><td>50</td><td>TCP, UDP</td><td>re-mail-ck</td><td>Remote Mail Checking Protocol</td></tr><tr><td>51</td><td>TCP, UDP</td><td>la-maint</td><td>IMP Logical Address Maintenance</td></tr><tr><td>52</td><td>TCP, UDP</td><td>xns-time</td><td>XNS Time Protocol</td></tr><tr><td><b>53</b></td><td>TCP, UDP</td><td>domain</td><td>Domain Name System Server</td></tr><tr><td>54</td><td>TCP, UDP</td><td>xns-ch</td><td>XNS Clearinghouse</td></tr><tr><td>55</td><td>TCP, UDP</td><td>isi-gl</td><td>ISI Graphics Language</td></tr><tr><td>56</td><td>TCP, UDP</td><td>xns-auth</td><td>XNS Authentication</td></tr><tr><td>57</td><td>TCP, UDP</td><td><br /></td><td>Any private terminal access</td></tr><tr><td>58</td><td>TCP, UDP</td><td>xns-mail</td><td>XNS Mail</td></tr><tr><td>59</td><td>TCP, UDP</td><td><br /></td><td>Any private file service</td></tr><tr><td>60</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>61</td><td>TCP, UDP</td><td>ni-mail</td><td>NI MAIL</td></tr><tr><td>62</td><td>TCP, UDP</td><td>acas</td><td>ACA Services</td></tr><tr><td>63</td><td>TCP, UDP</td><td>via-ftp</td><td>VIA Systems – FTP</td></tr><tr><td>64</td><td>TCP, UDP</td><td>covia</td><td>Communications Integrator (CI)</td></tr><tr><td>65</td><td>TCP, UDP</td><td>tacacs-ds</td><td>TACACS-Database Service</td></tr><tr><td>66</td><td>TCP, UDP</td><td>sql*net</td><td>Oracle SQL*NET</td></tr><tr><td>67</td><td>TCP, UDP</td><td>bootpc</td><td>DHCP/BOOTP Protocol Server</td></tr><tr><td>68</td><td>TCP, UDP</td><td>bootpc</td><td>DHCP/BOOTP Protocol Server</td></tr><tr><td><b>69</b></td><td>TCP, UDP</td><td>TFTP</td><td>Trivial File Transfer Protocol</td></tr><tr><td>70</td><td>TCP, UDP</td><td>gopher</td><td>Gopher</td></tr><tr><td>71</td><td>TCP, UDP</td><td>netrjs-1</td><td>Remote Job Service</td></tr><tr><td>72</td><td>TCP, UDP</td><td>netrjs-2</td><td>Remote Job Service</td></tr><tr><td>73</td><td>TCP, UDP</td><td>netrjs-3</td><td>Remote Job Service</td></tr><tr><td>74</td><td>TCP, UDP</td><td>netrjs-4</td><td>Remote Job Service</td></tr><tr><td>75</td><td>UDP</td><td>T/A</td><td>Any private dial-out service</td></tr><tr><td>76</td><td>TCP, UDP</td><td>T/A</td><td>Belum ditetapkan</td></tr><tr><td>77</td><td>TCP, UDP</td><td><br /></td><td>Any private RJE service</td></tr><tr><td>78</td><td>TCP, UDP</td><td>vetTCP</td><td>VetTCP</td></tr><tr><td>79</td><td>TCP, UDP</td><td>finger</td><td>Finger</td></tr><tr><td><b>80</b></td><td>TCP, UDP</td><td>www</td><td>World Wide Web HTTP</td></tr><tr><td>81</td><td>TCP, UDP</td><td>hosts2-ns</td><td>HOSTS2 Name Server</td></tr><tr><td>82</td><td>TCP, UDP</td><td>xfer</td><td>XFER Utility</td></tr><tr><td>83</td><td>TCP, UDP</td><td>mit-ml-dev</td><td>MIT ML Device</td></tr><tr><td>84</td><td>TCP, UDP</td><td>ctf</td><td>Common Trace Facility</td></tr><tr><td>85</td><td>TCP, UDP</td><td>mit-ml-dev</td><td>MIT ML Device</td></tr><tr><td>86</td><td>TCP, UDP</td><td>mfcobol</td><td>Micro Focus Cobol</td></tr><tr><td>87</td><td>TCP, UDP</td><td><br /></td><td>Any private terminal link; alias = ttylink</td></tr><tr><td>88</td><td>TCP, UDP</td><td>kerberos</td><td>Kerberos</td></tr><tr><td>89</td><td>TCP, UDP</td><td>su-mit-tg</td><td>SU/MIT Telnet Gateway</td></tr><tr><td>90</td><td>TCP, UDP</td><td><br /></td><td>DNSIX Security Attribute Token Map</td></tr><tr><td>91</td><td>TCP, UDP</td><td>mit-dov</td><td>MIT Dover Spooler</td></tr><tr><td>92</td><td>TCP, UDP</td><td>npp</td><td>Network Printing Protocol</td></tr><tr><td>93</td><td>TCP, UDP</td><td>dcp</td><td>Device Control Protocol</td></tr><tr><td>94</td><td>TCP, UDP</td><td>objcall</td><td>Tivoli Object Dispatcher</td></tr><tr><td>95</td><td>TCP, UDP</td><td>supdup</td><td>SUPDUP</td></tr><tr><td>96</td><td>TCP, UDP</td><td>dixie</td><td>DIXIE Protocol Specification</td></tr><tr><td>97</td><td>TCP, UDP</td><td>swift-rvf</td><td>Swift Remote Virtual File Protocol</td></tr><tr><td>98</td><td>TCP, UDP</td><td>tacnews</td><td>TAC News</td></tr><tr><td>99</td><td>TCP, UDP</td><td>metagram</td><td>Metagram Relay</td></tr><tr><td>100</td><td>TCP</td><td>newacct</td><td>(unauthorized use)</td></tr><tr><td>101</td><td>TCP, UDP</td><td>hostname</td><td>NIC Host Name Server; alias = hostname</td></tr><tr><td>102</td><td>TCP, UDP</td><td>iso-tsap</td><td>ISO-TSAP</td></tr><tr><td>103</td><td>TCP, UDP</td><td>gppitnp</td><td>Genesis Point-to-Point Trans Net; alias = webster</td></tr><tr><td>104</td><td>TCP, UDP</td><td>acr-nema</td><td>ACR-NEMA Digital Imag. &amp; Comm. 300</td></tr><tr><td>105</td><td>TCP, UDP</td><td>csnet-ns</td><td>Mailbox Name Nameserver</td></tr><tr><td>106</td><td>TCP, UDP</td><td>3com-tsmux</td><td>3COM-TSMUX</td></tr><tr><td>107</td><td>TCP, UDP</td><td>rtelnet</td><td>Remote Telnet Service</td></tr><tr><td>108</td><td>TCP, UDP</td><td>snagas</td><td>SNA Gateway Access Server</td></tr><tr><td>109</td><td>TCP, UDP</td><td>pop2</td><td>Post Office Protocol version 2 (POP2); alias = postoffice</td></tr><tr><td><b>110</b></td><td>TCP, UDP</td><td>pop3</td><td>Post Office Protocol version 3 (POP3); alias = postoffice</td></tr><tr><td>111</td><td>TCP, UDP</td><td>sunrpc</td><td>SUN Remote Procedure Call</td></tr><tr><td>112</td><td>TCP, UDP</td><td>mcidas</td><td>McIDAS Data Transmission Protocol</td></tr><tr><td>113</td><td>TCP, UDP</td><td>auth</td><td>Authentication Service; alias = authentication</td></tr><tr><td>114</td><td>TCP, UDP</td><td>audionews</td><td>Audio News Multicast</td></tr><tr><td>115</td><td>TCP, UDP</td><td>sftp</td><td>Simple File Transfer Protocol</td></tr><tr><td>116</td><td>TCP, UDP</td><td>ansanotify</td><td>ANSA REX Notify</td></tr><tr><td>117</td><td>TCP, UDP</td><td>uucp-path</td><td>UUCP Path Service</td></tr><tr><td>118</td><td>TCP, UDP</td><td>sqlserv</td><td>SQL Services</td></tr><tr><td>119</td><td>TCP, UDP</td><td>nntp</td><td>Network News Transfer Protocol (NNTP); alias = usenet</td></tr><tr><td>120</td><td>TCP, UDP</td><td>cfdptkt</td><td>CFDPTKT</td></tr><tr><td>121</td><td>TCP, UDP</td><td>erpc</td><td>Encore Expedited Remote Procedure Call</td></tr><tr><td>122</td><td>TCP, UDP</td><td>smakynet</td><td>SMAKYNET</td></tr><tr><td><b>123</b></td><td>TCP, UDP</td><td>ntp</td><td>Network Time Protocol; alias = ntpd ntp</td></tr><tr><td>124</td><td>TCP, UDP</td><td>ansatrader</td><td>ANSA REX Trader</td></tr><tr><td>125</td><td>TCP, UDP</td><td>locus-map</td><td>Locus PC-Interface Net Map Server</td></tr><tr><td>126</td><td>TCP, UDP</td><td>unitary</td><td>Unisys Unitary Login</td></tr><tr><td>127</td><td>TCP, UDP</td><td>locus-con</td><td>Locus PC-Interface Connection Server</td></tr><tr><td>128</td><td>TCP, UDP</td><td>gss-xlicen</td><td>GSS X License Verification</td></tr><tr><td>129</td><td>TCP, UDP</td><td>pwdgen</td><td>Password Generator Protocol</td></tr><tr><td>130</td><td>TCP, UDP</td><td>cisco-fna</td><td>Cisco FNATIVE</td></tr><tr><td>131</td><td>TCP, UDP</td><td>cisco-tna</td><td>Cisco TNATIVE</td></tr><tr><td>132</td><td>TCP, UDP</td><td>cisco-sys</td><td>Cisco SYSMAINT</td></tr><tr><td>133</td><td>TCP, UDP</td><td>statsrv</td><td>Statistics Service</td></tr><tr><td>134</td><td>TCP, UDP</td><td>ingres-net</td><td>INGRES-NET Service</td></tr><tr><td>135</td><td>TCP, UDP</td><td>loc-srv</td><td>Location Service</td></tr><tr><td>136</td><td>TCP, UDP</td><td>profile</td><td>PROFILE Naming System</td></tr><tr><td><b>137</b></td><td>TCP, UDP</td><td>netbios-ns</td><td>NetBIOS Name Service</td></tr><tr><td><b>138</b></td><td>TCP, UDP</td><td>netbios-dgm</td><td>NetBIOS Datagram Service</td></tr><tr><td><b>139</b></td><td>TCP, UDP</td><td>netbios-ssn</td><td>NetBIOS Session Service</td></tr><tr><td>140</td><td>TCP, UDP</td><td>emfis-data</td><td>EMFIS Data Service</td></tr><tr><td>141</td><td>TCP, UDP</td><td>emfis-cntl</td><td>EMFIS Control Service</td></tr><tr><td>142</td><td>TCP, UDP</td><td>bl-idm</td><td>Britton-Lee IDM</td></tr><tr><td>143</td><td>TCP, UDP</td><td>imap2</td><td>Interim Mail Access Protocol v2</td></tr><tr><td>144</td><td>TCP, UDP</td><td>news</td><td>NewS; alias = news</td></tr><tr><td>145</td><td>TCP, UDP</td><td>uaac</td><td>UAAC Protocol</td></tr><tr><td>146</td><td>TCP, UDP</td><td>iso-ip0</td><td>ISO-IP0</td></tr><tr><td>147</td><td>TCP, UDP</td><td>iso-ip</td><td>ISO-IP</td></tr><tr><td>148</td><td>TCP, UDP</td><td>cronus</td><td>CRONUS-SUPPORT</td></tr><tr><td>149</td><td>TCP, UDP</td><td>aed-512</td><td>AED 512 Emulation Service</td></tr><tr><td>150</td><td>TCP, UDP</td><td>sql-net</td><td>SQL-NET</td></tr><tr><td>151</td><td>TCP, UDP</td><td>hems</td><td>HEMS</td></tr><tr><td>152</td><td>TCP, UDP</td><td>bftp</td><td>Background File Transfer Program</td></tr><tr><td>153</td><td>TCP, UDP</td><td>sgmp</td><td>SGMP; alias = sgmp</td></tr><tr><td>154</td><td>TCP, UDP</td><td>netsc-prod</td><td>Netscape</td></tr><tr><td>155</td><td>TCP, UDP</td><td>netsc-dev</td><td>Netscape</td></tr><tr><td>156</td><td>TCP, UDP</td><td>sqlsrv</td><td>SQL Service</td></tr><tr><td>157</td><td>TCP, UDP</td><td>knet-cmp</td><td>KNET/VM Command/Message Protocol</td></tr><tr><td>158</td><td>TCP, UDP</td><td>pcmail-srv</td><td>PCMail Server; alias = repository</td></tr><tr><td>159</td><td>TCP, UDP</td><td>nss-routing</td><td>NSS-Routing</td></tr><tr><td>160</td><td>TCP, UDP</td><td>sgmp-traps</td><td>SGMP-TRAPS</td></tr><tr><td>161</td><td>TCP, UDP</td><td>snmp</td><td>Simple Network Management Protocol</td></tr><tr><td>162</td><td>TCP, UDP</td><td>snmptrap</td><td>SNMP TRAP</td></tr><tr><td>163</td><td>TCP, UDP</td><td>cmip-man</td><td>CMIP/TCP Manager</td></tr><tr><td>164</td><td>TCP, UDP</td><td>cmip-agent</td><td>CMIP/TCP Agent</td></tr><tr><td>165</td><td>TCP, UDP</td><td>xns-courier</td><td>Xerox</td></tr><tr><td>166</td><td>TCP, UDP</td><td>s-net</td><td>Sirius Systems</td></tr><tr><td>167</td><td>TCP, UDP</td><td>namp</td><td>NAMP</td></tr><tr><td>168</td><td>TCP, UDP</td><td>rsvd</td><td>RSVD</td></tr><tr><td>169</td><td>TCP, UDP</td><td>send</td><td>SEND</td></tr><tr><td>170</td><td>TCP, UDP</td><td>print-srv</td><td>Network PostScript</td></tr><tr><td>171</td><td>TCP, UDP</td><td>multiplex</td><td>Network Innovations Multiplex</td></tr><tr><td>172</td><td>TCP, UDP</td><td>cl/1</td><td>Network Innovations CL/1</td></tr><tr><td>173</td><td>TCP, UDP</td><td>xyplex-mux</td><td>Xyplex</td></tr><tr><td>174</td><td>TCP, UDP</td><td>mailq</td><td>MAILQ</td></tr><tr><td>175</td><td>TCP, UDP</td><td>vmnet</td><td>VMNET</td></tr><tr><td>176</td><td>TCP, UDP</td><td>genrad-mux</td><td>GENRAD-MUX</td></tr><tr><td>177</td><td>TCP, UDP</td><td>xdmcp</td><td>X Display Manager Control Protocol</td></tr><tr><td>178</td><td>TCP, UDP</td><td>nextstep</td><td>NextStep Window Server</td></tr><tr><td>179</td><td>TCP, UDP</td><td>bgp</td><td>Border Gateway Protocol (BGP)</td></tr><tr><td>180</td><td>TCP, UDP</td><td>ris</td><td>Intergraph</td></tr><tr><td>181</td><td>TCP, UDP</td><td>unify</td><td>Unify</td></tr><tr><td>182</td><td>TCP, UDP</td><td>audit</td><td>Unisys Audit SITP</td></tr><tr><td>183</td><td>TCP, UDP</td><td>ocbinder</td><td>OCBinder</td></tr><tr><td>184</td><td>TCP, UDP</td><td>ocserver</td><td>OCServer</td></tr><tr><td>185</td><td>TCP, UDP</td><td>remote-kis</td><td>Remote-KIS</td></tr><tr><td>186</td><td>TCP, UDP</td><td>kis</td><td>KIS Protocol</td></tr><tr><td>187</td><td>TCP, UDP</td><td>aci</td><td>Application Communication Interface</td></tr><tr><td>188</td><td>TCP, UDP</td><td>mumps</td><td>Plus Five’s MUMPS</td></tr><tr><td>189</td><td>TCP, UDP</td><td>qft</td><td>Queued File Transport</td></tr><tr><td>190</td><td>TCP, UDP</td><td>gacp</td><td>Gateway Access Control Protocol</td></tr><tr><td>191</td><td>TCP, UDP</td><td>prospero</td><td>Prospero</td></tr><tr><td>192</td><td>TCP, UDP</td><td>osu-nms</td><td>OSU Network Monitoring System</td></tr><tr><td>193</td><td>TCP, UDP</td><td>srmp</td><td>Spider Remote Monitoring Protocol</td></tr><tr><td><b>194</b></td><td>TCP, UDP</td><td>irc</td><td>Internet Relay Chat (IRC) Protocol</td></tr><tr><td>195</td><td>TCP, UDP</td><td>dn6-nlm-aud</td><td>DNSIX Network Level Module Audit</td></tr><tr><td>196</td><td>TCP, UDP</td><td>dn6-smmred</td><td>DNSIX Session Management Module Audit Redirector</td></tr><tr><td>197</td><td>TCP, UDP</td><td>dls</td><td>Directory Location Service</td></tr><tr><td>198</td><td>TCP, UDP</td><td>dls-mon</td><td>Directory Location Service Monitor</td></tr><tr><td>199</td><td>TCP, UDP</td><td>smux</td><td>SMUX</td></tr><tr><td>200</td><td>TCP, UDP</td><td>src</td><td>IBM System Resource Controller</td></tr><tr><td>201</td><td>TCP, UDP</td><td>at-rtmp</td><td>AppleTalk Routing Maintenance</td></tr><tr><td>202</td><td>TCP, UDP</td><td>at-nbp</td><td>AppleTalk Name Binding</td></tr><tr><td>203</td><td>TCP, UDP</td><td>at-3</td><td>AppleTalk Unused</td></tr><tr><td>204</td><td>TCP, UDP</td><td>at-echo</td><td>AppleTalk Echo</td></tr><tr><td>205</td><td>TCP, UDP</td><td>at-5</td><td>AppleTalk Unused</td></tr><tr><td>206</td><td>TCP, UDP</td><td>at-zis</td><td>AppleTalk Zone Information</td></tr><tr><td>207</td><td>TCP, UDP</td><td>at-7</td><td>AppleTalk Unused</td></tr><tr><td>208</td><td>TCP, UDP</td><td>at-8</td><td>AppleTalk Unused</td></tr><tr><td>209</td><td>TCP, UDP</td><td>tam</td><td>Trivial Authenticated Mail Protocol</td></tr><tr><td>210</td><td>TCP, UDP</td><td>z39.50</td><td>ANSI Z39.50</td></tr><tr><td>211</td><td>TCP, UDP</td><td>914c/g</td><td>Texas Instruments 914C/G Terminal</td></tr><tr><td>212</td><td>TCP, UDP</td><td>anet</td><td>ATEXSSTR</td></tr><tr><td>213</td><td>TCP, UDP</td><td>ipx</td><td>Internetwork Packet Exchange (IPX)</td></tr><tr><td>214</td><td>TCP, UDP</td><td>vmpwscs</td><td>VM PWSCS</td></tr><tr><td>215</td><td>TCP, UDP</td><td>softpc</td><td>Insignia Solutions</td></tr><tr><td>216</td><td>TCP, UDP</td><td>atls</td><td>Access Technology License Server</td></tr><tr><td>217</td><td>TCP, UDP</td><td>dbase</td><td>dBASE UNIX</td></tr><tr><td>218</td><td>TCP, UDP</td><td>mpp</td><td>Netix Message Posting Protocol</td></tr><tr><td>219</td><td>TCP, UDP</td><td>uarps</td><td>Unisys ARPs</td></tr><tr><td><b>220</b></td><td>TCP, UDP</td><td>imap3</td><td>Interactive Mail Access Protocol versi 3</td></tr><tr><td>221</td><td>TCP, UDP</td><td>fln-spx</td><td>Berkeley rlogind with SPX authentication</td></tr><tr><td>222</td><td>TCP, UDP</td><td>fsh-spx</td><td>Berkeley rshd with SPX authentication</td></tr><tr><td>223</td><td>TCP, UDP</td><td>cdc</td><td>Certificate Distribution Center</td></tr><tr><td>224–241</td><td>T/A</td><td>T/A</td><td>Tidak digunakan; dicadangkan</td></tr><tr><td>242</td><td>TCP, UDP</td><td>direct</td><td>Direct</td></tr><tr><td>243</td><td>TCP, UDP</td><td>sur-meas</td><td>Survey Measurement</td></tr><tr><td>245</td><td>TCP, UDP</td><td>link</td><td>LINK</td></tr><tr><td>246</td><td>TCP, UDP</td><td>dsp3270</td><td>Display Systems Protocol</td></tr><tr><td>247</td><td>TCP, UDP</td><td>subntbcst_tftp</td><td>SUBNTBCST_TFTP</td></tr><tr><td>248</td><td>TCP, UDP</td><td>bhfhs</td><td>bhfhs</td></tr><tr><td>249–255</td><td>T/A</td><td>T/A</td><td>Tidak digunakan; dicadangkan</td></tr><tr><td>345</td><td>TCP, UDP</td><td>pawserv</td><td>Perf Analysis Workbench</td></tr><tr><td>346</td><td>TCP, UDP</td><td>zserv</td><td>Zebra server</td></tr><tr><td>347</td><td>TCP, UDP</td><td>fatserv</td><td>Fatmen Server</td></tr><tr><td>371</td><td>TCP, UDP</td><td>clearcase</td><td>Clearcase</td></tr><tr><td>372</td><td>TCP, UDP</td><td>ulistserv</td><td>UNIX Listserv</td></tr><tr><td>373</td><td>TCP, UDP</td><td>legent-1</td><td>Legent Corporation</td></tr><tr><td>374</td><td>TCP, UDP</td><td>legent-2</td><td>Legent Corporation</td></tr><tr><td>375</td><td>TCP, UDP</td><td>T/A</td><td>official &amp; unofficial assignments, known security risks, trojans and applications use.</td></tr><tr><td>376</td><td>TCP, UDP</td><td>T/A</td><td>protocol and security warnings including related ports.</td></tr><tr><td>377</td><td>TCP, UDP</td><td>T/A</td><td><ol><li>protocol and security warnings including related ports.</li></ol></td></tr></tbody></table></li><li><i><b>Registered Port</b></i>: Port-port yang digunakan oleh  vendor-vendor komputer atau jaringan yang berbeda untuk mendukung  aplikasi dan sistem operasi yang mereka buat. Registered port juga  diketahui dan didaftarkan oleh IANA tetapi tidak dialokasikan secara  permanen, sehingga vendor lainnya dapat menggunakan port number yang  sama. Range registered port berkisar dari 1024 hingga 49151 dan beberapa  port di antaranya adalah <i>Dynamically Assigned Port</i>.</li><li><i><b>Dynamically Assigned Port</b></i>: merupakan port-port yang  ditetapkan oleh sistem operasi atau aplikasi yang digunakan untuk  melayani request dari pengguna sesuai dengan kebutuhan. Dynamically  Assigned Port berkisar dari 1024 hingga 65536 dan dapat digunakan atau  dilepaskan sesuai kebutuhan.</li></ul></ul><b>D.Refrensi</b><br /><ul><li><b><a href="https://id.wikipedia.org/wiki/Port_(Jaringan_Komputer)">https://id.wikipedia.org/wiki/Port_(Jaringan_Komputer)</a>&nbsp;</b> </li></ul><ul style="text-align: left;"><ul></ul></ul><div></div></div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/web-portal/">Web Portal</a></li>            
+        
+          <li><a href="/post/installasi-debian-di-proxmox/">Installasi Debian di Proxmox</a></li>            
+        
+          <li><a href="/post/setting-ip-statik-di-mikrotik/">Setting Ip Statik DI Mikrotik</a></li>            
+        
+          <li><a href="/post/mengatur-waktu-di-routherboard/">MENGATUR WAKTU DI ROUTHERBOARD</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/blc/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/virtual-private-network-vpn/">
+      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/virtual-private-network-vpn/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Virtual Private Network (VPN)</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A. Pendahuluan&nbsp;
+Virtual Private Network (VPN) adalah suatu metode untuk mengkoneksikan antar node jaringan dengan cara memanfaatkan koneksi Internet (Jaringan Publik/WAN) dan menggunakan protokol yang terenkripsi sehingga lebih aman. VPN merupakan salah satu solusi jitu untuk menghubungkan beberapa lokasi yang berjauhan dengan mudah memanfaatkan koneksi Internet masing-masing lokasi. B. Maksud dan Tujuan 
+Memahami dan mengenal apa itu VPNC. Pembahasan
+VPN (Virtual Private Network) yaitu sebuah koneksi private yang melalui jaringan publik (dalam hal ini internet). ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/blokir-situs-dengan-mikrotik/">
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/blokir-situs-dengan-mikrotik/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Blokir Situs Dengan Mikrotik</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A. Pengertian
+Proxy server (peladen proxy) adalah sebuah komputer server atau program komputer yang dapat bertindak sebagai komputer lainnya untuk melakukan request terhadap content dari Internet atau intranet.&nbsp;Proxy Server bertindak sebagai gateway terhadap dunia ini Internet untuk setiap komputer klien. Proxy server tidak terlihat oleh komputer klien: seorang pengguna yang berinteraksi dengan Internet melalui sebuah proxy server tidak akan mengetahui bahwa sebuah proxy server sedang menangani request yang dilakukannya. Web server yang menerima request dari proxy server akan menginterpretasikan request-request tersebut seolah-olah request itu datang secara langsung dari komputer klien, bukan dari proxy server. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Port Di Jaringan Komputer</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Port%20Di%20Jaringan%20Komputer&amp;url=%2fpost%2fport-di-jaringan-komputer%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fport-di-jaringan-komputer%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title> Menghubungka 3 Router Mikrotik dengan RIP &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/img/go.png" />
+    <link rel="canonical" href="/post/menghubungka-3-router-mikrotik-dengan-rip/" />
+
+     <meta name="description" content="A. Pendahuluan
+1. Pengertian
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Routing Information Protocol (RIP) adalah sebuah protokol routing dinamis yang digunakan dalam jarin" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content=" Menghubungka 3 Router Mikrotik dengan RIP"/>
+    <meta name="twitter:description" content="A. Pendahuluan
+1. Pengertian
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Routing Information Protocol (RIP) adalah sebuah protokol routing dinamis yang digunakan dalam jarin"/>
+    <meta name="twitter:url" content="/post/menghubungka-3-router-mikrotik-dengan-rip/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content=" Menghubungka 3 Router Mikrotik dengan RIP &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/menghubungka-3-router-mikrotik-dengan-rip/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A. Pendahuluan
+1. Pengertian
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Routing Information Protocol (RIP) adalah sebuah protokol routing dinamis yang digunakan dalam jarin" />
+
+    <meta property="article:published_time" content="2017-09-25T15:54:00Z" />
+    <meta property="article:tag" content="BLC" />
+
+    <meta property="og:image" content="/img/header-blog.jpg"/>
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/blc">BLC Telkom</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/programming/">Programming</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2017-09-25">25 September 2017</time>
+                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
+        </section>
+        <h1 class="post-full-title"> Menghubungka 3 Router Mikrotik dengan RIP</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/defimg/3.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><b>A. Pendahuluan</b><br /><div class="post-body entry-content float-container" id="post-body-327729232916156885">1. Pengertian<br /><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Routing Information Protocol <b>(RIP)</b> adalah sebuah  protokol routing dinamis yang digunakan dalam jaringan LAN (Local Area  Network) dan WAN (Wide Area Network). Oleh karena itu protokol ini  diklasifikasikan sebagai Interior Gateway Protocol(IGP). Protokol ini  menggunakan algoritma Distance-Vector Routing. Pertama kali  didefinisikan dalam RFC 1058 (1988). Protokol ini telah dikembangkan  beberapa kali, sehingga terciptalah RIP Versi 2 (RFC 2453). Kedua versi  ini masih digunakan sampai sekarang, meskipun begitu secara teknis  mereka telah dianggap usang oleh teknik-teknik yang lebih maju, seperti  Open Shortest Path First (OSPF) dan protokol OSI IS-IS. RIP juga telah  diadaptasi untuk digunakan dalam jaringan IPv6, yang dikenal sebagai  standar RIPng (RIP Next Generation / RIP generasi berikutnya), yang  diterbitkan dalam RFC 2080 (1997).<br />&nbsp;</div><div class="post-body entry-content float-container" id="post-body-327729232916156885">2. Latar Belakang<br />Ingin memahami konsep dan konfigurasi Routing RIP<br />&nbsp;</div><div class="post-body entry-content float-container" id="post-body-327729232916156885">3. Maksud dan Tujuan</div><div class="post-body entry-content float-container" id="post-body-327729232916156885">Ingin menghubungkan 3 router dengan routing RIP</div><div class="post-body entry-content float-container" id="post-body-327729232916156885"><br /></div><div class="post-body entry-content float-container" id="post-body-327729232916156885">4. Hasil yang Diharapkan<br />Kita dapat melakukan konfigurasi routing RIP</div><div class="post-body entry-content float-container" id="post-body-327729232916156885"></div><div class="post-body entry-content float-container" id="post-body-327729232916156885">B. Alat dan Bahan<br /><ul><li>3 RouterBoard Mikrotik</li><li>5 Kabel UTP</li><li>Laptop</li></ul>C. Jangka Waktu Pelaksanaan<br />&nbsp; &nbsp; 28 menit<br /><br />D. Tahap Pelaksanaan<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Membuat Topologi<br /><br /><div style="text-align: center;">&nbsp;<a href="https://3.bp.blogspot.com/-VVqujCMmcM4/WbDAdjGZTRI/AAAAAAAACAM/HxQa7SIHrxsnvmizm--wBAMQoAmniibUACLcBGAs/s1600/Topologi%2BRIP.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="520" data-original-width="771" height="215" src="https://3.bp.blogspot.com/-VVqujCMmcM4/WbDAdjGZTRI/AAAAAAAACAM/HxQa7SIHrxsnvmizm--wBAMQoAmniibUACLcBGAs/s320/Topologi%2BRIP.png" width="320" /></a></div><br /><div style="text-align: center;">&nbsp;&nbsp;&nbsp;<b> Kita Konfigurasi RO_Pusat</b></div><br />&nbsp;&nbsp; 1. Kita Setting IP Address di<br /><blockquote class="tr_bq">Ether 2 = Ke RO_2<br />Ether 3 = Ke Client<br />Ether 4 = Ke RO_3</blockquote><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-M4UA_af3LaE/WbC_qzt32DI/AAAAAAAAB-A/dvHfc3dafbsU-vpaqxoh_E-gl_EGN-qHgCLcBGAs/s1600/1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="243" data-original-width="263" src="https://2.bp.blogspot.com/-M4UA_af3LaE/WbC_qzt32DI/AAAAAAAAB-A/dvHfc3dafbsU-vpaqxoh_E-gl_EGN-qHgCLcBGAs/s1600/1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-ggweXuB7i_E/WbC_scN7QOI/AAAAAAAAB-M/LlL38Vl4to4V-7oPHsnJPYKtBCKWafj0wCLcBGAs/s1600/2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="243" data-original-width="263" src="https://1.bp.blogspot.com/-ggweXuB7i_E/WbC_scN7QOI/AAAAAAAAB-M/LlL38Vl4to4V-7oPHsnJPYKtBCKWafj0wCLcBGAs/s1600/2.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-RijWH99aiv4/WbC_sgV0TdI/AAAAAAAAB-Q/bKAmkbk0YbQ6qGzWteJYguioasSJBy5RACLcBGAs/s1600/3.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="244" data-original-width="262" src="https://1.bp.blogspot.com/-RijWH99aiv4/WbC_sgV0TdI/AAAAAAAAB-Q/bKAmkbk0YbQ6qGzWteJYguioasSJBy5RACLcBGAs/s1600/3.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-u-qYyoB1hMQ/WbC_s4DjScI/AAAAAAAAB-U/cw15Xaw4fPgg49gNOM1fqHy2yGwDutSkwCLcBGAs/s1600/4.1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="320" data-original-width="332" height="308" src="https://1.bp.blogspot.com/-u-qYyoB1hMQ/WbC_s4DjScI/AAAAAAAAB-U/cw15Xaw4fPgg49gNOM1fqHy2yGwDutSkwCLcBGAs/s320/4.1.png" width="320" /></a></div><br />&nbsp;&nbsp; 2. Kemudian Pada menu pilih <b>"Routing" &gt;&gt; "RIP"</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-DP0b3vqpkmY/WbC_tzwedEI/AAAAAAAAB-Y/fnKyuo02BmMFPpBf9f320HejtynMkXdaACLcBGAs/s1600/4.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1301" height="182" src="https://2.bp.blogspot.com/-DP0b3vqpkmY/WbC_tzwedEI/AAAAAAAAB-Y/fnKyuo02BmMFPpBf9f320HejtynMkXdaACLcBGAs/s320/4.png" width="320" /></a></div><br />&nbsp;&nbsp; 3. Pada <b>"New RIP Network" </b>isikan dengan <b>"IP Network" </b>yang ada di Interface Router kita.<br /><blockquote class="tr_bq">Ether 2 = 10.10.10.0/29<br />Ether 4 = 20.20.20.0/29 <br />Ether 3 = 192.168.10.0/24</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-dBNpWsN9P9g/WbC_t3KQLGI/AAAAAAAAB-c/AESDf9ezJP4WaAihWK5a1iexy-hQqPa_QCLcBGAs/s1600/5.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="218" data-original-width="309" src="https://1.bp.blogspot.com/-dBNpWsN9P9g/WbC_t3KQLGI/AAAAAAAAB-c/AESDf9ezJP4WaAihWK5a1iexy-hQqPa_QCLcBGAs/s1600/5.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-wfhxuusjpOY/WbC_uB67_NI/AAAAAAAAB-g/iavQOySuJIEAq0AF3TzwOjbYNm1A1qduwCLcBGAs/s1600/6.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="219" data-original-width="308" src="https://4.bp.blogspot.com/-wfhxuusjpOY/WbC_uB67_NI/AAAAAAAAB-g/iavQOySuJIEAq0AF3TzwOjbYNm1A1qduwCLcBGAs/s1600/6.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-WajU3yKVCwE/WbC_ueIXVKI/AAAAAAAAB-k/asCb8HJnhwMlwC42Oipd3WLK43xeFNq4gCLcBGAs/s1600/7.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="217" data-original-width="307" src="https://4.bp.blogspot.com/-WajU3yKVCwE/WbC_ueIXVKI/AAAAAAAAB-k/asCb8HJnhwMlwC42Oipd3WLK43xeFNq4gCLcBGAs/s1600/7.png" /></a></div><br />&nbsp;&nbsp; 4. Kita lihat hasil nya di <b>"IP" &gt;&gt; "Routes" </b>maka hasil nya seperti berikut.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-XnmYgo_89_Q/WbC_uo609pI/AAAAAAAAB-o/a0HvwRKJ73ob3JkB7n-Xjieocu8YOoytwCLcBGAs/s1600/8.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="345" data-original-width="690" height="160" src="https://3.bp.blogspot.com/-XnmYgo_89_Q/WbC_uo609pI/AAAAAAAAB-o/a0HvwRKJ73ob3JkB7n-Xjieocu8YOoytwCLcBGAs/s320/8.png" width="320" /></a></div><br />&nbsp;&nbsp; 5. Kita ubah IP Address client sesuai dengan IP yang ada pada Router.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-jJdbq_M4yYM/WbC_wKnTUII/AAAAAAAAB-s/pcuJdzwD1wgbepoloIUdRN6Lkm9IQkAhQCLcBGAs/s1600/9.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="482" data-original-width="575" height="268" src="https://4.bp.blogspot.com/-jJdbq_M4yYM/WbC_wKnTUII/AAAAAAAAB-s/pcuJdzwD1wgbepoloIUdRN6Lkm9IQkAhQCLcBGAs/s320/9.png" width="320" /></a></div><br /><div style="text-align: center;"><b>Kita Konfigurasi RO_2</b></div><br />&nbsp;&nbsp; 1. Sama seperti <b>"RO_Pusat"</b>, pertama kita setting IP Address nya<br /><blockquote class="tr_bq">Ether 2 = Ke Client<br />Ether 3 = Ke RO_Pusat</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-6sdtXfmcFRI/WbDACyH5ewI/AAAAAAAAB-4/hYuLU-hDCLMkAhTr-aeqLEzq5FzvlE4UwCLcBGAs/s1600/0.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1301" height="182" src="https://3.bp.blogspot.com/-6sdtXfmcFRI/WbDACyH5ewI/AAAAAAAAB-4/hYuLU-hDCLMkAhTr-aeqLEzq5FzvlE4UwCLcBGAs/s320/0.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-Xq4adoF_XeA/WbDACxaoz7I/AAAAAAAAB-0/rweFWo1yJOgignBuemU_UzqaNc2SE0LHACLcBGAs/s1600/1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="240" data-original-width="259" src="https://3.bp.blogspot.com/-Xq4adoF_XeA/WbDACxaoz7I/AAAAAAAAB-0/rweFWo1yJOgignBuemU_UzqaNc2SE0LHACLcBGAs/s1600/1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-twqhqNVl_Dw/WbDAF7pC-dI/AAAAAAAAB_M/MFvsA25KG40shG4MpQj1dvKIpWMrgPGmACLcBGAs/s1600/2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="248" data-original-width="263" src="https://2.bp.blogspot.com/-twqhqNVl_Dw/WbDAF7pC-dI/AAAAAAAAB_M/MFvsA25KG40shG4MpQj1dvKIpWMrgPGmACLcBGAs/s1600/2.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-X9veFlo8w9s/WbDAF5watKI/AAAAAAAAB_Q/3yq3T1abZKsCmDHvFTa9E0JA-NcgGa_GQCLcBGAs/s1600/3.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="316" data-original-width="328" height="308" src="https://2.bp.blogspot.com/-X9veFlo8w9s/WbDAF5watKI/AAAAAAAAB_Q/3yq3T1abZKsCmDHvFTa9E0JA-NcgGa_GQCLcBGAs/s320/3.png" width="320" /></a></div><br />&nbsp;&nbsp; 2. Pilih <b>"Routing" &gt;&gt; "RIP"</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-zK5jeIEXRs8/WbDAGXBBGVI/AAAAAAAAB_U/QeOYSoF4N-QggsfFN5h3hh7oJlD0nt0UgCLcBGAs/s1600/4.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1301" height="182" src="https://2.bp.blogspot.com/-zK5jeIEXRs8/WbDAGXBBGVI/AAAAAAAAB_U/QeOYSoF4N-QggsfFN5h3hh7oJlD0nt0UgCLcBGAs/s320/4.png" width="320" /></a></div><br />3. Pada <b>"New RIP Network" </b>isikan dengan <b>"IP Network" </b>yang ada di Interface Router kita.<br /><blockquote class="tr_bq">Ether 3 = 10.10.10.0/29<br />Ether 2 = 192.168.20.0/24</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-nFqN7K42yNE/WbDAHwelFOI/AAAAAAAAB_c/AHUYcYPTDO01pT9gu4XvUVt7Drd8kbE_wCLcBGAs/s1600/7.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="344" data-original-width="633" height="173" src="https://2.bp.blogspot.com/-nFqN7K42yNE/WbDAHwelFOI/AAAAAAAAB_c/AHUYcYPTDO01pT9gu4XvUVt7Drd8kbE_wCLcBGAs/s320/7.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-HVJgeR-EX8U/WbDAIS74saI/AAAAAAAAB_g/q7sAWUHdz1AFMtrGrBnBKkywt2G_BoLkACLcBGAs/s1600/8.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="348" data-original-width="624" height="178" src="https://2.bp.blogspot.com/-HVJgeR-EX8U/WbDAIS74saI/AAAAAAAAB_g/q7sAWUHdz1AFMtrGrBnBKkywt2G_BoLkACLcBGAs/s320/8.png" width="320" /></a></div><br />4. Kita lihat hasil nya di <b>"IP" &gt;&gt; "Routes" </b>maka hasil nya seperti berikut.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-AVyDK0qnX88/WbDAC4MY4fI/AAAAAAAAB-w/7QsL9ZfB5cUt7cYdGKIg-uvvFqHS2MoOwCLcBGAs/s1600/10.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="330" data-original-width="690" height="153" src="https://3.bp.blogspot.com/-AVyDK0qnX88/WbDAC4MY4fI/AAAAAAAAB-w/7QsL9ZfB5cUt7cYdGKIg-uvvFqHS2MoOwCLcBGAs/s320/10.png" width="320" /></a></div><br />&nbsp;&nbsp; 5. Kita ubah IP Address client sesuai dengan IP yang ada pada Router.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-RYNNTkKnwt8/WbDAEEN1VeI/AAAAAAAAB_E/VZmnYZu-WY0zq33ZW92zWjhUapWY6k2KQCLcBGAs/s1600/13.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="477" data-original-width="575" height="265" src="https://4.bp.blogspot.com/-RYNNTkKnwt8/WbDAEEN1VeI/AAAAAAAAB_E/VZmnYZu-WY0zq33ZW92zWjhUapWY6k2KQCLcBGAs/s320/13.png" width="320" /></a></div><br /><div style="text-align: center;"><b>Kita Konfigurasi RO_3</b></div><br />1. Sama seperti <b>"RO_Pusat"</b>, pertama kita setting IP Address nya<br /><blockquote class="tr_bq">Ether 2 = Ke Client<br />Ether 3 = Ke RO_Pusat</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-6sdtXfmcFRI/WbDACyH5ewI/AAAAAAAAB-4/hYuLU-hDCLMkAhTr-aeqLEzq5FzvlE4UwCLcBGAs/s1600/0.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1301" height="182" src="https://3.bp.blogspot.com/-6sdtXfmcFRI/WbDACyH5ewI/AAAAAAAAB-4/hYuLU-hDCLMkAhTr-aeqLEzq5FzvlE4UwCLcBGAs/s320/0.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-86HAXQP9p8U/WbDAXPh9_XI/AAAAAAAAB_w/-zyE4_dQIMwTsLx5tlORaZmPcOTmyPUQwCLcBGAs/s1600/2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="319" data-original-width="330" height="309" src="https://1.bp.blogspot.com/-86HAXQP9p8U/WbDAXPh9_XI/AAAAAAAAB_w/-zyE4_dQIMwTsLx5tlORaZmPcOTmyPUQwCLcBGAs/s320/2.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/--ZEbDHtffgw/WbDAXEjLtGI/AAAAAAAAB_s/4gZ-DCNlcC4-RuUpLt_cUxW-kI6OErlpQCLcBGAs/s1600/3.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="356" data-original-width="330" height="320" src="https://2.bp.blogspot.com/--ZEbDHtffgw/WbDAXEjLtGI/AAAAAAAAB_s/4gZ-DCNlcC4-RuUpLt_cUxW-kI6OErlpQCLcBGAs/s320/3.png" width="296" /></a></div><br />&nbsp;&nbsp; 2. Pilih <b>"Routing" &gt;&gt; "RIP"</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-r1bZZKjIBD4/WbDAYfCOqZI/AAAAAAAAB_0/t208PunLWJQXI_6GoG-4P2zNetCQ-UBKQCLcBGAs/s1600/4.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://3.bp.blogspot.com/-r1bZZKjIBD4/WbDAYfCOqZI/AAAAAAAAB_0/t208PunLWJQXI_6GoG-4P2zNetCQ-UBKQCLcBGAs/s320/4.png" width="320" /></a></div><br />3. Pada <b>"New RIP Network" </b>isikan dengan <b>"IP Network" </b>yang ada di Interface Router kita.<br /><blockquote class="tr_bq">Ether 3 = 20.20.20.0/29<br />Ether 2 = 192.168.30.0/24</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-OAgaXZEd_wA/WbDAZG02ugI/AAAAAAAAB_4/l5lSlLjKku89ZfYie3kCTQ7wUrDvwzgowCLcBGAs/s1600/5.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="364" data-original-width="597" height="195" src="https://4.bp.blogspot.com/-OAgaXZEd_wA/WbDAZG02ugI/AAAAAAAAB_4/l5lSlLjKku89ZfYie3kCTQ7wUrDvwzgowCLcBGAs/s320/5.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-trOgt7nvOls/WbDAcThwWXI/AAAAAAAACAA/giZe6UqNRkklJxym-_kwvfwGU4nWLvrlACLcBGAs/s1600/7.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="342" data-original-width="598" height="183" src="https://1.bp.blogspot.com/-trOgt7nvOls/WbDAcThwWXI/AAAAAAAACAA/giZe6UqNRkklJxym-_kwvfwGU4nWLvrlACLcBGAs/s320/7.png" width="320" /></a></div><br />&nbsp;&nbsp; 4. Kita ubah IP Address client sesuai dengan IP yang ada pada Router.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-xwCgS19pc0A/WbDAdSnrdyI/AAAAAAAACAI/A-cbpWdRqSkchApgcdZJbck0HysxPz4vgCLcBGAs/s1600/8.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="469" data-original-width="586" height="256" src="https://4.bp.blogspot.com/-xwCgS19pc0A/WbDAdSnrdyI/AAAAAAAACAI/A-cbpWdRqSkchApgcdZJbck0HysxPz4vgCLcBGAs/s320/8.png" width="320" /></a></div><br /><div style="text-align: center;"><b>Sekarang kita coba ping, Apakah sudah terhubung</b></div><div style="text-align: left;"></div><div style="text-align: left;">1. Dari <b>"Client RO_Pusat" </b>ke <b>"Clinet RO_2" (192.168.20.2) </b></div><div style="text-align: left;"></div><div style="text-align: center;"><a href="https://1.bp.blogspot.com/-6nlsNEPMiPk/WbC_sHwH6sI/AAAAAAAAB-I/7OasLLk92GMSf_WYDXezwq7WNJBgHtd1wCLcBGAs/s1600/10.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="434" data-original-width="733" height="189" src="https://1.bp.blogspot.com/-6nlsNEPMiPk/WbC_sHwH6sI/AAAAAAAAB-I/7OasLLk92GMSf_WYDXezwq7WNJBgHtd1wCLcBGAs/s320/10.png" width="320" /></a></div><br />2. Dari <b>" Clinet RO_Pusat" </b>ke <b>"Clinet RO_3" (192.168.30.2)</b><br /><br /><div style="text-align: center;"><a href="https://2.bp.blogspot.com/-e1Ka8bwSZb0/WbC_rWWeZwI/AAAAAAAAB-E/rPto2Xl0HvE3dDcNIZsb-9a7q70ionU6QCLcBGAs/s1600/11.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="439" data-original-width="736" height="190" src="https://2.bp.blogspot.com/-e1Ka8bwSZb0/WbC_rWWeZwI/AAAAAAAAB-E/rPto2Xl0HvE3dDcNIZsb-9a7q70ionU6QCLcBGAs/s320/11.png" width="320" /></a></div><br />2. Dari <b>"Client RO_2" </b>ke <b>"Client RO_3" (192.168.30.2)</b><br /><br />3. Dari<b> <b>"Client RO_2" </b></b>ke <b><b>"Client RO_Pusat" (192.168.10.2)</b> </b><br /><br /><div style="text-align: center;"><a href="https://2.bp.blogspot.com/-XZOyYtp3wx0/WbDAEtb1bOI/AAAAAAAAB_I/d_zmj_ZyMVEV6TgMMlDS528piocsMe5-QCLcBGAs/s1600/14.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="393" data-original-width="562" height="223" src="https://2.bp.blogspot.com/-XZOyYtp3wx0/WbDAEtb1bOI/AAAAAAAAB_I/d_zmj_ZyMVEV6TgMMlDS528piocsMe5-QCLcBGAs/s320/14.png" width="320" /></a></div><br /><br /><br />E. Hasil yang Didapatkan<br />Hasil yang didapatkan yaitu kita berhasil melakukan konfigurasi routing RIP<br /><br />F. Kesimpulan<br />&nbsp;&nbsp;&nbsp; Routing Dynamic sangat simple karena kita hanya mendaftarkan IP Network.<br /><br />G. Referensi<br />&nbsp;&nbsp;&nbsp; <a href="https://id.wikipedia.org/wiki/Routing_Information_Protocol">https://id.wikipedia.org/wiki/Routing_Information_Protocol</a><br />&nbsp;&nbsp;&nbsp; <a href="http://e-book%20mtcna/">E-book MTCNA</a></div></div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/menggunakan-hugo-ala-blogger/">Menggunakan Hugo Ala Blogger</a></li>            
+        
+          <li><a href="/post/hari-keempat-di-tonggor-pt-widodo-makmur-unggas/">Hari Keempat Di Tonggor | PT Widodo Makmur Unggas</a></li>            
+        
+          <li><a href="/post/cara-install-linux-mint-18.2-sonya/">Cara Install Linux Mint 18.2 Sonya</a></li>            
+        
+          <li><a href="/post/user-datagram-protocol-udp/">User Datagram Protocol (UDP)</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/blc/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/firewall-feature-di-mikrotik/">
+      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/firewall-feature-di-mikrotik/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Firewall Feature Di Mikrotik</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A. PENDAHULUAN
+1. PENGERTIAN
+&nbsp;&nbsp;&nbsp; Firewall adalah suatu sistem yang dirancang untuk mencegah akses yang tidak diinginkan dari atau ke dalam suatu jaringan internal.
+2. LATAR BELAKANG &nbsp;&nbsp;&nbsp; Perlu melakukan perlindungan perangkat Mikrotik supaya aman dari ancaman yang dapat mengganggu jaringan internal.
+3. MAKSUD DAN TUJUAN
+&nbsp; &nbsp; Maksud dan tujuannya yaitu supaya kita dapat mengetahui dan memahami fitur yang ada di dalam firewall
+4. HASIL YANG DIHARAPKAN
+&nbsp; &nbsp; Dapat memahami Konsep dan dapat mengimplementasikan Firewall pada Mikrotik. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/setting-ip-statik-di-mikrotik/">
+      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/setting-ip-statik-di-mikrotik/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Setting Ip Statik DI Mikrotik</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A. Pendahuluan
+MikroTik adalah perusahaan kecil berkantor pusat di Latvia, yang dibentuk oleh John Trully dan Arnis Riekstins. MikroTik RouterOS merupakan sistem operasi yang diperuntukkan sebagai network router. MikroTik routerOS sendiri adalah sistem operasi dan perangkat lunak yang dapat digunakan untuk menjadikan komputer biasa menjadi router network yang handal, mencakup berbagai fitur yang dibuat untuk ip network dan jaringan wireless. Fitur-fitur tersebut diantaranya: Firewall &amp; Nat, Routing, Hotspot, Point to Point Tunneling Protocol, DNS server, DHCP server, Hotspot, dan masih banyak lagi fitur lainnya. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title"> Menghubungka 3 Router Mikrotik dengan RIP</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=%20Menghubungka%203%20Router%20Mikrotik%20dengan%20RIP&amp;url=%2fpost%2fmenghubungka-3-router-mikrotik-dengan-rip%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fmenghubungka-3-router-mikrotik-dengan-rip%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

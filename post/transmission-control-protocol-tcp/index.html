@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Transmission Control Protocol (TCP) &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/img/go.png" />
+    <link rel="canonical" href="/post/transmission-control-protocol-tcp/" />
+
+     <meta name="description" content="A.Pendahuluan
+Transmission Control Protocol (TCP) adalah suatu protokol yang berada di lapisan transport (baik itu dalam tujuh lapis model referensi OSI atau mo" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Transmission Control Protocol (TCP)"/>
+    <meta name="twitter:description" content="A.Pendahuluan
+Transmission Control Protocol (TCP) adalah suatu protokol yang berada di lapisan transport (baik itu dalam tujuh lapis model referensi OSI atau mo"/>
+    <meta name="twitter:url" content="/post/transmission-control-protocol-tcp/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Transmission Control Protocol (TCP) &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/transmission-control-protocol-tcp/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A.Pendahuluan
+Transmission Control Protocol (TCP) adalah suatu protokol yang berada di lapisan transport (baik itu dalam tujuh lapis model referensi OSI atau mo" />
+
+    <meta property="article:published_time" content="2017-08-20T03:34:00Z" />
+    <meta property="article:tag" content="BLC" />
+
+    <meta property="og:image" content="/img/header-blog.jpg"/>
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/blc">BLC Telkom</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/programming/">Programming</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2017-08-20">20 August 2017</time>
+                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Transmission Control Protocol (TCP)</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/defimg/5.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-Hd5dJTKmZ34/WZzoTZDlnzI/AAAAAAAAA1o/cD7dnJeQQ6sX8hVuLnqxXMZ3YeoH8qkMQCLcBGAs/s1600/tcpip.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="224" data-original-width="592" height="121" src="https://3.bp.blogspot.com/-Hd5dJTKmZ34/WZzoTZDlnzI/AAAAAAAAA1o/cD7dnJeQQ6sX8hVuLnqxXMZ3YeoH8qkMQCLcBGAs/s320/tcpip.png" width="320" /></a></div><br /><b>A.Pendahuluan</b><br /><ul><li>Transmission Control Protocol (TCP) adalah suatu protokol yang berada di lapisan transport (baik itu dalam <a href="http://karyandroid.blogspot.co.id/2017/08/osi-layer.html">tujuh lapis model referensi OSI</a> atau model DARPA) yang berorientasi sambungan (<i>connection-oriented</i>) dan dapat diandalkan (<i>reliable</i>). TCP dispesifikasikan dalam RFC 793<b>&nbsp;</b></li></ul><b>B.Maksud &amp; Tujuan</b><br /><ul style="text-align: left;"><li>Memahami apa itu TCP</li></ul><b>C.Sejarah TCP</b><br /><ul style="text-align: left;"><li>Saat <b>Vint Cerf</b> dan <b>Bob Kahn</b> pertama menulis spesifikasi atas protokol  ini tahun 1973, internet masih merupakan media yang dilarang untuk  keperluan komersil. Di bulan May 1974, IEEE mempublikasikan makalah berjudul "<i>Protokol sebagai paket interkoneksi jaringan.</i>"  Sebagai penulis makalah tersebut, Cerf dan Kahn menjabarkan sebuah  protokol interkoneksi untuk berbagi layanan dengan memanfaatkan  pertukaran-paket antara node jaringan yang terhubung. Komponen  pengontrol utama atas model ini disebut sebagai "<i>Program pengontrol transmisi</i>" yang menggabungkan baik tautan koneksi teriorientasi dan layanan datagram antar <i>host</i>. Program pengontrol transmisi monolitik ini kemudian dipecah ke dalam arsitektur modular yang terdiri atas <i>Protokol pengontrol transmisi</i> pada lapisan koneksi terorientasi dan <i>Protokol internet</i> pada lapisan datagram. Model ini lah yang kemudian dikenal dengan istilah <i>TCP/IP</i>, meski secara formal istilah yang digunakan adalah <i>Paket protokol internet</i>.</li></ul><b>D.Karakteristik TCP</b><br /><ul style="text-align: left;"><li>TCP Memiliki Beberapa Karakteristik sebagai berikut :</li><ul><ul><li>Berorientasi sambungan (<i>connection-oriented</i>): Sebelum data  dapat ditransmisikan antara dua host, dua proses yang berjalan pada  lapisan aplikasi harus melakukan negosiasi untuk membuat sesi koneksi  terlebih dahulu. Koneksi TCP ditutup dengan menggunakan proses terminasi  koneksi TCP (TCP connection termination).</li><li><i>Full-duplex</i>:  Untuk setiap host TCP, koneksi yang terjadi antara dua host terdiri  atas dua buah jalur, yakni jalur keluar dan jalur masuk. Dengan  menggunakan teknologi lapisan yang lebih rendah yang mendukung  full-duplex, maka data pun dapat secara simultan diterima dan dikirim.  Header TCP berisi nomor urut (TCP sequence number) dari data yang  ditransmisikan dan sebuah acknowledgment dari data yang masuk.</li><li>Dapat diandalkan (<i>reliable</i>): Data yang dikirimkan ke sebuah koneksi TCP akan diurutkan dengan sebuah nomor urut paket dan akan mengharapkan paket <i>positive acknowledgment</i> dari penerima. Jika tidak ada paket Acknowledgment dari penerima, maka segmen TCP (protocol data unit  dalam protokol TCP) akan ditransmisikan ulang. Pada pihak penerima,  segmen-segmen duplikat akan diabaikan dan segmen-segmen yang datang  tidak sesuai dengan urutannya akan diletakkan di belakang untuk  mengurutkan segmen-segmen TCP. Untuk menjamin integritas setiap segmen  TCP, TCP mengimplementasikan penghitungan TCP Checksum.</li><li><i>Byte stream</i>: TCP melihat data yang dikirimkan dan diterima melalui dua jalur masuk dan jalur keluar TCP sebagai sebuah <i>byte stream</i> yang berdekatan (kontigu). Nomor urut TCP dan nomor acknowlegment dalam  setiap header TCP didefinisikan juga dalam bentuk byte. Meski demikian,  TCP tidak mengetahui batasan pesan-pesan di dalam byte stream TCP  tersebut. Untuk melakukannya, hal ini diserahkan kepada protokol lapisan  aplikasi (dalam DARPA Reference Model), yang harus menerjemahkan byte  stream TCP ke dalam "bahasa" yang ia pahami.</li><li>Memiliki layanan <i>flow control</i>: Untuk mencegah data terlalu banyak dikirimkan pada satu waktu, yang akhirnya membuat "macet" jaringan internetwork <a class="mw-disambig" href="http://karyandroid.blogspot.co.id/2017/08/ip-address.html" title="IP">IP</a>, TCP mengimplementasikan layanan <i>flow control</i> yang dimiliki oleh pihak pengirim yang secara terus menerus memantau  dan membatasi jumlah data yang dikirimkan pada satu waktu. Untuk  mencegah pihak penerima untuk memperoleh data yang tidak dapat  disangganya (<i>buffer</i>), TCP juga mengimplementasikan <i>flow control</i> dalam pihak penerima, yang mengindikasikan jumlah <i>buffer</i> yang masih tersedia dalam pihak penerima.</li><li>Melakukan segmentasi terhadap data yang datang dari lapisan aplikasi (dalam <i>DARPA Reference Model</i>)</li><li>Mengirimkan paket secara "<i>one-to-one</i>": hal ini karena memang  TCP harus membuat sebuah sirkuit logis antara dua buah protokol lapisan  aplikasi agar saling dapat berkomunikasi. TCP tidak menyediakan layanan  pengiriman data secara <i>one-to-many</i>.</li></ul></ul></ul><ul style="text-align: left;"><li>TCP umumnya digunakan ketika protokol lapisan aplikasi membutuhkan  layanan transfer data yang bersifat andal, yang layanan tersebut tidak  dimiliki oleh protokol lapisan aplikasi tersebut. Contoh dari protokol  yang menggunakan TCP adalah HTTP dan FTP.</li></ul><b>E.Segmen TCP</b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-YHAkqe1qNw4/WZzoK6WpPZI/AAAAAAAAA1s/LT5yR76OS4Ura2sKH0fE-baYoL2VxwkpgCEwYBhgL/s1600/Segmen_TCP.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="173" data-original-width="669" height="82" src="https://2.bp.blogspot.com/-YHAkqe1qNw4/WZzoK6WpPZI/AAAAAAAAA1s/LT5yR76OS4Ura2sKH0fE-baYoL2VxwkpgCEwYBhgL/s320/Segmen_TCP.png" width="320" /></a></div><br /><ul style="text-align: left;"><li>Segmen-segmen TCP akan dikirimkan sebagai datagram-datagram IP (datagram merupakan satuan protocol data unit pada lapisan <i>internetwork</i>). Sebuah segmen TCP terdiri atas sebuah <i>header</i> dan segmen data (<i>payload</i>), yang dienkapsulasi dengan menggunakan <i>header</i> IP dari protokol IP. Sebuah segmen dapat berukuran hingga 65495 byte: 2<sup>16</sup>-(ukuran header IP terkecil (20 byte)+ukuran header TCP terkecil (20 byte)). <i>Datagram</i> IP tersebut akan dienkapsulasi lagi dengan menggunakan header protokol  network interface (lapisan pertama dalam DARPA Reference Model) menjadi  frame lapisan Network Interface. Gambar berikut mengilustrasikan data  yang dikirimkan ke sebuah host. <br />Di dalam header IP dari sebuah segmen TCP, <i>field</i> Source IP Address diatur menjadi alamat <i>unicast</i> dari sebuah antarmuka host yang mengirimkan segmen TCP yang  bersangkutan. Sementara itu, field Destination IP Address juga akan  diatur menjadi alamat <i>unicast</i> dari sebuah antarmuka host tertentu yang dituju. Hal ini dikarenakan, protokol TCP hanya mendukung transmisi <i>one-to-one</i>.<br /><b></b></li></ul><b>F.Header TCP</b><br /><ul style="text-align: left;"><li>Ukuran dari header TCP adalah bervariasi, yang terdiri atas beberapa  field yang ditunjukkan dalam gambar dan tabel berikut. Ukuran TCP header  paling kecil (ketika tidak ada tambahan opsi TCP) adalah 20 byte.</li><li><table border="1" style="width: 100%px;"> <tbody><tr bgcolor="#fof8ff">  <td><b></b><br /><center><b>Nama Field</b></center></td>  <td><b></b><br /><center><b>Ukuran</b></center></td>  <td><b></b><br /><center><b>Keterangan</b></center></td> </tr><tr>  <td>Source Port</td>  <td>2 byte (16 bit)</td>  <td>Mengindikasikan sumber protokol lapisan aplikasi yang mengirimkan segmen TCP yang bersangkutan. Gabungan antara <i>field</i> <b>Source IP Address</b> dalam <i>header IP</i> dan <i>field</i> <b>Source Port</b> dalam <i>field</i> <i>header TCP</i> disebut juga sebagai <b>source</b> <i><b>socket</b></i>, yang berarti sebuah alamat global dari mana segmen dikirimkan. Lihat juga Port TCP.</td> </tr><tr>  <td>Destination Port</td>  <td>2 byte (16 bit)</td>  <td>Mengindikasikan tujuan protokol lapisan aplikasi yang menerima segmen  TCP yang bersangkutan. Gabungan antara field Destination IP Address  dalam header IP dan field Destination Port dalam field header TCP  disebut juga sebagai <b><i>socket</i> tujuan</b>, yang berarti sebuah alamat global ke mana segmen akan dikirimkan.</td> </tr><tr>  <td>Sequence Number</td>  <td>4 byte (32 bit)</td>  <td>Mengindikasikan nomor urut dari oktet pertama dari data di dalam sebuah  segmen TCP yang hendak dikirimkan. Field ini harus selalu diset,  meskipun tidak ada data (payload) dalam segmen.<br />Ketika memulai sebuah sesi koneksi TCP, segmen dengan flag SYN  (Synchronization) diset ke nilai 1, field ini akan berisi nilai Initial  Sequence Number (ISN). Hal ini berarti, oktet pertama dalam aliran byte  (byte stream) dalam koneksi adalah ISN+1.</td> </tr><tr>  <td>Acknowledgment Number</td>  <td>4 byte (32 bit)</td>  <td>Mengindikasikan nomor urut dari oktet selanjutnya dalam aliran byte yang  diharapkan oleh untuk diterima oleh pengirim dari si penerima pada  pengiriman selanjutnya. Acknowledgment number sangat dipentingkan bagi  segmen-segmen TCP dengan flag ACK diset ke nilai 1.</td> </tr><tr>  <td>Data Offset</td>  <td>4 bit</td>  <td>Mengindikasikan di mana data dalam segmen TCP dimulai. Field ini juga  dapat berarti ukuran dari header TCP. Seperti halnya field <b>Header Length</b> dalam header IP, field ini merupakan angka dari word 32-bit dalam  header TCP. Untuk sebuah segmen TCP terkecil (di mana tidak ada opsi TCP  tambahan), field ini diatur ke nilai 0x5, yang berarti data dalam  segmen TCP dimulai dari oktet ke 20 dilihat dari permulaan segmen TCP.  Jika field Data Offset diset ke nilai maksimumnya (2<sup>4</sup>=16) yakni 15, header TCP dengan ukuran terbesar dapat memiliki panjang hingga 60 byte.</td> </tr><tr>  <td>Reserved</td>  <td>6 bit</td>  <td>Direservasikan untuk digunakan pada masa depan. Pengirim segmen TCP akan mengeset bit-bit ini ke dalam nilai 0.</td> </tr><tr>  <td>Flags</td>  <td>6 bit</td>  <td>Mengindikasikan flag-flag TCP yang memang ada enam jumlahnya, yang  terdiri atas: URG (Urgent), ACK (Acknowledgment), PSH (Push), RST  (Reset), SYN (Synchronize), dan FIN (Finish).</td> </tr><tr>  <td>Window</td>  <td>2 byte (16 bit)</td>  <td>Mengindikasikan jumlah byte yang tersedia yang dimiliki oleh buffer host  penerima segmen yang bersangkutan. Buffer ini disebut sebagai Receive  Buffer, digunakan untuk menyimpan byte stream yang datang. Dengan  mengimbuhkan ukuran window ke setiap segmen, penerima segmen TCP  memberitahukan kepada pengirim segmen berapa banyak data yang dapat  dikirimkan dan disangga dengan sukses. Hal ini dilakukan agar si  pengirim segmen tidak mengirimkan data lebih banyak dibandingkan ukuran  Receive Buffer. Jika tidak ada tempat lagi di dalam Receive buffer,  nilai dari field ini adalah 0. Dengan nilai 0, maka si pengirim tidak  akan dapat mengirimkan segmen lagi ke penerima hingga nilai field ini  berubah (bukan 0). Tujuan hal ini adalah untuk mengatur lalu lintas data  atau <i>flow control</i>.</td> </tr><tr>  <td>Checksum</td>  <td>2 byte (16 bit)</td>  <td>Mampu melakukan pengecekan integritas segmen TCP (<i>header</i>-nya dan <i>payload</i>-nya). Nilai field Checksum akan diatur ke nilai 0 selama proses kalkulasi checksum.</td> </tr><tr>  <td>Urgent Pointer</td>  <td>2 byte (16 bit)</td>  <td>Menandakan lokasi data yang dianggap "urgent" dalam segmen.</td> </tr><tr>  <td>Options</td>  <td>4 byte (32 bit)</td>  <td>Berfungsi sebagai penampung beberapa opsi tambahan TCP. Setiap opsi TCP  akan memakan ruangan 32 bit, sehingga ukuran header TCP dapat  diindikasikan dengan menggunakan field Data offset.</td> </tr></tbody></table></li></ul><b>G.Port TCP</b><br /><ul style="text-align: left;"><li>Port TCP mampu mengindikasikan sebuah lokasi tertentu untuk menyampaikan  segmen-segmen TCP yang dikirimkan yang diidentifikasi dengan TCP Port Number.  Nomor-nomor di bawah angka 1024 merupakan port yang umum digunakan dan  ditetapkan oleh [[IANA|IANaplikasi, sementara port UDP merepresentasikan  sebuah antrean pesan UDP untuk protokol lapisan aplikasi. Selain itu,  protokol lapisan aplikasi yang menggunakan port TCP dan port UDP dalam  nomor yang sama juga tidak harus sama. Sebagai contoh protokol Extended Filename Server (EFS) menggunakan port TCP dengan nomor 520, dan protokol Routing Information Protocol  (RIP) menggunakan port UDP juga dengan nomor 520. Jelas, dua protokol  tersebut sangatlah berbeda! Karenanya, untuk menyebutkan sebuah nomor  port, sebutkan juga jenis port yang digunakannya, karena hal tersebut  mampu membingungkan (ambigu).<b></b></li></ul></div><b>H.Flag TCP</b><br /><ul style="text-align: left;"><li>Sebuah Segmen TCP memiliki flag (tanda-tanda) khusus yang mengindikasikan segmen yang bersangkutan</li><li><table border="1" style="width: 100%px;"> <tbody><tr>  <td><b></b><br /><center><b>Nama Flag</b></center></td>  <td><b></b><br /><center><b>Keterangan</b></center></td> </tr><tr>  <td><center>URG</center></td>  <td>Mengindikasikan bahwa beberapa bagian dari segmen TCP mengandung data  yang sangat penting, dan field Urgent Pointer dalam header TCP harus  digunakan untuk menentukan lokasi di mana data penting tersebut berada  dalam segmen.</td> </tr><tr>  <td><center>ACK</center></td>  <td>Mengindikasikan field Acknowledgment mengandung oktet selanjutnya yang  diharapkan dalam koneksi. Flag ini selalu diset, kecuali pada segmen  pertama pada pembuatan sesi koneksi TCP.</td> </tr><tr>  <td><center>PSH</center></td>  <td>Mengindikasikan bahwa isi dari TCP Receive buffer harus diserahkan  kepada protokol lapisan aplikasi. Data dalam receive buffer harus berisi  sebuah blok data yang berurutan (kontigu), dilihat dari ujung paling  kiri dari buffer. Dengan kata lain, sebuah segmen yang memiliki flag PSH  diset ke nilai 1, tidak bolah ada satu byte pun data yang hilang dari  aliran byte segmen tersebut; data tidak dapat diberikan kepada protokol  lapisan aplikasi hingga segmen yang hilang tersebut datang. Normalnya,  TCP Receive buffer akan dikosongkan (dengan kata lain, isi dari buffer  akan diteruskan kepada protokol lapisan aplikasi) ketika buffer tersebut  berisi data yang kontigu atau ketika dalam "proses perawatan". Flag PSH  ini dapat mengubah hal seperti itu, dan membuat akan TCP segera  mengosongkan TCP Receive buffer. Flag PSH umumnya digunakan dalam  protokol lapisan aplikasi yang bersifat interaktif, seperti halnya  Telnet, karena setiap penekanan tombol dalam sesi terminal virtual akan  dikirimkan dengan sebuah flag PSH diset ke nilai 1. Contoh dari  penggunaan lainnya dari flag ini adalah pada segmen terakhir dari berkas  yang ditransfer dengan menggunakan protokol FTP. Segmen yang dikirimkan  dengan flag PSH aktif tidak harus segera di-acknowledge oleh penerima.</td> </tr><tr>  <td><center>RST</center></td>  <td>Mengindikasikan bahwa koneksi yang dibuat akan digagalkan. Untuk sebuah  koneksi TCP yang sedang berjalan (aktif), sebuah segmen dengan flag RST  diset ke nilai 1 akan dikirimkan sebagai respons terhadap sebuah segmen  TCP yang diterima yang ternyata segmen tersebut bukan yang diminta,  sehingga koneksi pun menjadi gagal. Pengiriman segmen dengan flag RST  diset ke nilai 1 untuk sebuah koneksi aktif akan menutup koneksi secara  paksa, sehingga data yang disimpan dalam buffer akan dibuang  (dihilangkan). Untuk sebuah koneksi TCP yang sedang dibuat, segmen  dengan flag RST aktif akan dikirimkan sebagai respons terhadap request  pembuatan koneksi untuk mencegah percobaan pembuatan koneksi.</td> </tr><tr>  <td><center>SYN</center></td>  <td>Mengindikasikan bahwa segmen TCP yang bersangkutan mengandung Initial  Sequence Number (ISN). Selama proses pembuatan sesi koneksi TCP, TCP  akan mengirimkan sebuah segmen dengan flag SYN diset ke nilai 1. Setiap  host TCP lainnya akan memberikan jawaban (acknowledgment) dari segmen  dengan flag SYN tersebut dengan menganggap bahwa segmen tersebut  merupakan sekumpulan byte dari data. Field Acknowledgment Number dari  sebuah segmen SYN diatur ke nilai ISN + 1.</td> </tr><tr>  <td><center>FIN</center></td>  <td>Menandakan bahwa pengirim segmen TCP telah selesai dalam mengirimkan  data dalam sebuah koneksi TCP. Ketika sebuah koneksi TCP akhirnya  dihentikan (akibat sudah tidak ada data yang dikirimkan lagi), setiap  host TCP akan mengirimkan sebuah segmen TCP dengan flag FIN diset ke  nilai 1. Sebuah host TCP tidak akan mengirimkan segmen dengan flag FIN  hingga semua data yang dikirimkannya telah diterima dengan baik  (menerima paket acknowledgment) oleh penerima. Setiap host akan  menganggap sebuah segmen TCP dengan flag FIN sebagai sekumpulan byte  dari data. Ketika dua host TCP telah mengirimkan segmen TCP dengan flag  FIN dan menerima acknowledgment dari segmen tersebut, maka koneksi TCP  pun akan dihentikan.</td> </tr></tbody></table></li></ul><b>I.TCP Three-way Handshake</b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-vtXAM4Y9WRs/WZzpx5VdRYI/AAAAAAAAA10/KsIQC--9_EIZVZE3QnTbLKhexCZXZNA-QCLcBGAs/s1600/TCP_Three_Way_Handshake.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="105" data-original-width="362" height="92" src="https://2.bp.blogspot.com/-vtXAM4Y9WRs/WZzpx5VdRYI/AAAAAAAAA10/KsIQC--9_EIZVZE3QnTbLKhexCZXZNA-QCLcBGAs/s320/TCP_Three_Way_Handshake.png" width="320" /></a></div><br /><ul style="text-align: left;"><li>TCP Three-way Handshake adalah proses pembuatan koneksi TCP&nbsp;</li><li>Tujuan metode ini adalah agar dapat melakukan sinkronisasi terhadap  nomor urut dan nomor acknowledgement yang dikirimkan oleh kedua pihak  dan saling bertukar ukuran TCP Window. Prosesnya dapat digambarkan  sebagai berikut:&nbsp;</li></ul><br /><br /><ul style="text-align: left;"><ul><li><i>Host</i> pertama (yang ingin membuat koneksi) akan mengirimkan sebuah segmen TCP dengan flag SYN diaktifkan kepada <i>host</i> kedua (yang hendak diajak untuk berkomunikasi).</li><li><i>Host</i> kedua akan meresponsnya dengan mengirimkan segmen dengan <i>acknowledgment</i> dan juga SYN kepada <i>host</i> pertama.</li><li><i>Host</i> pertama selanjutnya akan mulai saling bertukar data dengan host kedua.</li></ul></ul><br /><ul style="text-align: left;"><li>TCP menggunakan proses jabat tangan yang sama untuk mengakhiri koneksi yang dibuat. Hal ini menjamin dua <i>host</i> yang sedang terkoneksi tersebut telah menyelesaikan proses transmisi  data dan semua data yang ditransmisikan telah diterima dengan baik.  Itulah sebabnya, mengapa TCP disebut dengan koneksi yang <i>reliable</i>..</li></ul><b>J.Refrensi</b><br /><ul style="text-align: left;"><li><b><a href="https://id.wikipedia.org/wiki/Transmission_Control_Protocol">https://id.wikipedia.org/wiki/Transmission_Control_Protocol</a>&nbsp;</b> </li></ul><div><ul style="text-align: left;"></ul></div></div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/menambahkan-banner-di-ssh/">Menambahkan Banner Di SSH</a></li>            
+        
+          <li><a href="/post/routing-dynamic-ospf/">Routing Dynamic OSPF</a></li>            
+        
+          <li><a href="/post/remote-server-dari-rumah-berbeda-jarinagn-dengan-ngrok/">Remote Server Dari Rumah Berbeda Jarinagn Dengan Ngrok</a></li>            
+        
+          <li><a href="/post/membuat-pppoe-server-di-mikrotik/">Membuat PPPoE Server Di MikroTik</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/blc/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/user-datagram-protocol-udp/">
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/user-datagram-protocol-udp/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">User Datagram Protocol (UDP)</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A.Pendahuluan
+UDP, singkatan dari User Datagram Protocol, adalah salah satu protokol lapisan transpor TCP/IP yang mendukung komunikasi yang tidak andal (unreliable), tanpa koneksi (connectionless) antara host-host dalam jaringan yang menggunakan TCP/IP. Protokol ini didefinisikan dalam RFC 768 B.Maksud dan Tujuan
+Mengetahui dan Memahami apa itu UDP&nbsp; C. Karakteristik UDP
+UDP memiliki karakteristik-karakteristik berikut:Connectionless (tanpa koneksi): Pesan-pesan UDP akan dikirimkan tanpa harus dilakukan proses negosiasi koneksi antara dua host yang hendak bertukar informasi. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/mengirim-file-dari-laptop-ke-server-scp/">
+      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/mengirim-file-dari-laptop-ke-server-scp/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Mengirim File Dari Laptop  ke Server (SCP)</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A.Pendahuluan
+PengertianSCP adalah protokol jaringan , berdasarkan protokol BSD RCP , yang mendukung transfer file antar host pada jaringan. SCP menggunakan Secure Shell (SSH) untuk transfer data dan menggunakan mekanisme otentikasi yang sama, sehingga memastikan keaslian dan kerahasiaan data dalam perjalanan . Klien dapat mengirim (upload) file ke server, termasuk atribut dasar (perizinan, cap waktu). Klien juga bisa meminta file atau direktori dari server (download). SCP berjalan di atas port TCP 22 secara default. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Transmission Control Protocol (TCP)</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Transmission%20Control%20Protocol%20%28TCP%29&amp;url=%2fpost%2ftransmission-control-protocol-tcp%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2ftransmission-control-protocol-tcp%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

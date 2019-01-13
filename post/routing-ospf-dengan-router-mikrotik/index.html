@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Routing ospf Dengan Router Mikrotik &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/img/go.png" />
+    <link rel="canonical" href="/post/routing-ospf-dengan-router-mikrotik/" />
+
+     <meta name="description" content="A. Pendahuluan
+Open shortest path first (OSPF) adalah&amp;nbsp; protokol routing dinamis yang dapat menjaga,mengatur dan mendistribusikan informasi routing antar ne" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Routing ospf Dengan Router Mikrotik"/>
+    <meta name="twitter:description" content="A. Pendahuluan
+Open shortest path first (OSPF) adalah&amp;nbsp; protokol routing dinamis yang dapat menjaga,mengatur dan mendistribusikan informasi routing antar ne"/>
+    <meta name="twitter:url" content="/post/routing-ospf-dengan-router-mikrotik/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Routing ospf Dengan Router Mikrotik &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/routing-ospf-dengan-router-mikrotik/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A. Pendahuluan
+Open shortest path first (OSPF) adalah&amp;nbsp; protokol routing dinamis yang dapat menjaga,mengatur dan mendistribusikan informasi routing antar ne" />
+
+    <meta property="article:published_time" content="2017-09-05T03:40:00Z" />
+    <meta property="article:tag" content="BLC" />
+
+    <meta property="og:image" content="/img/header-blog.jpg"/>
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/blc">BLC Telkom</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/programming/">Programming</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2017-09-05">5 September 2017</time>
+                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Routing ospf Dengan Router Mikrotik</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/defimg/6.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-size: x-small;"><span style="font-family: &quot;verdana&quot; , sans-serif;"><b>A. Pendahuluan</b></span></span><br /><br /><ul><li><span style="font-size: x-small;"><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;">Open shortest path first (OSPF) adalah&nbsp;  protokol routing dinamis yang dapat menjaga,mengatur dan  mendistribusikan informasi routing antar network mengikuti setiap  perubahan status jaringan secara dinamis</span></span></span></li></ul><span style="font-size: x-small;"><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"><b>B. Latar Belakang</b> </span></span><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><br /><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span></span><br /><ul><li><span style="font-size: x-small;"><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;">OSPF mempunyai istilah Autonomous System  yang merupakan sebuah gabungan dari beberapa jaringan dan dapat  digunakan dalam management dalam skala jaringan yang sangat besar</span></span><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><br /><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><br /><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span><span style="font-family: &quot;verdana&quot; , sans-serif;"><span style="font-family: inherit;"></span></span></span></li></ul><div class="separator" style="clear: both; text-align: center;"><span style="font-size: x-small;"><a href="https://2.bp.blogspot.com/-lkHBT0IyfaQ/V9TiptVKhoI/AAAAAAAABxo/ubJa15kkqmAkE8NfzGlca2GrmnBt0NtTwCLcB/s1600/Diagram1.jpeg" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="267" src="https://2.bp.blogspot.com/-lkHBT0IyfaQ/V9TiptVKhoI/AAAAAAAABxo/ubJa15kkqmAkE8NfzGlca2GrmnBt0NtTwCLcB/s640/Diagram1.jpeg" width="640" /></a></span></div><span style="font-size: x-small;"><br /></span><br /><ul><li><span style="font-size: x-small;"> Penjelasan :</span><span style="font-size: x-small;">pada gambar diatas terdapat 5 jaringan ,tiga router yang akan dikonfigurasi ospf,dan dua komputer client sebagai pengujian</span></li></ul><span style="font-size: x-small;"> <b>C. Maksud dan Tujuan</b></span><br /><ul><li><span style="font-size: x-small;">mengkonfigurasi routing ospf menggunakan mikrotik</span></li></ul><span style="font-size: x-small;"> <b>D. Jangka Waktu Kegiatan</b></span><br /><br /><ul><li>1 sampai 2 jam </li></ul><span style="font-size: x-small;"><b>E. Alat dan Bahan</b></span><br /><ul><li>3 router</li><li>2 komputer sebagai client</li><li>5 kabel utp</li></ul><span style="font-size: x-small;"><b>F. Proses/Tahapan</b></span><br /><ul><li>Beri alamat ip pada masing masing mikrotik IP&gt;&gt;Address </li><ul><li>&nbsp;Mikrotik1</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-4Oyqv8UFsb4/V9Ok7sgiR4I/AAAAAAAABvc/3gqAv3ZG__0FdmHDXwAl_hUsD_b7NTTTQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-01-53.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-4Oyqv8UFsb4/V9Ok7sgiR4I/AAAAAAAABvc/3gqAv3ZG__0FdmHDXwAl_hUsD_b7NTTTQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-01-53.png" /></a><a href="https://2.bp.blogspot.com/-SWvU7zu7Df0/V9Ok7fJroCI/AAAAAAAABvc/ikhCl-S0Pjg3Gx3S6ayu0uGsFs6-zM08QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-02-41.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-SWvU7zu7Df0/V9Ok7fJroCI/AAAAAAAABvc/ikhCl-S0Pjg3Gx3S6ayu0uGsFs6-zM08QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-02-41.png" /></a></div><br /><ul><ul><li>Mikrotik2 </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-k-zwgX0ANWI/V9OlR86FkUI/AAAAAAAABvc/4dkAsA0rjJsE-CSAhW_Tl81KvKrqSO-9QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_26_30.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-k-zwgX0ANWI/V9OlR86FkUI/AAAAAAAABvc/4dkAsA0rjJsE-CSAhW_Tl81KvKrqSO-9QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_26_30.png" /></a><a href="https://4.bp.blogspot.com/-WxElpvPj6KQ/V9OlR-NWGYI/AAAAAAAABvc/9awaJ-FjKwM0_RJmOZmuZFtGIYsimlnNwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_28_32.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-WxElpvPj6KQ/V9OlR-NWGYI/AAAAAAAABvc/9awaJ-FjKwM0_RJmOZmuZFtGIYsimlnNwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_28_32.png" /></a></div><br /><ul><ul><li>Mikrotik3 </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-dsIh2e4AZwc/V9OlwmpDN-I/AAAAAAAABvk/ZpQ08RlfzOYWOV5U6_fAjvJCXHYrW9NtgCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_02_03.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-dsIh2e4AZwc/V9OlwmpDN-I/AAAAAAAABvk/ZpQ08RlfzOYWOV5U6_fAjvJCXHYrW9NtgCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_02_03.png" /></a><a href="https://4.bp.blogspot.com/-tSUupuzBm7M/V9OlwyUjDVI/AAAAAAAABvk/_LWGje8puFUqJHI7TOm6KB0KoSg1sfLGQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_02_50.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-tSUupuzBm7M/V9OlwyUjDVI/AAAAAAAABvk/_LWGje8puFUqJHI7TOm6KB0KoSg1sfLGQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_02_50.png" /></a></div><ul><li>Kemudian tambah intrface bridge lalu namai dengan loopback</li><li>lalu tambahkan alamat loopback di dalamnya</li></ul><ul><ul><li>&nbsp;Mikrotik1</li></ul></ul><ul><ul><ul><li>&nbsp;Interfaces&gt;&gt;Add&gt;&gt;bridge</li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-Js82dtEcvpQ/V9Ok7itONKI/AAAAAAAABvc/qZMIvzgyMgkya5ULgOtfy0tS8SbHOARoACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-03-43.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="286" src="https://3.bp.blogspot.com/-Js82dtEcvpQ/V9Ok7itONKI/AAAAAAAABvc/qZMIvzgyMgkya5ULgOtfy0tS8SbHOARoACEw/s320/Screenshot%2Bat%2B2016-09-08%2B21-03-43.png" width="320" /></a></div><ul><ul><ul><li>IP&gt;&gt;Addresses</li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-LGlXbsB478A/V9Ok8Ji6f-I/AAAAAAAABvc/wHEEz3jkiIYahX-XysR5dxhH4bsM_P_9QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-04-39.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-LGlXbsB478A/V9Ok8Ji6f-I/AAAAAAAABvc/wHEEz3jkiIYahX-XysR5dxhH4bsM_P_9QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-04-39.png" /></a></div><br /><ul><ul><li>Mikrotik2</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-yHorLgHy4h0/V9OlSJwN1DI/AAAAAAAABvc/r3-mcAzmJyUgvTVkdHaPxpIfcUtdnYTbwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_29_25.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://4.bp.blogspot.com/-yHorLgHy4h0/V9OlSJwN1DI/AAAAAAAABvc/r3-mcAzmJyUgvTVkdHaPxpIfcUtdnYTbwCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_29_25.png" width="254" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-fjeNRecdeP8/V9OlSYP2cbI/AAAAAAAABvc/cyMn3tTmVt4EOs6USKfBMfbJVz1M6S-GQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_30_05.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-fjeNRecdeP8/V9OlSYP2cbI/AAAAAAAABvc/cyMn3tTmVt4EOs6USKfBMfbJVz1M6S-GQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_30_05.png" /></a></div><br /><ul><ul><li>Mikrotik3&nbsp; </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-yVFdfvrQF0c/V9OlxGziV9I/AAAAAAAABvk/vKyQBZu3UXQ_oa-7sJ5lCFeTBFAZf11yACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_04_05.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://1.bp.blogspot.com/-yVFdfvrQF0c/V9OlxGziV9I/AAAAAAAABvk/vKyQBZu3UXQ_oa-7sJ5lCFeTBFAZf11yACEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_04_05.png" width="285" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-HGjqLtfqKm8/V9OlxoaTxdI/AAAAAAAABvk/_wNKLcsOjVInUHN-r_lwFjilUNyTA6J7ACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_04_42.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-HGjqLtfqKm8/V9OlxoaTxdI/AAAAAAAABvk/_wNKLcsOjVInUHN-r_lwFjilUNyTA6J7ACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_04_42.png" /></a></div><ul><li>Kemudian menambah instance Routing ospf pada router id Routing&gt;&gt;OSPF&gt;&gt;OSPF Fnstance&gt;&gt;General</li></ul><ul><ul><li>Mikrotik1 </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-1SpnDnmlLZU/V9Ok8iHyRmI/AAAAAAAABvc/5QG0kApzSXYI882sxQk5sswBmn-GPL0EgCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-10-12.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="299" src="https://1.bp.blogspot.com/-1SpnDnmlLZU/V9Ok8iHyRmI/AAAAAAAABvc/5QG0kApzSXYI882sxQk5sswBmn-GPL0EgCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21-10-12.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-1D8w2QvagBM/V9Ok82n383I/AAAAAAAABvc/wEONmqn2csMLieNoAqY7WgS2AWMcMcanACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-10-26.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="https://3.bp.blogspot.com/-1D8w2QvagBM/V9Ok82n383I/AAAAAAAABvc/wEONmqn2csMLieNoAqY7WgS2AWMcMcanACEw/s320/Screenshot%2Bat%2B2016-09-08%2B21-10-26.png" width="320" /></a></div><br /><ul><ul><li>Mikrotik2 </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-eWWD8sB_ImI/V9OlS_7ydKI/AAAAAAAABvc/o9aCUAy7dJoZpgIijbxz2RyyP-WbNDMOgCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_33_10.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="https://2.bp.blogspot.com/-eWWD8sB_ImI/V9OlS_7ydKI/AAAAAAAABvc/o9aCUAy7dJoZpgIijbxz2RyyP-WbNDMOgCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_33_10.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: left;"></div><ul><ul><li>Mikrotik3 </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-Z1oXoR7Tn8c/V9OlyOqIjtI/AAAAAAAABvk/w5n6WOF_xdU5uCG8zKHA_h-K2Zr5kbPPwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_10_08.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="303" src="https://1.bp.blogspot.com/-Z1oXoR7Tn8c/V9OlyOqIjtI/AAAAAAAABvk/w5n6WOF_xdU5uCG8zKHA_h-K2Zr5kbPPwCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_10_08.png" width="320" /></a></div><ul><li>Kemudian kita menambahkan direct network pada masing-masing router Routing&gt;&gt;OSPF&gt;&gt;Network</li></ul><ul><ul><li>Mikrotik1</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-I2Gnc-nwMMs/V9Ok9MOPiGI/AAAAAAAABvc/y2Rk4oeTJsUQxkq2AzPsPyeN14ZLNrNOACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-13-20.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-I2Gnc-nwMMs/V9Ok9MOPiGI/AAAAAAAABvc/y2Rk4oeTJsUQxkq2AzPsPyeN14ZLNrNOACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-13-20.png" /></a><a href="https://3.bp.blogspot.com/-Eb_BFH5GSWo/V9Ok9Ht_uOI/AAAAAAAABvc/2vh9bO0bS98WUFaMvMWIVF2fJs9kT0kmQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-13-43.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-Eb_BFH5GSWo/V9Ok9Ht_uOI/AAAAAAAABvc/2vh9bO0bS98WUFaMvMWIVF2fJs9kT0kmQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21-13-43.png" /></a></div><br /><ul><ul><li>Mikrotik2</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-jgVM7wb6ANk/V9OlTAP0P_I/AAAAAAAABvc/IKJG7bwtgFg9oj0l57VD4L2r6ItbICg2QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_33_50.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-jgVM7wb6ANk/V9OlTAP0P_I/AAAAAAAABvc/IKJG7bwtgFg9oj0l57VD4L2r6ItbICg2QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_33_50.png" /></a><a href="https://1.bp.blogspot.com/-4q9x9eHkcTQ/V9OlTGkc6NI/AAAAAAAABvc/adWFY2Kldf0awFMi3T8_7ZX6SOIOp8icwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_34_09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-4q9x9eHkcTQ/V9OlTGkc6NI/AAAAAAAABvc/adWFY2Kldf0awFMi3T8_7ZX6SOIOp8icwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_34_09.png" /></a></div><br /><ul><ul><li>Mikrotik3</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><img border="0" src="https://1.bp.blogspot.com/-XnOPB3we1wk/V9Olyj3-bdI/AAAAAAAABvk/RHNUmauKD9El5LMPXkI_feTQRYRPiuPSwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_14_44.png" /><a href="https://1.bp.blogspot.com/-p9rQuEg3AXw/V9OlyQT-lnI/AAAAAAAABvk/wvrTPaOa1iYbPjNvVc5jl439gOZHfKVrACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_14_16.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-p9rQuEg3AXw/V9OlyQT-lnI/AAAAAAAABvk/wvrTPaOa1iYbPjNvVc5jl439gOZHfKVrACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_14_16.png" /></a></div><br /><b>G. Verifikasi </b><br /><br /><ul><ul><li>Mikrotik1<b>&nbsp;</b></li></ul></ul><ul><ul><ul><li>IP&gt;&gt;Addresses</li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-SePjunDPC0I/V9TUTbwMDZI/AAAAAAAABwk/UrgzfbIkcmcZLQ6xhlewt3KwjKrE8z6XACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-04-51.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="307" src="https://2.bp.blogspot.com/-SePjunDPC0I/V9TUTbwMDZI/AAAAAAAABwk/UrgzfbIkcmcZLQ6xhlewt3KwjKrE8z6XACLcB/s320/Screenshot%2Bat%2B2016-09-08%2B21-04-51.png" width="320" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Instances  </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-UicAI4x635Q/V9TUUK6G1aI/AAAAAAAABww/-INWP2vlVXw7tWORsRI3hnVoK2XY9nonACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-16-16.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-UicAI4x635Q/V9TUUK6G1aI/AAAAAAAABww/-INWP2vlVXw7tWORsRI3hnVoK2XY9nonACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-16-16.png" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Areas </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-RcZ3X-9-w6A/V9OlUb-qJxI/AAAAAAAABvc/aAewkOYTXcA9tKKsRIxLm58Z0SfyCTlEACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B22_57_57.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="116" src="https://3.bp.blogspot.com/-RcZ3X-9-w6A/V9OlUb-qJxI/AAAAAAAABvc/aAewkOYTXcA9tKKsRIxLm58Z0SfyCTlEACEw/s320/Screenshot%2Bat%2B2016-09-08%2B22_57_57.png" width="320" /></a></div><br /><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Networks </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-S5Vo7Z1wwfM/V9TUTcuV5ZI/AAAAAAAABwo/gtvchG2AhP8EWzXv5THqpSHQ_MzZ5JriQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-14-12.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-S5Vo7Z1wwfM/V9TUTcuV5ZI/AAAAAAAABwo/gtvchG2AhP8EWzXv5THqpSHQ_MzZ5JriQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-14-12.png" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Interfaces </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-RgS3aIDh7F8/V9TUU5oScmI/AAAAAAAABw8/VrlNzlbywrIZYMYg9lDHLO1cGg9uueCiQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-40-39.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="147" src="https://2.bp.blogspot.com/-RgS3aIDh7F8/V9TUU5oScmI/AAAAAAAABw8/VrlNzlbywrIZYMYg9lDHLO1cGg9uueCiQCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B21-40-39.png" width="320" /></a></div><ul><ul><ul><li>New Terminal&gt;&gt;Ketik Perintah ip route print </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-yDSJtS4Pyvs/V9TUURxwAWI/AAAAAAAABw0/ZhMUUw3JB5QI6QaqHUbeZN0voGYOD1UPwCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-39-26.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="197" src="https://3.bp.blogspot.com/-yDSJtS4Pyvs/V9TUURxwAWI/AAAAAAAABw0/ZhMUUw3JB5QI6QaqHUbeZN0voGYOD1UPwCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B21-39-26.png" width="320" /></a></div><ul><ul><li>Mikrotik2</li></ul></ul><ul><ul><ul><li>IP&gt;&gt;Addresses </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-3fTiw7xu-j8/V9OlSvCziZI/AAAAAAAABvc/t85Og5je6OgQuJ0XCAYNP4yOVulIhwxDwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_31_53.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="308" src="https://4.bp.blogspot.com/-3fTiw7xu-j8/V9OlSvCziZI/AAAAAAAABvc/t85Og5je6OgQuJ0XCAYNP4yOVulIhwxDwCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_31_53.png" width="320" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Instances  </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-jRORaqA-cmc/V9OlUP7yB7I/AAAAAAAABvc/yCm6JVlZjQkudpsuREXPEd8DEDW1xZdAwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B22_57_36.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="170" src="https://4.bp.blogspot.com/-jRORaqA-cmc/V9OlUP7yB7I/AAAAAAAABvc/yCm6JVlZjQkudpsuREXPEd8DEDW1xZdAwCEw/s320/Screenshot%2Bat%2B2016-09-08%2B22_57_36.png" width="320" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Areas </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-RcZ3X-9-w6A/V9OlUb-qJxI/AAAAAAAABvc/aAewkOYTXcA9tKKsRIxLm58Z0SfyCTlEACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B22_57_57.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="116" src="https://3.bp.blogspot.com/-RcZ3X-9-w6A/V9OlUb-qJxI/AAAAAAAABvc/aAewkOYTXcA9tKKsRIxLm58Z0SfyCTlEACEw/s320/Screenshot%2Bat%2B2016-09-08%2B22_57_57.png" width="320" /></a></div><br /><ul><ul><ul><li>Routing&gt;OSPF&gt;Networks </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><b><a href="https://4.bp.blogspot.com/-gxYUolKPMws/V9OlUfYorTI/AAAAAAAABvc/AcId9feWZaggZ4IUYCnfOTaQEaSMK0OLwCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B22_57_46.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="126" src="https://4.bp.blogspot.com/-gxYUolKPMws/V9OlUfYorTI/AAAAAAAABvc/AcId9feWZaggZ4IUYCnfOTaQEaSMK0OLwCEw/s320/Screenshot%2Bat%2B2016-09-08%2B22_57_46.png" width="320" /></a></b></div><br /><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Interfaces </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-q1Y8PP6IUMA/V9OlT8ZUk4I/AAAAAAAABvc/rQxfY2V8XRcRIB_S2eZGMfIS5mzrKDk_wCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B22_57_19.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="147" src="https://2.bp.blogspot.com/-q1Y8PP6IUMA/V9OlT8ZUk4I/AAAAAAAABvc/rQxfY2V8XRcRIB_S2eZGMfIS5mzrKDk_wCEw/s320/Screenshot%2Bat%2B2016-09-08%2B22_57_19.png" width="320" /></a></div><ul><ul><ul><li>New Terminal&gt;&gt;ketik perintah ip route print </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-fVLnFUyouxQ/V9OlTYxtAOI/AAAAAAAABvc/-N9Z1CNC6EEfcOq3cSYHFLBJHSSdXDW-ACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_42_35.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="91" src="https://4.bp.blogspot.com/-fVLnFUyouxQ/V9OlTYxtAOI/AAAAAAAABvc/-N9Z1CNC6EEfcOq3cSYHFLBJHSSdXDW-ACEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_42_35.png" width="320" /></a></div><br /><ul><ul><li>Mikrotik3</li></ul></ul><ul><ul><ul><li>IP&gt;&gt;Addresses </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-9My_3PhyABA/V9Olx3ALNNI/AAAAAAAABvk/MM9iAUbgXIY9tmGlxTffQ74RsavbRpCbACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_04_54.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="309" src="https://2.bp.blogspot.com/-9My_3PhyABA/V9Olx3ALNNI/AAAAAAAABvk/MM9iAUbgXIY9tmGlxTffQ74RsavbRpCbACEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_04_54.png" width="320" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Instances  </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;">&nbsp; <img border="0" height="181" src="https://1.bp.blogspot.com/-6f-ONLhWPlw/V9TVnhMAPdI/AAAAAAAABxI/nERVsUHaxo0dVlkuOmzOedZ-cbRfUWN4gCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B21%253A15%253A57.png" width="320" /></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Areas </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-RcZ3X-9-w6A/V9OlUb-qJxI/AAAAAAAABvc/aAewkOYTXcA9tKKsRIxLm58Z0SfyCTlEACEw/s1600/Screenshot%2Bat%2B2016-09-08%2B22_57_57.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="116" src="https://3.bp.blogspot.com/-RcZ3X-9-w6A/V9OlUb-qJxI/AAAAAAAABvc/aAewkOYTXcA9tKKsRIxLm58Z0SfyCTlEACEw/s320/Screenshot%2Bat%2B2016-09-08%2B22_57_57.png" width="320" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Networks </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-_HabjEkftFU/V9Oly8kTybI/AAAAAAAABvk/1Vu2wpANa0cqgTvrs4Afu1sbSVRFlxCuQCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_14_55.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="146" src="https://1.bp.blogspot.com/-_HabjEkftFU/V9Oly8kTybI/AAAAAAAABvk/1Vu2wpANa0cqgTvrs4Afu1sbSVRFlxCuQCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_14_55.png" width="320" /></a></div><ul><ul><ul><li>Routing&gt;&gt;OSPF&gt;&gt;Interfaces </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-RgS3aIDh7F8/V9TUU5oScmI/AAAAAAAABw8/VrlNzlbywrIZYMYg9lDHLO1cGg9uueCiQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B21-40-39.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="147" src="https://2.bp.blogspot.com/-RgS3aIDh7F8/V9TUU5oScmI/AAAAAAAABw8/VrlNzlbywrIZYMYg9lDHLO1cGg9uueCiQCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B21-40-39.png" width="320" /></a></div><ul><ul><ul><li>New Terminal&gt;&gt;ketik perintah ip route print </li></ul></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-V8Xl94GfvjY/V9OlzRw8bWI/AAAAAAAABvk/b6cX9rANukkT_89IeaI7O6oUbBJwTR4-QCEw/s1600/Screenshot%2Bat%2B2016-09-08%2B21_41_20.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="97" src="https://2.bp.blogspot.com/-V8Xl94GfvjY/V9OlzRw8bWI/AAAAAAAABvk/b6cX9rANukkT_89IeaI7O6oUbBJwTR4-QCEw/s320/Screenshot%2Bat%2B2016-09-08%2B21_41_20.png" width="320" /></a></div><ul><li>Karena kita menambah dua client  masing-masing ada di mikrotik1 dan mikrotik3,maka kita konfigurasi ip  address dan menambahkan network unruk eth5 pada kedua router tersebut</li></ul><ul><ul><li>Mikrotik1</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-k7BfYRoaaaU/V9UGQgruSbI/AAAAAAAAByE/JVmNryYoxOI_UPpI8l6TrMhkbLPurvukwCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-41-25.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-k7BfYRoaaaU/V9UGQgruSbI/AAAAAAAAByE/JVmNryYoxOI_UPpI8l6TrMhkbLPurvukwCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-41-25.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-l4TO4kVzlnM/V9UGPD637WI/AAAAAAAABx4/vJWE6J21s_UJOJ5e3xuuNVVP0x8JK3VvQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-14-13.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-l4TO4kVzlnM/V9UGPD637WI/AAAAAAAABx4/vJWE6J21s_UJOJ5e3xuuNVVP0x8JK3VvQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-14-13.png" /></a></div><ul><ul><li> Mikrotik3 </li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-6cOSe_qNdNU/V9UGsQhIMJI/AAAAAAAAByQ/8egeYz_k-IQjoOOteSR_APimh5EJZvKkACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A07%253A59.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-6cOSe_qNdNU/V9UGsQhIMJI/AAAAAAAAByQ/8egeYz_k-IQjoOOteSR_APimh5EJZvKkACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A07%253A59.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-Pfst09dAta0/V9UGsVVjBcI/AAAAAAAAByU/aqiSWe1W0y8C4wTiiw-5o_Le7urg_rw2ACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A08%253A29.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-Pfst09dAta0/V9UGsVVjBcI/AAAAAAAAByU/aqiSWe1W0y8C4wTiiw-5o_Le7urg_rw2ACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A08%253A29.png" /></a></div>&nbsp; <b>H. VERIFIKASI </b><br /><br /><ul><ul><li>Mikrotik1</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-wjLqKsREx3M/V9UHrRDKxjI/AAAAAAAAByg/pUwSyd_RQ3svDI8SyDK5MZIIpGOqz-UYQCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-12-33.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="120" src="https://4.bp.blogspot.com/-wjLqKsREx3M/V9UHrRDKxjI/AAAAAAAAByg/pUwSyd_RQ3svDI8SyDK5MZIIpGOqz-UYQCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22-12-33.png" width="320" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-OJT9wLoCKHA/V9UHre8eh7I/AAAAAAAAByk/mE937BsdJXwtSwpwBsNSSH2thbJoM-rNwCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-41-52.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="201" src="https://3.bp.blogspot.com/-OJT9wLoCKHA/V9UHre8eh7I/AAAAAAAAByk/mE937BsdJXwtSwpwBsNSSH2thbJoM-rNwCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22-41-52.png" width="320" /></a></div><ul><ul><li> Mikrotik3</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-Q02fHHxdvoc/V9UH0agIwbI/AAAAAAAABys/uBp075G_JDojo8OhbCygLaxBxmpmPW3xgCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A11%253A55.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="145" src="https://2.bp.blogspot.com/-Q02fHHxdvoc/V9UH0agIwbI/AAAAAAAABys/uBp075G_JDojo8OhbCygLaxBxmpmPW3xgCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22%253A11%253A55.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-VvqOKEEfPP0/V9UHWv-8rMI/AAAAAAAAByc/Din-l42D6coiSlzUl42dQeduAV5bvkmtACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A41%253A57.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="120" src="https://2.bp.blogspot.com/-VvqOKEEfPP0/V9UHWv-8rMI/AAAAAAAAByc/Din-l42D6coiSlzUl42dQeduAV5bvkmtACLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22%253A41%253A57.png" width="320" /></a></div><ul><li>Pengujian Ping pada masing-masing Client</li></ul><ul><ul><li>Ping Client Mikrotik1 ke Mikrotik2</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-Yb0pOiC9M9o/V9UIRFECXWI/AAAAAAAABy0/EMok5WPAbV4SiWyH8JlVvhCccZxlmnwSgCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22-42-16.png" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="199" src="https://2.bp.blogspot.com/-Yb0pOiC9M9o/V9UIRFECXWI/AAAAAAAABy0/EMok5WPAbV4SiWyH8JlVvhCccZxlmnwSgCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22-42-16.png" width="320" /></a><a href="https://2.bp.blogspot.com/-AFAUB6lTNC4/V9UJFNen-DI/AAAAAAAABzA/trk7uH_GtmY0sERxtTecL5GGv3PPsO5UQCLcB/s1600/Screenshot%2Bat%2B2016-09-11%2B14%253A34%253A07.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://2.bp.blogspot.com/-AFAUB6lTNC4/V9UJFNen-DI/AAAAAAAABzA/trk7uH_GtmY0sERxtTecL5GGv3PPsO5UQCLcB/s320/Screenshot%2Bat%2B2016-09-11%2B14%253A34%253A07.png" width="269" /></a></div><ul><ul><li>Ping Client Mikrotik2 ke Mikrotik1</li></ul></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-jOQgKthXA8Y/V9UIVnBx5mI/AAAAAAAABy4/MTViUebae0APt-tJoNgCezj_qvU1EbkUACLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A44%253A51.png" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="223" src="https://2.bp.blogspot.com/-jOQgKthXA8Y/V9UIVnBx5mI/AAAAAAAABy4/MTViUebae0APt-tJoNgCezj_qvU1EbkUACLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22%253A44%253A51.png" width="320" /></a><a href="https://2.bp.blogspot.com/-Wv3-leFwMiQ/V9UInt7YeAI/AAAAAAAABy8/8yUvggZVvfgt0nuCJiW_56voAV5wwTHfwCLcB/s1600/Screenshot%2Bat%2B2016-09-08%2B22%253A09%253A48.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://2.bp.blogspot.com/-Wv3-leFwMiQ/V9UInt7YeAI/AAAAAAAABy8/8yUvggZVvfgt0nuCJiW_56voAV5wwTHfwCLcB/s320/Screenshot%2Bat%2B2016-09-08%2B22%253A09%253A48.png" width="267" /></a></div><b><br /></b><b>I. Hasil yang Didapatkan</b><br /><br /><ul><li>Router satu sama lain sudah bisa saling terkoneksi</li></ul><b>J. Kesimpulan</b><br /><ul><li>Routing ospf dapat kita terapkan lebih dari tiga router, untuk konfigurasi-nya sama seperti yang ada diatas</li></ul><b>K. Referensi :</b> <a href="http://www.uptoayuning.io/2016/09/konfigurasi-routing-ospf-menggunakan.html">http://www.uptoayuning.io/2016/09/konfigurasi-routing-ospf-menggunakan.html</a></div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/konsep-wireless/">Konsep Wireless</a></li>            
+        
+          <li><a href="/post/instalasi-drupal-di-localhost/">Instalasi Drupal Di Localhost</a></li>            
+        
+          <li><a href="/post/pengertian-kernel-macamnya/">Pengertian Kernel &amp; Macamnya</a></li>            
+        
+          <li><a href="/post/road-map-rencana-kerja/">Road map &amp; Rencana Kerja</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/blc/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/setting-mikrotik-menggunakan-ip-static/">
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/setting-mikrotik-menggunakan-ip-static/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title"> Setting MikroTik Menggunakan IP Static </h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A. Pendahuluan
+MikroTik adalah perusahaan kecil berkantor pusat di Latvia, yang dibentuk oleh John Trully dan Arnis Riekstins. MikroTik RouterOS merupakan sistem operasi yang diperuntukkan sebagai network router. MikroTik routerOS sendiri adalah sistem operasi dan perangkat lunak yang dapat digunakan untuk menjadikan komputer biasa menjadi router network yang handal, mencakup berbagai fitur yang dibuat untuk ip network dan jaringan wireless. Fitur-fitur tersebut diantaranya: Firewall &amp; Nat, Routing, Hotspot, Point to Point Tunneling Protocol, DNS server, DHCP server, Hotspot, dan masih banyak lagi fitur lainnya. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/sejarah-perkembangan-linux/">
+      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/sejarah-perkembangan-linux/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Sejarah Perkembangan Linux</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Pada tahun 1969, Ken Thompson dan Dennis Ritchie (juga adalah developer bahasa C), para peneliti di AT&amp;T Bell Laboratorium Amerika, membuat sistem operasi UNIX, cikal bakal dari Linux. UNIX mendapatkan perhatian besar karena merupakan sistem operasi pertama yang dibuat bukan oleh hardware maker. Selain itu juga karena seluruh source code-nya dibuat dengan bahasa C, sehingga mempermudah pemindahannya ke berbagai platform.
+Dalam waktu singkat UNIX berkembang dalam dua jalur : UNIX yang dikembangkan oleh Universitas Berkeley dan yang dikembangkan oleh AT&amp;T. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Routing ospf Dengan Router Mikrotik</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Routing%20ospf%20Dengan%20Router%20Mikrotik&amp;url=%2fpost%2frouting-ospf-dengan-router-mikrotik%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2frouting-ospf-dengan-router-mikrotik%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

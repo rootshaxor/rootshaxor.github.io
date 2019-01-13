@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Membuat VLAN &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/img/go.png" />
+    <link rel="canonical" href="/post/membuat-vlan/" />
+
+     <meta name="description" content="A. Pendahuluan
+Virtual LAN atau disingkat VLAN merupakan sekelompok perangkat pada satu LAN atau lebih yang dikonfigurasikan (menggunakan perangkat lunak pengel" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Membuat VLAN"/>
+    <meta name="twitter:description" content="A. Pendahuluan
+Virtual LAN atau disingkat VLAN merupakan sekelompok perangkat pada satu LAN atau lebih yang dikonfigurasikan (menggunakan perangkat lunak pengel"/>
+    <meta name="twitter:url" content="/post/membuat-vlan/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Membuat VLAN &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/membuat-vlan/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A. Pendahuluan
+Virtual LAN atau disingkat VLAN merupakan sekelompok perangkat pada satu LAN atau lebih yang dikonfigurasikan (menggunakan perangkat lunak pengel" />
+
+    <meta property="article:published_time" content="2017-09-13T23:23:00Z" />
+    <meta property="article:tag" content="BLC" />
+
+    <meta property="og:image" content="/img/header-blog.jpg"/>
+
+    <meta name="generator" content="Hugo 0.53" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/blc">BLC Telkom</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/programming/">Programming</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2017-09-13">13 September 2017</time>
+                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Membuat VLAN</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/defimg/6.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><br /><div class="separator" style="clear: both; text-align: center;"><b><a href="https://2.bp.blogspot.com/-NKkEtlrG3Nw/WbuAPAoiUqI/AAAAAAAAA-A/NvpfJ1UYt3QbhYUIGECkWBTxwB8YhhqaQCLcBGAs/s1600/images.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="221" data-original-width="228" src="https://2.bp.blogspot.com/-NKkEtlrG3Nw/WbuAPAoiUqI/AAAAAAAAA-A/NvpfJ1UYt3QbhYUIGECkWBTxwB8YhhqaQCLcBGAs/s1600/images.png" /></a></b></div><br /><span style="font-size: x-small;"><b>A. Pendahuluan</b></span><br /><br /><ul><li><span style="font-size: x-small;"><span class="posted-on">Virtual LAN  atau disingkat VLAN merupakan sekelompok perangkat pada satu LAN atau  lebih yang dikonfigurasikan (menggunakan perangkat lunak  pengelolaan) sehingga dapat berkomunikasi seperti halnya bila perangkat  tersebut terhubung ke jalur yang sama, padahal sebenarnya perangkat  tersebut berada pada sejumlah segmen LAN yang berbeda. Vlan dibuat  dengan menggunakan jaringan pihak ke tiga. VLAN merupakan sebuah bagian  kecil jaringan IP yang terpisah secara logik. VLAN memungkinkan beberapa  jaringan IP dan jaringan-jaringan kecil (subnet) berada dalam jaringan  switched switched yang sama. Agar computer bisa berkomunikasi pada VLAN  yang sama, setiap computer harus memiliki sebuah alamat IP dan Subnet  Mask yang sesuai dengan VLAN tersebut. Switch harus dikonfigurasi dengan  VLAN dan setiap port dalam VLAN harus didaftarkan ke VLAN. Sebuah port  switch yang telah dikonfigurasi dengan sebuah VLAN tunggal disebut  sebagai access port.</span></span></li></ul><span style="font-size: x-small;"><span class="posted-on"><b>B. Latar Belakang</b>&nbsp; </span><b><br /></b></span><br /><ul><li><div class="entry-meta"><span style="font-size: x-small;"><span class="posted-on">Dalam pembuatan  nya vlan adalah interface yang virtual,maka dari itu pada mikrotik vlan  mempunyai fungsi yang banyak, vlan pun dapat digunakan untuk  DHCP,PPP,Bidge,VPN dan banyak lagi layak nya sebuah interface ether  fisik yang berada dalam mikrotik</span></span></div></li></ul><span style="font-size: x-small;"><b>C. Maksud dan Tujuan</b><span class="posted-on"> </span><span class="posted-on">&nbsp;</span></span><br /><ul><li><span style="font-size: x-small;"><span class="posted-on">konfigurasi vlan  akan digunakan untuk koneksi berupa vitualisasi pada server misal  server proxmox atau vmware yang menggunakan tekonolgi virtualisasi</span></span></li></ul><span style="font-size: x-small;"><span class="posted-on"><b>D. Jangka Waktu Yang Dibutuhkan</b></span></span><br /><ul><li><span style="font-size: x-small;"><span class="posted-on">5 Menit</span></span></li></ul><span style="font-size: x-small;"><span class="posted-on"><b>E. Proses/Tahapan</b></span></span><br /><ul><li><span style="font-size: x-small;"><span class="posted-on">       Buka Mikrotik lewat winbox&nbsp;</span></span></li><li><span style="font-size: x-small;"><span class="posted-on">Kemudian masuk ke menu interface</span></span></li><li><span style="font-size: x-small;"><span class="posted-on">Kemudian klik (+) add kemudian pilih VLAN<div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-yi24UM62pgk/WbsxHN_pZ3I/AAAAAAAAA08/Ilv2vnsM7pwY1fbm8gF2v0KmvWsc3YYUQCEwYBhgL/s1600/Screenshot%2Bpada%2B2017-09-15%2B08-44-32.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="220" data-original-width="475" height="148" src="https://4.bp.blogspot.com/-yi24UM62pgk/WbsxHN_pZ3I/AAAAAAAAA08/Ilv2vnsM7pwY1fbm8gF2v0KmvWsc3YYUQCEwYBhgL/s320/Screenshot%2Bpada%2B2017-09-15%2B08-44-32.png" width="320" /></a></div></span></span><span style="font-size: x-small;"><span class="posted-on"></span></span></li><li><span style="font-size: x-small;"><span class="posted-on">Selanjutnya beri nama misal VLAN1&gt;&gt; interface&gt;&gt; misal ether5&gt;&gt; apply&gt;&gt; OK<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-o8qOgnzd_G0/WbsxGl5HdOI/AAAAAAAAA04/xekhszV8dxgc8_stZEc1ckmTsRaG6C3cQCEwYBhgL/s1600/Screenshot%2Bpada%2B2017-09-15%2B08-43-58.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="519" data-original-width="418" height="320" src="https://1.bp.blogspot.com/-o8qOgnzd_G0/WbsxGl5HdOI/AAAAAAAAA04/xekhszV8dxgc8_stZEc1ckmTsRaG6C3cQCEwYBhgL/s320/Screenshot%2Bpada%2B2017-09-15%2B08-43-58.png" width="257" /></a></div></span></span></li><li><span style="font-size: x-small;"><span class="posted-on">Selanjutnya  beri IP pada VLAN yang sudah kita buat tadi, IP&gt;&gt; Address&gt;&gt;  Add&gt;&gt; masukkan IP&gt;&gt; interface (Vlan1)&gt;&gt; apply&gt;&gt;  Ok<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-3kntuKHP_Ec/WbsxGWO534I/AAAAAAAAA1A/jGz2Qk7yrx89ppEU0CTRWP4Kt22ImjQ8QCEwYBhgL/s1600/Screenshot%2Bpada%2B2017-09-15%2B08-43-29.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="403" data-original-width="612" height="210" src="https://1.bp.blogspot.com/-3kntuKHP_Ec/WbsxGWO534I/AAAAAAAAA1A/jGz2Qk7yrx89ppEU0CTRWP4Kt22ImjQ8QCEwYBhgL/s320/Screenshot%2Bpada%2B2017-09-15%2B08-43-29.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-E0v6A4AfOhY/WbsxFytksJI/AAAAAAAAA1A/hKoo2bkEgcoNGnI3QZDHraW9Bk7wnPocwCEwYBhgL/s1600/Screenshot%2Bpada%2B2017-09-15%2B08-43-01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="266" data-original-width="286" src="https://3.bp.blogspot.com/-E0v6A4AfOhY/WbsxFytksJI/AAAAAAAAA1A/hKoo2bkEgcoNGnI3QZDHraW9Bk7wnPocwCEwYBhgL/s1600/Screenshot%2Bpada%2B2017-09-15%2B08-43-01.png" /></a></div></span></span></li><li><span style="font-size: x-small;"><span class="posted-on">Selesai</span></span></li></ul><span style="font-size: x-small;"><span class="posted-on"><b>F. Kesimpulan</b></span></span><br /><ul><li><span style="font-size: x-small;"><span class="posted-on">pada konfigurasi diatas hanya membuat interface nya untuk selanjutnya  bisa dikembangkan menjadi DHCP,PPP,bridge,VPN dan lainnya&nbsp; <b><br /></b></span></span></li></ul><span style="font-size: x-small;"><span class="posted-on"><b>G. Referensi</b></span></span><br /><ul><li><span style="font-size: x-small;"><a href="https://id.wikipedia.org/wiki/VLAN">https://id.wikipedia.org/wiki/VLAN</a></span></li><li><a href="https://mikrotik.co.id/"><span style="font-size: x-small;">https://mikrotik.co.id&nbsp;</span></a></li><li><span style="font-size: x-small;"><a href="http://www.uptoayuning.io/2016/10/membuat-vlan-pada-mikrotik.html">http://www.uptoayuning.io/2016/10/membuat-vlan-pada-mikrotik.html </a></span></li></ul></div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/port-di-jaringan-komputer/">Port Di Jaringan Komputer</a></li>            
+        
+          <li><a href="/post/cara-membatasi-limit-bandwidth-mikrotik-dengan-simple-queue-mikrotik/">Cara Membatasi (Limit) Bandwidth Mikrotik dengan Simple Queue Mikrotik  </a></li>            
+        
+          <li><a href="/post/membuat-http-server-dengan-golang/">Membuat HTTP Server Dengan Golang</a></li>            
+        
+          <li><a href="/post/setting-mikrotik-menggunakan-ip-static/"> Setting MikroTik Menggunakan IP Static </a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/blc/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/sistem-directory-di-linux/">
+      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/sistem-directory-di-linux/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Sistem Directory Di Linux</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>&nbsp;&nbsp;A.PendahuluanPengertianSebuah direktori adalah komponen dari sistem berkas yang mengandung satu berkas atau lebih atau satu direktori lainnya atau lebih, yang disebut dengan subdirektori. Batasan jumlah berkas atau subdirektori yang dapat ditampung dalam sebuah direktori tergantung dari sistem berkas yang digunakan, meskipun sebagian sistem berkas tidak membatasinya (batasan tersebut disebabkan ukuran media penyimpanan di mana direktori berada). Sebuah direktori yang mengandung satu direktori atau lebih disebut sebagai parent directory dari direktori-direktori tersebut, dan setiap direktori yang dikandung di dalam direktori disebut sebagai child directory. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/sop/">
+      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/sop/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">SOP</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A.Pendahuluan
+Pengertian SOP (Standar Operasional Prosedur) adalah dokumen yang berkaitan dengan prosedur yang dilakukan secara kronologis untuk menyelesaikan suatu pekerjaan yang bertujuan untuk memperoleh hasil kerja yang paling efektif dari para pekerja dengan biaya yang serendah-rendahnya. SOP biasanya terdiri dari manfaat, kapan dibuat atau direvisi, metode penulisan prosedur, serta dilengkapi oleh bagan flowchart di bagian akhir (Laksmi, 2008:52). Setiap perusahaan bagaimanapun bentuk dan apapun jenisnya, membutuhkan sebuah panduan untuk menjalankan tugas dan fungsi setiap elemen atau unit perusahaan. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Membuat VLAN</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Membuat%20VLAN&amp;url=%2fpost%2fmembuat-vlan%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fmembuat-vlan%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>
