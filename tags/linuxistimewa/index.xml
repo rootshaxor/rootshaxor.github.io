@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linuxistimewa on </title>
+    <link>/tags/linuxistimewa/</link>
+    <description>Recent content in Linuxistimewa on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 29 Mar 2019 13:49:22 +0700</lastBuildDate>
+    
+	<atom:link href="/tags/linuxistimewa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kenapa Linux Istimewa</title>
+      <link>/post/kenapa-linux-istimewa/</link>
+      <pubDate>Fri, 29 Mar 2019 13:49:22 +0700</pubDate>
+      
+      <guid>/post/kenapa-linux-istimewa/</guid>
+      <description>Keistimewaan Linux Di Banding Yang Lain 
+selain opensource linux juga dapat mejalankan program aplikasi operasi sistem lainnya misalnya :
+ Windows  *.msi *.exe  OSX  *.dmg  Android  *.apk   Untuk Menjalankan Program tersebut Anda memerlukan aplikasi berikut : 
+Program Windows :  wine (winehq.org)   Wine &amp;ldquo;Wine Is Not an Emulator&amp;rdquo; adalah lapisan kompatibilitas yang mampu menjalankan aplikasi Windows pada beberapa sistem operasi yang sesuai dengan POSIX, seperti Linux, macOS, &amp;amp; BSD.</description>
+    </item>
+    
+  </channel>
+</rss>

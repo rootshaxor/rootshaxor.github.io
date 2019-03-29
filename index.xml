@@ -6,10 +6,22 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 11 Jan 2019 14:26:15 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 29 Mar 2019 13:49:22 +0700</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kenapa Linux Istimewa</title>
+      <link>/post/kenapa-linux-istimewa/</link>
+      <pubDate>Fri, 29 Mar 2019 13:49:22 +0700</pubDate>
+      
+      <guid>/post/kenapa-linux-istimewa/</guid>
+      <description>Keistimewaan Linux Di Banding Yang Lain 
+selain opensource linux juga dapat mejalankan program aplikasi operasi sistem lainnya misalnya :
+ Windows  *.msi *.exe  OSX  *.dmg  Android  *.apk   Untuk Menjalankan Program tersebut Anda memerlukan aplikasi berikut : 
+Program Windows :  wine (winehq.org)   Wine &amp;ldquo;Wine Is Not an Emulator&amp;rdquo; adalah lapisan kompatibilitas yang mampu menjalankan aplikasi Windows pada beberapa sistem operasi yang sesuai dengan POSIX, seperti Linux, macOS, &amp;amp; BSD.</description>
+    </item>
     
     <item>
       <title>Mencari Wildcard Dengan Python</title>
@@ -659,10 +671,10 @@ FreeBSD adalah sebuah sistem operasi bertipe Unix bebas yang diturunkan dari UNI
     
     <item>
       <title>Menginstall CMS hugo di Linux Debian/Ubuntu/linux Mint</title>
-      <link>/post/menginstall-cms-hugo-di-linux-debian-ubuntu-linux-mint/</link>
+      <link>/post/menginstall-cms-hugo-di-linux-debian/ubuntu/linux-mint/</link>
       <pubDate>Sat, 14 Oct 2017 14:23:00 +0000</pubDate>
       
-      <guid>/post/menginstall-cms-hugo-di-linux-debian-ubuntu-linux-mint/</guid>
+      <guid>/post/menginstall-cms-hugo-di-linux-debian/ubuntu/linux-mint/</guid>
       <description>A.Pendahuluan
 Hugo adalah generator situs HTML dan CSS statis yang ditulis dengan bahasa pemrograman Go / Golang. Ini dioptimalkan untuk kecepatan, kemudahan penggunaan, dan konfigurabilitas. Hugo mengambil sebuah direktori dengan konten dan template dan memasukkannya ke dalam situs HTML lengkap. Hugo mengandalkan file penurunan harga dengan materi depan untuk metadata, dan Anda dapat menjalankan Hugo dari sembarang direktori. Ini bekerja dengan baik untuk host bersama dan sistem lain di tempat Anda tidak memiliki akun istimewa.</description>
     </item>
@@ -1531,10 +1543,10 @@ Profesional adalah istilah bagi seseorang yang menawarkan jasa atau layanan sesu
     
     <item>
       <title>Belajar Pemrogaman Bourne-Again shell (sh) / Bash Di Linux</title>
-      <link>/post/belajar-pemrogaman-bourne-again-shell-sh-bash-di-linux/</link>
+      <link>/post/belajar-pemrogaman-bourne-again-shell-sh-/-bash-di-linux/</link>
       <pubDate>Fri, 21 Jul 2017 20:15:00 +0000</pubDate>
       
-      <guid>/post/belajar-pemrogaman-bourne-again-shell-sh-bash-di-linux/</guid>
+      <guid>/post/belajar-pemrogaman-bourne-again-shell-sh-/-bash-di-linux/</guid>
       <description>Assalamualaikum Wr Wb
 Selamat siang kawan , hari ini saya menjelaskan Sediki tentang Pemrograman Bourne-Again Shell / Bash .
 A.Pendahuluan
@@ -1613,10 +1625,10 @@ Linux (diucapkan ˈlɪnəks atau /ˈlɪnʊks/) adalah nama yang diberikan kepada
     
     <item>
       <title>Cara Install VYM Di Linux (Linux Mint ) /Distro Linux Yang Lain</title>
-      <link>/post/cara-install-vym-di-linux-linux-mint-distro-linux-yang-lain/</link>
+      <link>/post/cara-install-vym-di-linux-linux-mint-/distro-linux-yang-lain/</link>
       <pubDate>Thu, 13 Jul 2017 19:02:00 +0000</pubDate>
       
-      <guid>/post/cara-install-vym-di-linux-linux-mint-distro-linux-yang-lain/</guid>
+      <guid>/post/cara-install-vym-di-linux-linux-mint-/distro-linux-yang-lain/</guid>
       <description>Assalamualaikum Wr. Wb
 Sore Hari ini , Pembelajaran mengenai VYM &amp;amp; Pengenalan VYM
 VYM (View Your Mind) adalah Alat Pemetaan konsep , Yang Memilik Fungsi 
