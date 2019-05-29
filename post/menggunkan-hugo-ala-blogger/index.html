@@ -1,507 +1,120 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
+  <head>
+  <title>
+      
+          Menggunakan Hugo Ala Blogger - Mojokerto FOSS
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="map[]" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://example.com/img/go.png">
 
-<head><style>
-body {
-	display: block;
-	--colorBG: "#40e0d0, #ff8c00, #ff0080";background: linear-gradient(to right, var(--colorBG)) !important;
-	
-}
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://example.com/style.min.a6cab246517742ad1189b209575fc61556550e663cdfe02a0aab0632b39e978b.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-body, body.pushable {
-	background-repeat: no-repeat;
-  	background-attachment: fixed;
-  	background-size: cover !important;
-}
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/custom.css">
+  
 
-</style><title>
-Menggunakan Hugo Ala Blogger
-</title><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="author" content="Erwin Kurniawan" />
-	<meta name="description" content="Menggunakan hugo ala blogger" />
-<meta name="generator" content="Hugo 0.48" />
+  <meta property="og:title" content="Menggunakan Hugo Ala Blogger" />
+<meta property="og:description" content="Menggunakan hugo ala blogger" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/menggunkan-hugo-ala-blogger/" />
+<meta property="article:published_time" content="2018-11-10T23:34:37&#43;07:00"/>
+<meta property="article:modified_time" content="2018-11-10T23:34:37&#43;07:00"/>
 
-<link rel="shortcut icon" href="/img/go.png">
+<meta itemprop="name" content="Menggunakan Hugo Ala Blogger">
+<meta itemprop="description" content="Menggunakan hugo ala blogger">
 
-<link rel="canonical" href="https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/" />
-<link rel="alternative" href="/index.xml" title="Erwin Kurniawan&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
-<style>
-body.pushable {
-	display: block;background: linear-gradient(to right, var(--colorBG)) !important;
-	 ;
-}
-</style>
-<link rel="stylesheet" type="text/css" href="/css/site.css">
-<script>
-	var colorBG =  true 
-	var enabledPost = true
-	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
-	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
-</script>
-</head>
 
-<body><script>
-var prevBgIndex = 0;
-var bodyBgSwitchIndex = 0;var gradients = [
-	  [],
-	  ['#40e0d0', '#ff8c00', '#ff0080'], 
-	  ['#3e5151', '#decba4'], 
-	  ['#11998e', '#38ef7d'], 
-	  ['#108dc7', '#ef8e38'], 
-	  ['#fc5c7d', '#6a82fb'], 
-	  ['#fc466b', '#3f5efb'], 
-	  ['#c94b4b', '#4b134f'], 
-	  ['#23074d', '#cc5333'] 
-	]
-	document.body.style.setProperty('--colorBG', connect(gradients[getRandomInt(0, gradients.length)]))
-	function getRandomInt(min, max) {
-	  min = Math.ceil(min)
-	  max = Math.floor(max)
-	  var random
-	  while (1) {
-	    random = Math.floor(Math.random() * (max - min)) + min
-	    if (random !== prevBgIndex) {
-	      prevBgIndex = random
-	      break
-	    }
-	  }
-	  return random
-	}
+<meta itemprop="datePublished" content="2018-11-10T23:34:37&#43;07:00" />
+<meta itemprop="dateModified" content="2018-11-10T23:34:37&#43;07:00" />
+<meta itemprop="wordCount" content="100">
 
-	function connect(arr) {
-	  var str = ''
-	  for (var i = 0; i < arr.length; i++) {
-	    if (i !== arr.length - 1) {
-	      str += arr[i] + ', '
-	    } else {
-	      str += arr[i]
-	    }
-	  }
-	  return str
-	}
-</script><div id="sidebar" class="ui sidebar inverted vertical menu">
-	<section id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
-	<img src="/img/go.png">
-</div>
-<h3 class="ui header">Erwin Kurniawan
-	<div class="sub header">Berbagi Selagi Bisa</div>
-</h3>
-</section><section class="ui attached center aligned inverted segment sidebar-dream-tags">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
 
-<a class="ui label" href="/tags/blog" title="blog">blog</a>
 
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
+<meta itemprop="keywords" content="blog,hugo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Menggunakan Hugo Ala Blogger"/>
+<meta name="twitter:description" content="Menggunakan hugo ala blogger"/>
 
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
 
-<a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
 
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
+  </head>
 
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
-
-<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
-
-<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
-
-</section>	
-	
-	<section class="ui attached inverted segment sidebar-dream-categories both flexbox">
-		<div class="ui inverted accordion">
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/golang">golang</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Hugo Ala Blogger</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/linux">linux</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Sudo Tanpa Passwd</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/server">server</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Dns Master Slave Debian9</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/shell-script">shell-script</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/management-service-server/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Management Service Server</p>
-		</div>
-	</a>
-
-</div>
-
-</div>
-	</section>
-	
-	
-	<section id="footer" class="ui bottom attached center aligned inverted segment">
-<p>© 2018 Erwin Kurniawan&#39;s Blog</p>
+  <body>
     
-<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></section>
-</div>
-<div class="pusher">
-		<div class="flipper">
-			<div class="front">
-<nav class="ui top secondary menu bar">
-	<div class="item">
-		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
-	</div><div class="item">
-		<a href="/">
-			<i class="inverted big link home icon" title="Home"></i>
-		</a>
-	</div>
-	<div class="item">
-		<a href="/post">
-			<i class="inverted big link archive icon" title="Archive"></i>
-		</a>
-	</div>
-	<div class="item">
-		<a href="/tags">
-			<i class="inverted big link tags icon" title="All Tags"></i>
-		</a>
-	</div>
-	<div class="item">
-		<a href="/categories">
-			<i class="inverted big link cubes icon" title="All Categories"></i>
-		</a>
-    </div>
-	<div class="ui container tablet computer only grid">
-		<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
-			<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
-		</div>
-	</div>
-	
-</nav>
-
-<div class="ui centered grid">
-	<div class="sixteen wide mobile only column"><div class="ui inverted accordion">
-	<div id="header" class="ui inverted segment column box">
-		<header id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
-	<img src="/img/go.png">
-</div>
-<h3 class="ui header">Erwin Kurniawan
-	<div class="sub header">Berbagi Selagi Bisa</div>
-</h3>
+  <h1>Menggunakan Hugo Ala Blogger</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://example.com//img/tux.jpg">
+    <a href="https://example.com/"><img src="https://example.com//img/avatar-border.svg" }}></a>
+  </div>
+  
+  <h2><a class="author" href="https://example.com/">Erwin Kurniawan</a></h2>
 </header>
-		<div class=" title header-title"><div id="tag-category-pop" class="ui red right corner label">		
-				<i class="hand point icon down"title="Click this to pop tags and categories"></i>		
-			</div></div>
-		<div id="tag-category" class=" content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
 
-<a class="ui label" href="/tags/blog" title="blog">blog</a>
-
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
-
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
-
-<a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
-
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
-
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
-
-<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
-
-<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
-
-</section><section class="ui attached inverted segment dream-categories both flexbox">
-			<div class="inverted accordion">
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/golang">golang</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Hugo Ala Blogger</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/linux">linux</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/menggunakan-sudo-tampa-passwd/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Menggunakan Sudo Tanpa Passwd</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/server">server</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/dns-master-slave-debian9/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Dns Master Slave Debian9</p>
-		</div>
-	</a>
-
-</div>
-
-<div class="title">
-	<i class="dropdown icon"></i>
-	<a class="link" href="/categories/shell-script">shell-script</a>
-</div>
-<div class="content">
-
-	<a class="item" href="https://rootshaxor.github.io/post/management-service-server/">
-		<div>
-			<i class="cocktail icon"></i>
-			<p>Management Service Server</p>
-		</div>
-	</a>
-
-</div>
-
-</div>
-			</section></div>
-		<footer class="ui bottom attached center aligned inverted segment">
-<p>© 2018 Erwin Kurniawan&#39;s Blog</p>
+  
+  
+  <p class="date">November 10, 2018</p>
+  
+  <div id="contentBody">
     
-<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></footer>
-	</div>
-</div></div>
-	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
-		<section class="ui secondary top attached black segment post-head">
-			<h1 class="post-title">
-				Menggunakan Hugo Ala Blogger
-			</h1>
-			<div class="sub header">
-					<div><span><i class="calendar outline icon"></i>Nov 10, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://rootshaxor.github.io/post/menggunkan-hugo-ala-blogger/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="64c1b66c8475c4fc6d1b21eb03cb5212"></a></span></div>
-					<div><span><i class="clock outline icon"></i>1 min read</span></div>
-					<div><span><i class="angle double up icon"></i>Last updated on Nov 10, 2018</span></div>
-			</div>
-			<hr><div class="toc"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#pendahuluan">Pendahuluan</a></li>
-<li><a href="#bagaimana-menggunakannya">Bagaimana menggunakannya</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav></div>
-			
-			
-			<article class="post-content twemoji">
-				
 
 <p>#Menggunakan Hugo Ala Blogger dengan forestry (github)</p>
 
-<h3 id="pendahuluan">Pendahuluan&nbsp;<a class="anchor" href="#pendahuluan"><i class="small linkify icon"></i></a> </h3>
+<h3 id="pendahuluan">Pendahuluan</h3>
 
 <pre><code>forestry adalah CMS yang dapat digunakan sebagai editor Jekyll, Hugo atau VuePress Anda.
 </code></pre>
 
-<h3 id="bagaimana-menggunakannya">Bagaimana menggunakannya&nbsp;<a class="anchor" href="#bagaimana-menggunakannya"><i class="small linkify icon"></i></a> </h3>
+<h3 id="bagaimana-menggunakannya">Bagaimana menggunakannya</h3>
 
 <p>Kasus kali ini saya deploy site saya di github, jadi di asumsikan menggunakan github</p>
 
 <ol>
 <li>Kunjungi <a href="https://forestry.io">https://forestry.io</a> dan lakukan login menggunakan github</li>
 <li>Jika sudah melakukan login , klik button <code>add site</code> ,  pilih <code>Hugo</code> dan klik button <em>NEXT</em>
-<center> <img src="/img/forestry/1.png"> </center></li>
+<center> <img src="https://example.com/img/forestry/1.png"> </center></li>
 <li>Selanjutnya pilih <code>github</code> dan klik button <em>NEXT</em>
-<center> <img src="/img/forestry/2.png"> </center></li>
+<center> <img src="https://example.com/img/forestry/2.png"> </center></li>
 <li>Kemudian Pilih repository blognya , pilih Branch <code>master</code> dan klik button <em>NEXT</em><br />
-<center> <img src="/img/forestry/3.png"> </center></li>
+<center> <img src="https://example.com/img/forestry/3.png"> </center></li>
 
 <li><p>Tambahkan Email anda , proses ini adalah proses terakhir , jika email sudah di tambahkan maka klik button <em>NEXT</em>
-<center> <img src="/img/forestry/4.png"> </center></p></li>
+<center> <img src="https://example.com/img/forestry/4.png"> </center></p></li>
 
 <li><p>Tampilan forestry
-<center> <img src="/img/forestry/5.png"> </center></p></li>
+<center> <img src="https://example.com/img/forestry/5.png"> </center></p></li>
 </ol>
 
-			</article>
-		</section>
-		<section class="ui secondary attached segment dream-tags">
-<a class="ui label" href="/tags/bash" title="bash">bash</a>
-
-<a class="ui label" href="/tags/blog" title="blog">blog</a>
-
-<a class="ui label" href="/tags/debian9" title="debian9">debian9</a>
-
-<a class="ui label" href="/tags/dns" title="dns">dns</a>
-
-<a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
-
-<a class="ui label" href="/tags/linux" title="linux">linux</a>
-
-<a class="ui label" href="/tags/programming" title="programming">programming</a>
-
-<a class="ui label" href="/tags/sudo" title="sudo">sudo</a>
-
-<a class="ui label" href="/tags/sudousers" title="sudousers">sudousers</a>
+  </div>
+  <footer>
+  <p>
+  &copy; 2019 Erwin Kurniawan.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
+  </p>
+</footer><script src="https://example.com/js/custom.js"></script>
 
 
-		</section><section class="ui secondary  attached segment share row box">
-	
 
-<div class="author">
-	<img class="avatar" src="/img/go.png">
-	
-</div>
-<div class="info grow flexbox">
-	<p class="name">Erwin Kurniawan</p>
-	<p class="desc">Berbagi Selagi Bisa</p>		
-</div>
-<section class="buttons row box">
-	<div class="facebook none flexbox" href="#" onclick="window.open(
-			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-			'facebook-share-dialog',
-			'width=626,height=436'); return false;">
-		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
-	</div>
-	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Menggunakan Hugo Ala Blogger  https:\/\/rootshaxor.github.io\/post\/menggunkan-hugo-ala-blogger\/','_self')">
-		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
-	</div>
-</section>
-</section>
-		<section class="ui secondary attached segment copyright">
-			
-		</section>
-		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
-<script>
-	var disqus_config = function () {
-		this.page.url = 'https:\/\/rootshaxor.github.io\/post\/menggunkan-hugo-ala-blogger\/';
-		this.page.identifier = '64c1b66c8475c4fc6d1b21eb03cb5212';
-	};
-	(function() {
-   	var d = document, s = d.createElement('script');
-   	s.src = 'https://' + 'dream-plus' + '.disqus.com/embed.js';
-   	s.setAttribute('data-timestamp', +new Date());
-   	(d.head || d.body).appendChild(s);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-</div>
-		
-	</div>
-</div>
-
-			</div>
-			<div class="back"><nav class="ui top secondary menu bar">
-	<div class="item">
-		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
-	</div><div class="item">
-	<a href="https://github.com/rootshaxor" target="_blank">
-		<i id="ico" class="inverted big link github icon" title="GitHub"></i>
-	</a>
-</div>
-<div class="item">
-	<a href="mailto:rootshaxor@gmail.com">
-		<i id="ico" class="inverted big link mail icon" title="Email"></i>
-	</a>
-</div>
-
-</nav>
-<div class="ui centered grid about">
-	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
-		<section class="ui stacked segments"><div class="ui inverted segment">
-	<article class="twemoji"><h1>Siapa Saya?</h1>
-
-<hr />
-
-<p><br></p>
-
-<p>Saya seorang pelajar yang haus pengetahuan mengenai GNU/LINUX , FLOSS , Programming GO &amp; Shell Script, dan SERVER , walaupun saya masih <em>newbie</em> saya tidak takut dengan ejekan tersebut bahwa dasarnya semua <strong>MASTAH</strong>  PERNAH <strong>NEWBIE</strong></p>
-
-<hr />
-
-<p>Jika Ada yang dipertanyakan anda dapat menghubungi :</p>
-
-<table>
-    <tr>
-        <td>Mail</td>
-        <td><a href="mailto:rootshaxor@gmail.com">rootshaxor@gmail.com</td>
-     </tr>
-     <tr>
-        <td>Facebook</td>
-        <td><a href="https://facebook.com/rootshaxor">Erwin Kurniawan</a></td>
-     </tr>
-     <tr>
-        <td>WhatsApp</td>
-        <td><a href="https://wa.me/6285791309271?text=Hay%20Erwin%20Saya%20tertarik%20dengan%20Postingan%20anda">+6285791309271</a></td>
-     </tr>
-</table>
-</article>
-</div></section>
-	</div>
-</div></div>
-		</div>
-	</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/site.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script><script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.6"></script>
-<script id="dsq-count-scr" src="//dream-plus.disqus.com/count.js" async></script>
-
-<script>
-	(function () {
-	  console.log("Twemoji up and making stuff colourful!");
-	  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
-		twemoji.parse(b[a]);
-	  }
-	})();
-</script>
-
-</body>
-
+  </body>
 </html>

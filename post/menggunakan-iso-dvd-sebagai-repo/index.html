@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>
+      
+          Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit - Mojokerto FOSS
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="map[]" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://example.com/img/go.png">
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://example.com/style.min.a6cab246517742ad1189b209575fc61556550e663cdfe02a0aab0632b39e978b.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/custom.css">
+  
+
+  <meta property="og:title" content="Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit" />
+<meta property="og:description" content="Cara cepat membuat repo local debian kurang dari 2 menit" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/menggunakan-iso-dvd-sebagai-repo/" />
+<meta property="article:published_time" content="2019-01-11T13:22:02&#43;07:00"/>
+<meta property="article:modified_time" content="2019-01-11T13:22:02&#43;07:00"/>
+
+<meta itemprop="name" content="Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit">
+<meta itemprop="description" content="Cara cepat membuat repo local debian kurang dari 2 menit">
+
+
+<meta itemprop="datePublished" content="2019-01-11T13:22:02&#43;07:00" />
+<meta itemprop="dateModified" content="2019-01-11T13:22:02&#43;07:00" />
+<meta itemprop="wordCount" content="151">
+
+
+
+<meta itemprop="keywords" content="debian9,linux,repo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit"/>
+<meta name="twitter:description" content="Cara cepat membuat repo local debian kurang dari 2 menit"/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
+    
+  <h1>Menggunakan ISO DVD Sebagai Repo Lokal kurang dari 2 Menit</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://example.com//img/tux.jpg">
+    <a href="https://example.com/"><img src="https://example.com//img/avatar-border.svg" }}></a>
+  </div>
+  
+  <h2><a class="author" href="https://example.com/">Erwin Kurniawan</a></h2>
+</header>
+
+  
+  
+  <p class="date">January 11, 2019</p>
+  
+  <div id="contentBody">
+    
+
+<h1 id="membuat-iso-file-dvd-debian-9-sebagai-repo-local-kurang-dari-2-menit">Membuat iso file dvd debian 9 sebagai repo local kurang dari 2 menit.</h1>
+
+<h3 id="alat-dan-bahan">Alat Dan Bahan</h3>
+
+<pre><code>- debian-dvd-1.iso
+- debian-dvd-2.iso
+- debian-dvd-3.iso
+- Server yang terinstall debian
+</code></pre>
+
+<h3 id="langkah-pembuatan">Langkah Pembuatan</h3>
+
+<ol>
+<li><p>masuk sebagai user <code>root</code> dan buat direktory sebagai mount point iso dvd.</p>
+
+<pre><code>    
+mkdir -pv /media/{dvd1,dvd2,dvd3}
+</code></pre></li>
+
+<li><p>Selanjutnya diasumsikan ketiga iso file sudah di pindahkan ke debian server, pada kasus ini saya pindahkan iso debian di direktory <code>/root/</code>.</p></li>
+
+<li><p>kemudian edit file <code>/etc/fstab</code> dengan editor kesayangan anda</p></li>
+
+<li><p>tambahkan kedalam file sebagai berikut :</p>
+
+<pre><code>
+
+/root/debian1.iso   /media/dvd1/    udf,iso9660 loop    0   0
+    
+/root/debian2.iso   /media/dvd2/    udf,iso9660 loop    0   0
+    
+/root/debian3.iso   /media/dvd3/    udf,iso9660 loop    0   0
+
+</code></pre></li>
+
+<li><p>kemudian buka <code>/etc/apt/source.list</code> dan comment semua repo yang online dengan di tambahkan <code>#</code> di depan alamat repo, jika sudah tambahkan sebagai berikut :</p>
+
+<pre><code>    
+deb [ trusted=yes ] file:///media/dvd1/ contrib main
+    
+deb [ trusted=yes ] file:///media/dvd2/ contrib main
+    
+deb [ trusted=yes ] file:///media/dvd3/ contrib main
+</code></pre></li>
+
+<li><p>Selanjutnya reboot server anda, dan jalankan command.</p>
+
+<p><code>apt update</code></p></li>
+</ol>
+
+<h3 id="selesai">Selesai</h3>
+
+  </div>
+  <footer>
+  <p>
+  &copy; 2019 Erwin Kurniawan.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
+  </p>
+</footer><script src="https://example.com/js/custom.js"></script>
+
+
+
+  </body>
+</html>

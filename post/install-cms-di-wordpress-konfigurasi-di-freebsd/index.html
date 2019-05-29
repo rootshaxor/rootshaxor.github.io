@@ -1,381 +1,96 @@
 <!DOCTYPE html>
-<html lang="en-US" />
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<html>
+  <head>
+  <title>
+      
+          Install CMS Di Wordpress &#43; Konfigurasi di freeBSD - Mojokerto FOSS
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="map[]" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://example.com/img/go.png">
 
-    <title>Install CMS Di Wordpress &#43; Konfigurasi di freeBSD &middot; </title>
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://example.com/style.min.a6cab246517742ad1189b209575fc61556550e663cdfe02a0aab0632b39e978b.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/custom.css">
+  
 
-    <link rel="shortcut icon" href="/img/go.png" />
-    <link rel="canonical" href="/post/install-cms-di-wordpress-konfigurasi-di-freebsd/" />
+  <meta property="og:title" content="Install CMS Di Wordpress &#43; Konfigurasi di freeBSD" />
+<meta property="og:description" content="A.Pendahuluan
+WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/install-cms-di-wordpress-konfigurasi-di-freebsd/" />
+<meta property="article:published_time" content="2017-10-23T11:14:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-23T11:14:00&#43;00:00"/>
 
-     <meta name="description" content="A.Pendahuluan
-WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun d" /> 
+<meta itemprop="name" content="Install CMS Di Wordpress &#43; Konfigurasi di freeBSD">
+<meta itemprop="description" content="A.Pendahuluan
+WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi.">
 
-     
+
+<meta itemprop="datePublished" content="2017-10-23T11:14:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-10-23T11:14:00&#43;00:00" />
+<meta itemprop="wordCount" content="349">
+
+
+
+<meta itemprop="keywords" content="BLC," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install CMS Di Wordpress &#43; Konfigurasi di freeBSD"/>
+<meta name="twitter:description" content="A.Pendahuluan
+WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi."/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
     
-    <meta name="twitter:card" content="summary"/>
-    
- 
-    <meta name="twitter:title" content="Install CMS Di Wordpress &#43; Konfigurasi di freeBSD"/>
-    <meta name="twitter:description" content="A.Pendahuluan
-WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun d"/>
-    <meta name="twitter:url" content="/post/install-cms-di-wordpress-konfigurasi-di-freebsd/" />
-    <meta name="twitter:site" content="@rootshaxor"/>
-
-    <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Install CMS Di Wordpress &#43; Konfigurasi di freeBSD &middot; Erwin Kurniawan Blog&#39;s" />
-    <meta property="og:url" content="/post/install-cms-di-wordpress-konfigurasi-di-freebsd/" />
-    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
-
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="A.Pendahuluan
-WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun d" />
-
-    <meta property="article:published_time" content="2017-10-23T11:14:00Z" />
-    <meta property="article:tag" content="BLC" />
-
-    <meta property="og:image" content="/img/header-blog.jpg"/>
-
-    <meta name="generator" content="Hugo 0.54.0" />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
-    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
-    
-
-     
-
-</head>
-
-
-<body class="post-template">
-  <div class="site-wrapper"> 
-
-<header class="site-header outer">
-  <div class="inner">
-    <nav class="site-nav">
-      <div class="site-nav-left">
-        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
-
-        <ul class="nav" role="menu">
-        
-        
-        
-            <li class="" role="menuitem">
-              <a href="/">Home</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/about/">About me</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/tags/blc">BLC Telkom</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/tags/linux/">Linux</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/tags/programming/">Programming</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/categories/">Categories</a>
-            </li>
-        
-      </ul></div>
-
-      <div class="site-nav-right">
-        <div class="social-links">
-                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
-
-                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
-
-                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-
-                    
-
-                    
-        </div>  
-            
-      </div>
-
-    </nav>  
-
+  <h1>Install CMS Di Wordpress &#43; Konfigurasi di freeBSD</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://example.com//img/tux.jpg">
+    <a href="https://example.com/"><img src="https://example.com//img/avatar-border.svg" }}></a>
   </div>
+  
+  <h2><a class="author" href="https://example.com/">Erwin Kurniawan</a></h2>
 </header>
 
-<main id="site-main" class="site-main outer" role="main">
-  <div class="inner">
-    
-      <article class="post-full post"> 
-    <header class="post-full-header">
-        <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2017-10-23">23 October 2017</time>
-                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
-        </section>
-        <h1 class="post-full-title">Install CMS Di Wordpress &#43; Konfigurasi di freeBSD</h1>
-    </header>
-    
-    <figure class="post-full-image" style="background-image: url(/defimg/3.jpg)">
-    </figure>
-
-    <section class="post-full-content">
-        <div class="kg-card-markdown">
-        <div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-LIj37QzqE4o/WhWSpuWG5HI/AAAAAAAABlY/JgZ9rxbS8mMdLQ9Q3T70pwyGzNbN5MgCACLcBGAs/s1600/wordpress.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1600" data-original-width="1600" height="320" src="https://3.bp.blogspot.com/-LIj37QzqE4o/WhWSpuWG5HI/AAAAAAAABlY/JgZ9rxbS8mMdLQ9Q3T70pwyGzNbN5MgCACLcBGAs/s320/wordpress.png" width="320" /></a></div><br /><b>A.Pendahuluan</b><br /><ul style="text-align: left;"><li>WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi. Nama WordPress diusulkan oleh Christine Selleck, teman Matt Mullenweg. WordPress saat ini menjadi platform content management system (CMS) bagi beberapa situs web ternama seperti CNN, Reuters, The New York Times, TechCrunch, dan lainnya . <b><br /></b></li></ul><b>B.Latar Belakang</b><br /><ul style="text-align: left;"><li>Karena Wordpress Adalah aplikasi web yang opensource dan bisa di unduh gratis , maka saya menggunakan CMS ini untuk di install di server FreeBSD saya </li></ul><b>C.Maksud &amp; Tujuan</b><br /><ul style="text-align: left;"><li>Menginstall CMS wordpress di FreeBSD , dan mengkonfigurasinya </li></ul><b>D.Hal Hal Yang Di Butuhkan</b><br /><ul style="text-align: left;"><li>Virtualbox&nbsp;+ FreeBSD</li><li>Koneksi Internet </li></ul><b>E.Langkah langkah</b><br /><ol style="text-align: left;"><li>Pertama install wordpress dengan perintah <br /><blockquote class="tr_bq">pkg install wordpress</blockquote></li><li>Jika sudah selesai maka edit DocumentRoot di <i><b>/usr/local/etc/apache24/httpd.conf</b></i> yang semula <i><b>/usr/local/www/apache24/data</b></i> di ubah menjadi <i><b>/usr/local/www/wordpress<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-chclUtr7kJI/WiMwi2H99WI/AAAAAAAABtk/622KNkI2bVsyVbM1dBzKIWYCUF4PqxlwACLcBGAs/s1600/add%2Bwordpress%2Bpath.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="390" data-original-width="576" height="216" src="https://1.bp.blogspot.com/-chclUtr7kJI/WiMwi2H99WI/AAAAAAAABtk/622KNkI2bVsyVbM1dBzKIWYCUF4PqxlwACLcBGAs/s320/add%2Bwordpress%2Bpath.png" width="320" /></a></div></b></i></li><li>&nbsp;Selanjutnya masuk ke Directory<i><b> /usr/local/www/</b></i> , Ubah hak milik directory wordpress menjadi milik www dengan perintah <br /><blockquote class="tr_bq">chown -R www:www wordpress/</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-bWsSq4Q7yIM/WiMww8drSaI/AAAAAAAABto/W1H2c4qbRzQC7uR4sUdUGmME-egyDf2BACLcBGAs/s1600/chown.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="390" data-original-width="576" height="216" src="https://1.bp.blogspot.com/-bWsSq4Q7yIM/WiMww8drSaI/AAAAAAAABto/W1H2c4qbRzQC7uR4sUdUGmME-egyDf2BACLcBGAs/s320/chown.png" width="320" /></a></div></li><li>Karena tadi merubah konfigurasi apachenya maka alangkah baiknya apachenya di restart dengan perintah <br /><blockquote class="tr_bq">service apache24 restart</blockquote></li><li>Sebelum menginstall wordpress lebih lanjut , buatlah database terlebih dahulu . isi seperti gambar di bawah ini<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-RCkM0VPPPgU/WiMw7Cxqb4I/AAAAAAAABts/ptRPqzWrREsMgKp9cLhT7BnjIYaV_v8TQCLcBGAs/s1600/add_database.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="390" data-original-width="576" height="216" src="https://2.bp.blogspot.com/-RCkM0VPPPgU/WiMw7Cxqb4I/AAAAAAAABts/ptRPqzWrREsMgKp9cLhT7BnjIYaV_v8TQCLcBGAs/s320/add_database.png" width="320" /></a></div></li><li>Apabila database sudah terbuat , langkah selanjutnya buka ip freeBSD di laman browser , Nanti akan langsung menuju ke installasi wordpress , karena DocumentRootnya sudah di rubah . Di tampilan installasi pertama harus memilih bahasa terlebih dahulu<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-D1suRDxGIUc/WiMxENuXjpI/AAAAAAAABt0/gjXUUHdsmWUHEwcye3f6ay6vWkzgvGiNgCLcBGAs/s1600/wp_1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-D1suRDxGIUc/WiMxENuXjpI/AAAAAAAABt0/gjXUUHdsmWUHEwcye3f6ay6vWkzgvGiNgCLcBGAs/s320/wp_1.png" width="320" /></a></div></li><li>Di sini langsung saja Next<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-0nsLVvXWmcQ/WiMxJTxIuTI/AAAAAAAABt4/SAXeL8RloKk_xKu0Wf2wRKcY2riBIzpxACLcBGAs/s1600/wp_2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://2.bp.blogspot.com/-0nsLVvXWmcQ/WiMxJTxIuTI/AAAAAAAABt4/SAXeL8RloKk_xKu0Wf2wRKcY2riBIzpxACLcBGAs/s320/wp_2.png" width="320" /></a></div></li><li>Kemudian isikan database yang telah di buat tadi , dan yang lain di sesuaikan<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-1aJ6tXjJ2zk/WiMxPDKHPFI/AAAAAAAABt8/JqmNJFHCtXYU85KgCdSaADm0CY9RoU4xwCLcBGAs/s1600/wp_3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://4.bp.blogspot.com/-1aJ6tXjJ2zk/WiMxPDKHPFI/AAAAAAAABt8/JqmNJFHCtXYU85KgCdSaADm0CY9RoU4xwCLcBGAs/s320/wp_3.png" width="320" /></a></div></li><li>Langsung next saja<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-jnQ2xlbxp9o/WiMxUAT0Q3I/AAAAAAAABuA/-SrY0R23-WMnlmkitpVy73C0OrJo8QUSQCLcBGAs/s1600/wp_4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-jnQ2xlbxp9o/WiMxUAT0Q3I/AAAAAAAABuA/-SrY0R23-WMnlmkitpVy73C0OrJo8QUSQCLcBGAs/s320/wp_4.png" width="320" /></a></div></li><li>Disini Harus mengisi site title / judul dari wordpress nanti , Username untuk admin dan passwornya , passtikan passwordnya secure<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-KyFJIPtHxJU/WiMxZ5dLrSI/AAAAAAAABuE/WE5YVeGoCJMASpi_X2MKGjDmHGtYeE6jQCLcBGAs/s1600/wp_5.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-KyFJIPtHxJU/WiMxZ5dLrSI/AAAAAAAABuE/WE5YVeGoCJMASpi_X2MKGjDmHGtYeE6jQCLcBGAs/s320/wp_5.png" width="320" /></a></div></li><li>Ok langsung next saja<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-xO0tcYaKfug/WiMxf7qXomI/AAAAAAAABuI/g6ELkRibwiMJBP7P_cVqbNmQf1dhixhJACLcBGAs/s1600/wp_6.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://3.bp.blogspot.com/-xO0tcYaKfug/WiMxf7qXomI/AAAAAAAABuI/g6ELkRibwiMJBP7P_cVqbNmQf1dhixhJACLcBGAs/s320/wp_6.png" width="320" /></a></div></li><li>Jika penginstallan telah usai , maka otomatis akan masuk ke admin login wordpress , di sini isikan sesuai dengan user &amp; password yang telah di buat <br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-OGZtJA2Jsec/WiMx-0Z_OsI/AAAAAAAABuQ/Wu55WvkdN3MLjo1ta7tuQKAMezQlw6czwCLcBGAs/s1600/wp_7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-OGZtJA2Jsec/WiMx-0Z_OsI/AAAAAAAABuQ/Wu55WvkdN3MLjo1ta7tuQKAMezQlw6czwCLcBGAs/s320/wp_7.png" width="320" /></a></div></li><li>Ini Tampilan site admin dari wordpress<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-t2H4_AswFcw/WiMyEvTRS0I/AAAAAAAABuU/up7_lhH6zTIB8ETTZXNiwQWEffw8lUaNQCLcBGAs/s1600/wp_8.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-t2H4_AswFcw/WiMyEvTRS0I/AAAAAAAABuU/up7_lhH6zTIB8ETTZXNiwQWEffw8lUaNQCLcBGAs/s320/wp_8.png" width="320" /></a></div></li><li>Ini Tampilan untuk Client<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-jIMeGy7BwVM/WiMyKyDSJTI/AAAAAAAABuY/1y82AUgo40UMUOvD2F8cbfAjQMZcNfHFACLcBGAs/s1600/wp_9.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://3.bp.blogspot.com/-jIMeGy7BwVM/WiMyKyDSJTI/AAAAAAAABuY/1y82AUgo40UMUOvD2F8cbfAjQMZcNfHFACLcBGAs/s320/wp_9.png" width="320" /></a></div></li></ol><div><b>F.Refrensi</b><br /><ul style="text-align: left;"><li><a href="http://#" target="_blank">Ebook FreeBSD CMS Server.pdf</a>&nbsp;</li></ul></div></div>
-    
-        </div>
-    </section>
-
-    <footer class="post-full-footer">
-      <section class="author-card">
-        <img class="author-profile-image" src="/img/go.png" alt="Author" />
-        <section class="author-card-content">
-            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
-                <p>Pengguna Linux sebagai keperluan sehari hari</p>
-        </section>
-      </section>
-    </footer>
-</article>
-    
-    
-    
+  
+  
+  <p class="date">October 23, 2017</p>
+  
+  <div id="contentBody">
+    <div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-LIj37QzqE4o/WhWSpuWG5HI/AAAAAAAABlY/JgZ9rxbS8mMdLQ9Q3T70pwyGzNbN5MgCACLcBGAs/s1600/wordpress.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1600" data-original-width="1600" height="320" src="https://3.bp.blogspot.com/-LIj37QzqE4o/WhWSpuWG5HI/AAAAAAAABlY/JgZ9rxbS8mMdLQ9Q3T70pwyGzNbN5MgCACLcBGAs/s320/wordpress.png" width="320" /></a></div><br /><b>A.Pendahuluan</b><br /><ul style="text-align: left;"><li>WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi. Nama WordPress diusulkan oleh Christine Selleck, teman Matt Mullenweg. WordPress saat ini menjadi platform content management system (CMS) bagi beberapa situs web ternama seperti CNN, Reuters, The New York Times, TechCrunch, dan lainnya . <b><br /></b></li></ul><b>B.Latar Belakang</b><br /><ul style="text-align: left;"><li>Karena Wordpress Adalah aplikasi web yang opensource dan bisa di unduh gratis , maka saya menggunakan CMS ini untuk di install di server FreeBSD saya </li></ul><b>C.Maksud &amp; Tujuan</b><br /><ul style="text-align: left;"><li>Menginstall CMS wordpress di FreeBSD , dan mengkonfigurasinya </li></ul><b>D.Hal Hal Yang Di Butuhkan</b><br /><ul style="text-align: left;"><li>Virtualbox&nbsp;+ FreeBSD</li><li>Koneksi Internet </li></ul><b>E.Langkah langkah</b><br /><ol style="text-align: left;"><li>Pertama install wordpress dengan perintah <br /><blockquote class="tr_bq">pkg install wordpress</blockquote></li><li>Jika sudah selesai maka edit DocumentRoot di <i><b>/usr/local/etc/apache24/httpd.conf</b></i> yang semula <i><b>/usr/local/www/apache24/data</b></i> di ubah menjadi <i><b>/usr/local/www/wordpress<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-chclUtr7kJI/WiMwi2H99WI/AAAAAAAABtk/622KNkI2bVsyVbM1dBzKIWYCUF4PqxlwACLcBGAs/s1600/add%2Bwordpress%2Bpath.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="390" data-original-width="576" height="216" src="https://1.bp.blogspot.com/-chclUtr7kJI/WiMwi2H99WI/AAAAAAAABtk/622KNkI2bVsyVbM1dBzKIWYCUF4PqxlwACLcBGAs/s320/add%2Bwordpress%2Bpath.png" width="320" /></a></div></b></i></li><li>&nbsp;Selanjutnya masuk ke Directory<i><b> /usr/local/www/</b></i> , Ubah hak milik directory wordpress menjadi milik www dengan perintah <br /><blockquote class="tr_bq">chown -R www:www wordpress/</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-bWsSq4Q7yIM/WiMww8drSaI/AAAAAAAABto/W1H2c4qbRzQC7uR4sUdUGmME-egyDf2BACLcBGAs/s1600/chown.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="390" data-original-width="576" height="216" src="https://1.bp.blogspot.com/-bWsSq4Q7yIM/WiMww8drSaI/AAAAAAAABto/W1H2c4qbRzQC7uR4sUdUGmME-egyDf2BACLcBGAs/s320/chown.png" width="320" /></a></div></li><li>Karena tadi merubah konfigurasi apachenya maka alangkah baiknya apachenya di restart dengan perintah <br /><blockquote class="tr_bq">service apache24 restart</blockquote></li><li>Sebelum menginstall wordpress lebih lanjut , buatlah database terlebih dahulu . isi seperti gambar di bawah ini<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-RCkM0VPPPgU/WiMw7Cxqb4I/AAAAAAAABts/ptRPqzWrREsMgKp9cLhT7BnjIYaV_v8TQCLcBGAs/s1600/add_database.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="390" data-original-width="576" height="216" src="https://2.bp.blogspot.com/-RCkM0VPPPgU/WiMw7Cxqb4I/AAAAAAAABts/ptRPqzWrREsMgKp9cLhT7BnjIYaV_v8TQCLcBGAs/s320/add_database.png" width="320" /></a></div></li><li>Apabila database sudah terbuat , langkah selanjutnya buka ip freeBSD di laman browser , Nanti akan langsung menuju ke installasi wordpress , karena DocumentRootnya sudah di rubah . Di tampilan installasi pertama harus memilih bahasa terlebih dahulu<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-D1suRDxGIUc/WiMxENuXjpI/AAAAAAAABt0/gjXUUHdsmWUHEwcye3f6ay6vWkzgvGiNgCLcBGAs/s1600/wp_1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-D1suRDxGIUc/WiMxENuXjpI/AAAAAAAABt0/gjXUUHdsmWUHEwcye3f6ay6vWkzgvGiNgCLcBGAs/s320/wp_1.png" width="320" /></a></div></li><li>Di sini langsung saja Next<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-0nsLVvXWmcQ/WiMxJTxIuTI/AAAAAAAABt4/SAXeL8RloKk_xKu0Wf2wRKcY2riBIzpxACLcBGAs/s1600/wp_2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://2.bp.blogspot.com/-0nsLVvXWmcQ/WiMxJTxIuTI/AAAAAAAABt4/SAXeL8RloKk_xKu0Wf2wRKcY2riBIzpxACLcBGAs/s320/wp_2.png" width="320" /></a></div></li><li>Kemudian isikan database yang telah di buat tadi , dan yang lain di sesuaikan<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-1aJ6tXjJ2zk/WiMxPDKHPFI/AAAAAAAABt8/JqmNJFHCtXYU85KgCdSaADm0CY9RoU4xwCLcBGAs/s1600/wp_3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://4.bp.blogspot.com/-1aJ6tXjJ2zk/WiMxPDKHPFI/AAAAAAAABt8/JqmNJFHCtXYU85KgCdSaADm0CY9RoU4xwCLcBGAs/s320/wp_3.png" width="320" /></a></div></li><li>Langsung next saja<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-jnQ2xlbxp9o/WiMxUAT0Q3I/AAAAAAAABuA/-SrY0R23-WMnlmkitpVy73C0OrJo8QUSQCLcBGAs/s1600/wp_4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-jnQ2xlbxp9o/WiMxUAT0Q3I/AAAAAAAABuA/-SrY0R23-WMnlmkitpVy73C0OrJo8QUSQCLcBGAs/s320/wp_4.png" width="320" /></a></div></li><li>Disini Harus mengisi site title / judul dari wordpress nanti , Username untuk admin dan passwornya , passtikan passwordnya secure<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-KyFJIPtHxJU/WiMxZ5dLrSI/AAAAAAAABuE/WE5YVeGoCJMASpi_X2MKGjDmHGtYeE6jQCLcBGAs/s1600/wp_5.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-KyFJIPtHxJU/WiMxZ5dLrSI/AAAAAAAABuE/WE5YVeGoCJMASpi_X2MKGjDmHGtYeE6jQCLcBGAs/s320/wp_5.png" width="320" /></a></div></li><li>Ok langsung next saja<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-xO0tcYaKfug/WiMxf7qXomI/AAAAAAAABuI/g6ELkRibwiMJBP7P_cVqbNmQf1dhixhJACLcBGAs/s1600/wp_6.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://3.bp.blogspot.com/-xO0tcYaKfug/WiMxf7qXomI/AAAAAAAABuI/g6ELkRibwiMJBP7P_cVqbNmQf1dhixhJACLcBGAs/s320/wp_6.png" width="320" /></a></div></li><li>Jika penginstallan telah usai , maka otomatis akan masuk ke admin login wordpress , di sini isikan sesuai dengan user &amp; password yang telah di buat <br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-OGZtJA2Jsec/WiMx-0Z_OsI/AAAAAAAABuQ/Wu55WvkdN3MLjo1ta7tuQKAMezQlw6czwCLcBGAs/s1600/wp_7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-OGZtJA2Jsec/WiMx-0Z_OsI/AAAAAAAABuQ/Wu55WvkdN3MLjo1ta7tuQKAMezQlw6czwCLcBGAs/s320/wp_7.png" width="320" /></a></div></li><li>Ini Tampilan site admin dari wordpress<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-t2H4_AswFcw/WiMyEvTRS0I/AAAAAAAABuU/up7_lhH6zTIB8ETTZXNiwQWEffw8lUaNQCLcBGAs/s1600/wp_8.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://1.bp.blogspot.com/-t2H4_AswFcw/WiMyEvTRS0I/AAAAAAAABuU/up7_lhH6zTIB8ETTZXNiwQWEffw8lUaNQCLcBGAs/s320/wp_8.png" width="320" /></a></div></li><li>Ini Tampilan untuk Client<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-jIMeGy7BwVM/WiMyKyDSJTI/AAAAAAAABuY/1y82AUgo40UMUOvD2F8cbfAjQMZcNfHFACLcBGAs/s1600/wp_9.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="1364" height="152" src="https://3.bp.blogspot.com/-jIMeGy7BwVM/WiMyKyDSJTI/AAAAAAAABuY/1y82AUgo40UMUOvD2F8cbfAjQMZcNfHFACLcBGAs/s320/wp_9.png" width="320" /></a></div></li></ol><div><b>F.Refrensi</b><br /><ul style="text-align: left;"><li><a href="http://#" target="_blank">Ebook FreeBSD CMS Server.pdf</a>&nbsp;</li></ul></div></div>
 
   </div>
-</main>
-
-
-<aside class="read-next outer">
-  <div class="inner">
-    <div class="read-next-feed">      
-      
-<article class="read-next-card" 
-            style="background-image: url(/img/header-blog.jpg);" >
-    <header class="read-next-card-header">
-        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
-        
-        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
-    </header>
-    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
-    </div>
-
-    <div class="read-next-card-content">
-      
-        <ul>
-          <li><a href="/post/membuat-vpn-pptp-server-di-mikrotik/">Membuat VPN (PPTP) Server di MikroTik </a></li>            
-        
-          <li><a href="/post/workshop-freebsd-bersama-bapak-andy-hidayat-m1m1n/">Workshop FreeBSD Bersama Bapak Andy Hidayat | m1m1n</a></li>            
-        
-          <li><a href="/post/routing-dynamic-ospf/">Routing Dynamic OSPF</a></li>            
-        
-          <li><a href="/post/mengganti-template-hostpot-di-mikrotik/">Mengganti Template Hostpot di Mikrotik</a></li>            
-        </ul>
-    </div>
-    <footer class="read-next-card-footer">
-      
-        <a href="/tags/blc/">See all related posts →</a>
-    </footer>
-</article>
-
-
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="/post/membuat-http-server-sederhana-dengan-python/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="/post/membuat-http-server-sederhana-dengan-python/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #BLC  </span>
-              
-              <h2 class="post-card-title">Membuat HTTP server sederhana dengan python</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>A.Pendahuluan
-Python adalah bahasa pemrograman interpretatif multiguna dengan filosofi perancangan yang berfokus pada tingkat keterbacaan kode.Python diklaim sebagai bahasa yang menggabungkan kapabilitas, kemampuan, dengan sintaksis kode yang sangat jelas, dan dilengkapi dengan fungsionalitas pustaka standar yang besar serta komprehensif. B.Latar Belakang
-Karena kebetulan&nbsp; saya habis install ulang , dan belum menginstall apache2 untuk webserver , maka saya menggunakan python sebagai service httpnyaC.Maksud &amp; Tujuan
-Membuat service http sederhana menggunakan python D. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="/img/go.png" alt="Author" />
-          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
-      </footer>
-    </div>
-</article>
-      
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="/post/install-konfigurasi-ekstensi-php5-di-freebsd/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="/post/install-konfigurasi-ekstensi-php5-di-freebsd/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #BLC  </span>
-              
-              <h2 class="post-card-title">Install &#43; Konfigurasi &#43; ekstensi php5 di freeBSD</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>A.Pendahuluan
-PHP: Hypertext Preprocessor adalah bahasa skrip yang dapat ditanamkan atau disisipkan ke dalam HTML. PHP banyak dipakai untuk memprogram situs web dinamis. PHP dapat digunakan untuk membangun sebuah CMS. 
-B.Latar Belakang
-Sebelum Menginstall CMS / Aplikasi web , Kita Harus menginstall PHP beserta extensi yang di butuhkan , agar penginstallan CMS / Aplikasi Web Berjalan Dengan Baik C.Maksud &amp; Tujuan
-Menginstall PHP&nbsp;+ Extensinya di FreeBSD untuk keperluan penginstallan aplikasi web / CMS D. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="/img/go.png" alt="Author" />
-          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
-      </footer>
-    </div>
-</article>
-      
-    </div>
-  </div>
-</aside>
-
-<div class="floating-header">
-  <div class="floating-header-logo">
-    <a href="/">
-      <img src="/img/header-blog.png" alt="" />
-      <span></span>
-    </a>
-  </div>
-  <span class="floating-header-divider">&mdash;</span>
-  <div class="floating-header-title">Install CMS Di Wordpress &#43; Konfigurasi di freeBSD</div>
-  <div class="floating-header-share">
-    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
-    </div>
-    
-    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Install%20CMS%20Di%20Wordpress%20%2b%20Konfigurasi%20di%20freeBSD&amp;url=%2fpost%2finstall-cms-di-wordpress-konfigurasi-di-freebsd%2f"
-          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
-      </a>
-      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2finstall-cms-di-wordpress-konfigurasi-di-freebsd%2f"
-          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
-      </a>
-  </div>
-
-  <progress class="progress" value="0">
-    <div class="progress-container">
-      <span class="progress-bar"></span>
-    </div>
-  </progress>
-</div>
+  <footer>
+  <p>
+  &copy; 2019 Erwin Kurniawan.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
+  </p>
+</footer><script src="https://example.com/js/custom.js"></script>
 
 
 
-<footer class="site-footer outer">
-  <div class="site-footer-content inner">
-    <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">rootshaxor</a> © 2019 <br>
-      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
-    </section>
-    <nav class="site-footer-nav">
-        <a href="/">Latest Posts</a>
-        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
-        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
-        
-        
-    </nav>  
-  </div>
-</footer>
-
-</div>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-    <script>
-
-
-
-
-
-$(document).ready(function () {
-    
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-    
-
-    var progressBar = document.querySelector('progress');
-    var header = document.querySelector('.floating-header');
-    var title = document.querySelector('.post-full-title');
-
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
-    var ticking = false;
-
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-        requestTick();
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(update);
-        }
-        ticking = true;
-    }
-
-    function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
-
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('resize', onResize, false);
-
-    update();
-});
-</script>
-</body></html>
+  </body>
+</html>

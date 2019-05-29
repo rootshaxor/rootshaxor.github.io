@@ -1,380 +1,102 @@
 <!DOCTYPE html>
-<html lang="en-US" />
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<html>
+  <head>
+  <title>
+      
+          Membuat virtualhost di debian 8.6  - Mojokerto FOSS
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="map[]" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://example.com/img/go.png">
 
-    <title>Membuat virtualhost di debian 8.6  &middot; </title>
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://example.com/style.min.a6cab246517742ad1189b209575fc61556550e663cdfe02a0aab0632b39e978b.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/custom.css">
+  
 
-    <link rel="shortcut icon" href="/img/go.png" />
-    <link rel="canonical" href="/post/membuat-virtualhost-di-debian-8.6/" />
+  <meta property="og:title" content="Membuat virtualhost di debian 8.6 " />
+<meta property="og:description" content="A.Pendahuluan
+Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan server). Hal ini memungkinkan satu server untuk berbagi sumber dayanya, seperti siklus memori dan prosesor, tanpa memerlukan semua layanan yang diberikan untuk menggunakan nama host yang sama. Istilah virtual hosting biasanya digunakan dalam referensi ke server web namun prinsipnya terbawa ke layanan internet lainnya. 
+B.Latar Belakang
+Karena alasan penghematan sumber daya dari server maka alangkah baiknya kita menggunakan virtual host , ini sangat membantu dalam penghematan dari segi fisik server maupun aplikasi yang di install , karena ini hanya memerlukan 1 fisik , dengan DocumentRoot yang banyak" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/membuat-virtualhost-di-debian-8.6/" />
+<meta property="article:published_time" content="2017-11-01T09:08:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-11-01T09:08:00&#43;00:00"/>
 
-     <meta name="description" content="A.Pendahuluan
-Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan ser" /> 
+<meta itemprop="name" content="Membuat virtualhost di debian 8.6 ">
+<meta itemprop="description" content="A.Pendahuluan
+Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan server). Hal ini memungkinkan satu server untuk berbagi sumber dayanya, seperti siklus memori dan prosesor, tanpa memerlukan semua layanan yang diberikan untuk menggunakan nama host yang sama. Istilah virtual hosting biasanya digunakan dalam referensi ke server web namun prinsipnya terbawa ke layanan internet lainnya. 
+B.Latar Belakang
+Karena alasan penghematan sumber daya dari server maka alangkah baiknya kita menggunakan virtual host , ini sangat membantu dalam penghematan dari segi fisik server maupun aplikasi yang di install , karena ini hanya memerlukan 1 fisik , dengan DocumentRoot yang banyak">
 
-     
+
+<meta itemprop="datePublished" content="2017-11-01T09:08:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-11-01T09:08:00&#43;00:00" />
+<meta itemprop="wordCount" content="234">
+
+
+
+<meta itemprop="keywords" content="BLC," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Membuat virtualhost di debian 8.6 "/>
+<meta name="twitter:description" content="A.Pendahuluan
+Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan server). Hal ini memungkinkan satu server untuk berbagi sumber dayanya, seperti siklus memori dan prosesor, tanpa memerlukan semua layanan yang diberikan untuk menggunakan nama host yang sama. Istilah virtual hosting biasanya digunakan dalam referensi ke server web namun prinsipnya terbawa ke layanan internet lainnya. 
+B.Latar Belakang
+Karena alasan penghematan sumber daya dari server maka alangkah baiknya kita menggunakan virtual host , ini sangat membantu dalam penghematan dari segi fisik server maupun aplikasi yang di install , karena ini hanya memerlukan 1 fisik , dengan DocumentRoot yang banyak"/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
     
-    <meta name="twitter:card" content="summary"/>
-    
- 
-    <meta name="twitter:title" content="Membuat virtualhost di debian 8.6 "/>
-    <meta name="twitter:description" content="A.Pendahuluan
-Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan ser"/>
-    <meta name="twitter:url" content="/post/membuat-virtualhost-di-debian-8.6/" />
-    <meta name="twitter:site" content="@rootshaxor"/>
-
-    <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Membuat virtualhost di debian 8.6  &middot; Erwin Kurniawan Blog&#39;s" />
-    <meta property="og:url" content="/post/membuat-virtualhost-di-debian-8.6/" />
-    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
-
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="A.Pendahuluan
-Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan ser" />
-
-    <meta property="article:published_time" content="2017-11-01T09:08:00Z" />
-    <meta property="article:tag" content="BLC" />
-
-    <meta property="og:image" content="/img/header-blog.jpg"/>
-
-    <meta name="generator" content="Hugo 0.54.0" />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
-    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
-    
-
-     
-
-</head>
-
-
-<body class="post-template">
-  <div class="site-wrapper"> 
-
-<header class="site-header outer">
-  <div class="inner">
-    <nav class="site-nav">
-      <div class="site-nav-left">
-        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
-
-        <ul class="nav" role="menu">
-        
-        
-        
-            <li class="" role="menuitem">
-              <a href="/">Home</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/about/">About me</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/tags/blc">BLC Telkom</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/tags/linux/">Linux</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/tags/programming/">Programming</a>
-            </li>
-        
-            <li class="" role="menuitem">
-              <a href="/categories/">Categories</a>
-            </li>
-        
-      </ul></div>
-
-      <div class="site-nav-right">
-        <div class="social-links">
-                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
-
-                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
-
-                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-
-                    
-
-                    
-        </div>  
-            
-      </div>
-
-    </nav>  
-
+  <h1>Membuat virtualhost di debian 8.6 </h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://example.com//img/tux.jpg">
+    <a href="https://example.com/"><img src="https://example.com//img/avatar-border.svg" }}></a>
   </div>
+  
+  <h2><a class="author" href="https://example.com/">Erwin Kurniawan</a></h2>
 </header>
 
-<main id="site-main" class="site-main outer" role="main">
-  <div class="inner">
-    
-      <article class="post-full post"> 
-    <header class="post-full-header">
-        <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2017-11-01">1 November 2017</time>
-                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
-        </section>
-        <h1 class="post-full-title">Membuat virtualhost di debian 8.6 </h1>
-    </header>
-    
-    <figure class="post-full-image" style="background-image: url(/defimg/1.jpg)">
-    </figure>
-
-    <section class="post-full-content">
-        <div class="kg-card-markdown">
-        <div dir="ltr" style="text-align: left;" trbidi="on"><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-ZYocuUr0JEw/WhWCigFs64I/AAAAAAAABkE/S9Bi1eWLoo8BDyIOyvAUiWugBZRMuP0oQCLcBGAs/s1600/vhost.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="409" data-original-width="512" height="255" src="https://4.bp.blogspot.com/-ZYocuUr0JEw/WhWCigFs64I/AAAAAAAABkE/S9Bi1eWLoo8BDyIOyvAUiWugBZRMuP0oQCLcBGAs/s320/vhost.png" width="320" /></a></div><b>A.Pendahuluan</b><br /><ul style="text-align: left;"><li>Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan server). Hal ini memungkinkan satu server untuk berbagi sumber dayanya, seperti siklus memori dan prosesor, tanpa memerlukan semua layanan yang diberikan untuk menggunakan nama host yang sama. Istilah virtual hosting biasanya digunakan dalam referensi ke server web namun prinsipnya terbawa ke layanan internet lainnya. <b><br /></b></li></ul><b>B.Latar Belakang</b><br /><ul style="text-align: left;"><li>Karena alasan penghematan sumber daya dari server maka alangkah baiknya kita menggunakan virtual host , ini sangat membantu dalam penghematan dari segi fisik server maupun aplikasi yang di install , karena ini hanya memerlukan 1 fisik , dengan DocumentRoot yang banyak <b><br /></b></li></ul><b>C.Maksud &amp; Tujuan</b><br /><ul style="text-align: left;"><li>Membuat Virtualhost </li></ul><b>D.Hal Hal Yang Di Butuhkan</b><br /><ul style="text-align: left;"><li>Server&nbsp;</li><li>Apache2</li><li>Bind9 </li></ul><b>E.Langkah langkah</b><br /><ol style="text-align: left;"><li>Sebelum Membuat virtualhost ,pastikan sudah menginstall DNS server &amp; Web server&nbsp;</li><li>Pertama tambahkan nama subdomain di bind , ini hanya di tambahkan di db.192 &amp; db.roots&nbsp;</li><li>edit db.roots , dengan perintah <i><b>nano /etc/bind/db.roots<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-4nZ2K3D762U/Wh54nTjrswI/AAAAAAAABqg/Ul8_uAe89dwjFMJbUh7Lx4MHJ_vV_DHOgCLcBGAs/s1600/add_db_roots.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://2.bp.blogspot.com/-4nZ2K3D762U/Wh54nTjrswI/AAAAAAAABqg/Ul8_uAe89dwjFMJbUh7Lx4MHJ_vV_DHOgCLcBGAs/s320/add_db_roots.png" width="320" /></a></div></b></i></li><li>edit db.192 , dengan perintah <i><b>nano /etc/bind/db.192<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-IRX8-1-IN6g/Wh54uI-U1oI/AAAAAAAABqk/UQ2k5Gg5ACoibNGPZRli5UZylElxK7gugCLcBGAs/s1600/add_db_192.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://2.bp.blogspot.com/-IRX8-1-IN6g/Wh54uI-U1oI/AAAAAAAABqk/UQ2k5Gg5ACoibNGPZRli5UZylElxK7gugCLcBGAs/s320/add_db_192.png" width="320" /></a></div></b></i></li><li>kemudian masuk ke directory /etc/apache2/site-available , dengan perintah <i><b>cd /etc/apache2/site-available/</b></i></li><li>Selanjutnya copy 000-default.conf ke indra.conf , dengan perintah <i><b>cp 000-default.conf indra.conf&nbsp;<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-CY5bfh5Oxu4/Wh540wpPbLI/AAAAAAAABqo/YK1gsNQY_ZQ3Kh8fX08OomSDE20qmo6GgCLcBGAs/s1600/cp.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://2.bp.blogspot.com/-CY5bfh5Oxu4/Wh540wpPbLI/AAAAAAAABqo/YK1gsNQY_ZQ3Kh8fX08OomSDE20qmo6GgCLcBGAs/s320/cp.png" width="320" /></a></div></b></i></li><li>Setelah di copy , edit indra.conf seperti di bawah<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-KkbdR_THx04/Wh55ClDRk3I/AAAAAAAABqs/1HHYnxRAeiMc5pS00sEJfjmbFp_XH7spwCLcBGAs/s1600/indra-conf.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://1.bp.blogspot.com/-KkbdR_THx04/Wh55ClDRk3I/AAAAAAAABqs/1HHYnxRAeiMc5pS00sEJfjmbFp_XH7spwCLcBGAs/s320/indra-conf.png" width="320" /></a></div></li><li>kemudian enable-kan indra.conf , dengan perintah <i><b>a2ensite indra.conf<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-uQ73JADN6ao/Wh55JPPbxJI/AAAAAAAABq0/-PJKDjPiaWQ4USatM9svYwEg9o6Pxlw0wCLcBGAs/s1600/a2ensite.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://1.bp.blogspot.com/-uQ73JADN6ao/Wh55JPPbxJI/AAAAAAAABq0/-PJKDjPiaWQ4USatM9svYwEg9o6Pxlw0wCLcBGAs/s320/a2ensite.png" width="320" /></a></div></b></i></li><li>buat file index.html di /home/indra/public_html/ , dengan perintah <i><b>nano /home/indra/public_html/index.html </b></i>dan isikan seperti di bawah<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-eI7fPTvs6EQ/Wh55VbaqNLI/AAAAAAAABq4/m81gShxgmGIbnko8hWxZnE_Nb_Hn2PevgCLcBGAs/s1600/add_html.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="386" data-original-width="576" height="214" src="https://2.bp.blogspot.com/-eI7fPTvs6EQ/Wh55VbaqNLI/AAAAAAAABq4/m81gShxgmGIbnko8hWxZnE_Nb_Hn2PevgCLcBGAs/s320/add_html.png" width="320" /></a></div></li><li>Setelah itu restart service dns dan webserver-nya<br /><ul><li>service bind9 restart</li><li>service apache2 restart</li></ul></li><li>Untuk hasil bisa di lihat di browser dengan subdomain yang telah di buat<div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-fslNvVk2C0w/Wh55c17VxBI/AAAAAAAABq8/FDZ8blGVvMkPBxGisttQ5ovbKh5jLYeigCLcBGAs/s1600/berhasil.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="689" data-original-width="1365" height="161" src="https://3.bp.blogspot.com/-fslNvVk2C0w/Wh55c17VxBI/AAAAAAAABq8/FDZ8blGVvMkPBxGisttQ5ovbKh5jLYeigCLcBGAs/s320/berhasil.png" width="320" /></a></div></li></ol><b>F.Refrensi</b><br /><ul style="text-align: left;"><li>Buku Konfigurasi Debian Versi BLC.pdf </li></ul></div>
-    
-        </div>
-    </section>
-
-    <footer class="post-full-footer">
-      <section class="author-card">
-        <img class="author-profile-image" src="/img/go.png" alt="Author" />
-        <section class="author-card-content">
-            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
-                <p>Pengguna Linux sebagai keperluan sehari hari</p>
-        </section>
-      </section>
-    </footer>
-</article>
-    
-    
-    
+  
+  
+  <p class="date">November 1, 2017</p>
+  
+  <div id="contentBody">
+    <div dir="ltr" style="text-align: left;" trbidi="on"><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-ZYocuUr0JEw/WhWCigFs64I/AAAAAAAABkE/S9Bi1eWLoo8BDyIOyvAUiWugBZRMuP0oQCLcBGAs/s1600/vhost.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="409" data-original-width="512" height="255" src="https://4.bp.blogspot.com/-ZYocuUr0JEw/WhWCigFs64I/AAAAAAAABkE/S9Bi1eWLoo8BDyIOyvAUiWugBZRMuP0oQCLcBGAs/s320/vhost.png" width="320" /></a></div><b>A.Pendahuluan</b><br /><ul style="text-align: left;"><li>Virtual hosting adalah metode untuk hosting beberapa nama domain (dengan penanganan terpisah dari setiap nama) pada satu server (atau kumpulan server). Hal ini memungkinkan satu server untuk berbagi sumber dayanya, seperti siklus memori dan prosesor, tanpa memerlukan semua layanan yang diberikan untuk menggunakan nama host yang sama. Istilah virtual hosting biasanya digunakan dalam referensi ke server web namun prinsipnya terbawa ke layanan internet lainnya. <b><br /></b></li></ul><b>B.Latar Belakang</b><br /><ul style="text-align: left;"><li>Karena alasan penghematan sumber daya dari server maka alangkah baiknya kita menggunakan virtual host , ini sangat membantu dalam penghematan dari segi fisik server maupun aplikasi yang di install , karena ini hanya memerlukan 1 fisik , dengan DocumentRoot yang banyak <b><br /></b></li></ul><b>C.Maksud &amp; Tujuan</b><br /><ul style="text-align: left;"><li>Membuat Virtualhost </li></ul><b>D.Hal Hal Yang Di Butuhkan</b><br /><ul style="text-align: left;"><li>Server&nbsp;</li><li>Apache2</li><li>Bind9 </li></ul><b>E.Langkah langkah</b><br /><ol style="text-align: left;"><li>Sebelum Membuat virtualhost ,pastikan sudah menginstall DNS server &amp; Web server&nbsp;</li><li>Pertama tambahkan nama subdomain di bind , ini hanya di tambahkan di db.192 &amp; db.roots&nbsp;</li><li>edit db.roots , dengan perintah <i><b>nano /etc/bind/db.roots<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-4nZ2K3D762U/Wh54nTjrswI/AAAAAAAABqg/Ul8_uAe89dwjFMJbUh7Lx4MHJ_vV_DHOgCLcBGAs/s1600/add_db_roots.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://2.bp.blogspot.com/-4nZ2K3D762U/Wh54nTjrswI/AAAAAAAABqg/Ul8_uAe89dwjFMJbUh7Lx4MHJ_vV_DHOgCLcBGAs/s320/add_db_roots.png" width="320" /></a></div></b></i></li><li>edit db.192 , dengan perintah <i><b>nano /etc/bind/db.192<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-IRX8-1-IN6g/Wh54uI-U1oI/AAAAAAAABqk/UQ2k5Gg5ACoibNGPZRli5UZylElxK7gugCLcBGAs/s1600/add_db_192.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://2.bp.blogspot.com/-IRX8-1-IN6g/Wh54uI-U1oI/AAAAAAAABqk/UQ2k5Gg5ACoibNGPZRli5UZylElxK7gugCLcBGAs/s320/add_db_192.png" width="320" /></a></div></b></i></li><li>kemudian masuk ke directory /etc/apache2/site-available , dengan perintah <i><b>cd /etc/apache2/site-available/</b></i></li><li>Selanjutnya copy 000-default.conf ke indra.conf , dengan perintah <i><b>cp 000-default.conf indra.conf&nbsp;<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-CY5bfh5Oxu4/Wh540wpPbLI/AAAAAAAABqo/YK1gsNQY_ZQ3Kh8fX08OomSDE20qmo6GgCLcBGAs/s1600/cp.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://2.bp.blogspot.com/-CY5bfh5Oxu4/Wh540wpPbLI/AAAAAAAABqo/YK1gsNQY_ZQ3Kh8fX08OomSDE20qmo6GgCLcBGAs/s320/cp.png" width="320" /></a></div></b></i></li><li>Setelah di copy , edit indra.conf seperti di bawah<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-KkbdR_THx04/Wh55ClDRk3I/AAAAAAAABqs/1HHYnxRAeiMc5pS00sEJfjmbFp_XH7spwCLcBGAs/s1600/indra-conf.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://1.bp.blogspot.com/-KkbdR_THx04/Wh55ClDRk3I/AAAAAAAABqs/1HHYnxRAeiMc5pS00sEJfjmbFp_XH7spwCLcBGAs/s320/indra-conf.png" width="320" /></a></div></li><li>kemudian enable-kan indra.conf , dengan perintah <i><b>a2ensite indra.conf<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-uQ73JADN6ao/Wh55JPPbxJI/AAAAAAAABq0/-PJKDjPiaWQ4USatM9svYwEg9o6Pxlw0wCLcBGAs/s1600/a2ensite.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="388" data-original-width="582" height="213" src="https://1.bp.blogspot.com/-uQ73JADN6ao/Wh55JPPbxJI/AAAAAAAABq0/-PJKDjPiaWQ4USatM9svYwEg9o6Pxlw0wCLcBGAs/s320/a2ensite.png" width="320" /></a></div></b></i></li><li>buat file index.html di /home/indra/public_html/ , dengan perintah <i><b>nano /home/indra/public_html/index.html </b></i>dan isikan seperti di bawah<div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-eI7fPTvs6EQ/Wh55VbaqNLI/AAAAAAAABq4/m81gShxgmGIbnko8hWxZnE_Nb_Hn2PevgCLcBGAs/s1600/add_html.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="386" data-original-width="576" height="214" src="https://2.bp.blogspot.com/-eI7fPTvs6EQ/Wh55VbaqNLI/AAAAAAAABq4/m81gShxgmGIbnko8hWxZnE_Nb_Hn2PevgCLcBGAs/s320/add_html.png" width="320" /></a></div></li><li>Setelah itu restart service dns dan webserver-nya<br /><ul><li>service bind9 restart</li><li>service apache2 restart</li></ul></li><li>Untuk hasil bisa di lihat di browser dengan subdomain yang telah di buat<div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-fslNvVk2C0w/Wh55c17VxBI/AAAAAAAABq8/FDZ8blGVvMkPBxGisttQ5ovbKh5jLYeigCLcBGAs/s1600/berhasil.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="689" data-original-width="1365" height="161" src="https://3.bp.blogspot.com/-fslNvVk2C0w/Wh55c17VxBI/AAAAAAAABq8/FDZ8blGVvMkPBxGisttQ5ovbKh5jLYeigCLcBGAs/s320/berhasil.png" width="320" /></a></div></li></ol><b>F.Refrensi</b><br /><ul style="text-align: left;"><li>Buku Konfigurasi Debian Versi BLC.pdf </li></ul></div>
 
   </div>
-</main>
-
-
-<aside class="read-next outer">
-  <div class="inner">
-    <div class="read-next-feed">      
-      
-<article class="read-next-card" 
-            style="background-image: url(/img/header-blog.jpg);" >
-    <header class="read-next-card-header">
-        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
-        
-        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
-    </header>
-    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
-    </div>
-
-    <div class="read-next-card-content">
-      
-        <ul>
-          <li><a href="/post/install-lamp-di-centos-7/">Install LAMP Di CentOS 7</a></li>            
-        
-                      
-        
-          <li><a href="/post/routing-and-swicting-chapter-2-section-2.3-2.4/">Routing And Swicting | Chapter 2 section 2.3 - 2.4</a></li>            
-        
-          <li><a href="/post/menghubungka-3-router-mikrotik-dengan-rip/"> Menghubungka 3 Router Mikrotik dengan RIP</a></li>            
-        
-          <li><a href="/post/konsep-wireless/">Konsep Wireless</a></li>            
-        </ul>
-    </div>
-    <footer class="read-next-card-footer">
-      
-        <a href="/tags/blc/">See all related posts →</a>
-    </footer>
-</article>
-
-
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="/post/management-user-di-proxmox/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="/post/management-user-di-proxmox/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #BLC  </span>
-              
-              <h2 class="post-card-title">Management User di Proxmox</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>A.Pendahulan
-Management user adalah pengelompokan hak akses / hak milik setiap user , ini sangat berguna bagi kinerja sistemB.Latar Belakang
-Karena Pengguna VM Saya Di proxmox banyak , dan setiap user akan masuk di proxmox dengan user "root" , maka saya menggunakan management user agar setiap user masuk di proxmox dengan usernya sendiri dan vm yang di akses hanya vm-nya sendiri C.Maksud &amp;&nbsp; Tujuan
-Membuat dan mengatur hak akses user di proxmox (Management User) D. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="/img/go.png" alt="Author" />
-          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
-      </footer>
-    </div>
-</article>
-      
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="/post/konfigurasi-dns-server-di-debian-8.6/">
-      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="/post/konfigurasi-dns-server-di-debian-8.6/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #BLC  </span>
-              
-              <h2 class="post-card-title">Konfigurasi DNS Server Di Debian 8.6</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>A.Pendahuluan
-DNS adalah sebuah sistem yang menyimpan informasi tentang nama host ataupun nama domain dalam bentuk basis data tersebar (distributed database) di dalam jaringan komputer, misalkan: Internet. DNS menyediakan alamat IP untuk setiap nama host dan mendata setiap server transmisi surat (mail exchange server) yang menerima surel (email) untuk setiap domain. Menurut browser Google Chrome, DNS adalah layanan jaringan yang menerjemahkan nama situs web menjadi alamat internet. B.Latar Belakang ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="/img/go.png" alt="Author" />
-          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
-      </footer>
-    </div>
-</article>
-      
-    </div>
-  </div>
-</aside>
-
-<div class="floating-header">
-  <div class="floating-header-logo">
-    <a href="/">
-      <img src="/img/header-blog.png" alt="" />
-      <span></span>
-    </a>
-  </div>
-  <span class="floating-header-divider">&mdash;</span>
-  <div class="floating-header-title">Membuat virtualhost di debian 8.6 </div>
-  <div class="floating-header-share">
-    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
-    </div>
-    
-    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Membuat%20virtualhost%20di%20debian%208.6%20&amp;url=%2fpost%2fmembuat-virtualhost-di-debian-8.6%2f"
-          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
-      </a>
-      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fmembuat-virtualhost-di-debian-8.6%2f"
-          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
-      </a>
-  </div>
-
-  <progress class="progress" value="0">
-    <div class="progress-container">
-      <span class="progress-bar"></span>
-    </div>
-  </progress>
-</div>
+  <footer>
+  <p>
+  &copy; 2019 Erwin Kurniawan.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
+  </p>
+</footer><script src="https://example.com/js/custom.js"></script>
 
 
 
-<footer class="site-footer outer">
-  <div class="site-footer-content inner">
-    <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">rootshaxor</a> © 2019 <br>
-      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
-    </section>
-    <nav class="site-footer-nav">
-        <a href="/">Latest Posts</a>
-        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
-        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
-        
-        
-    </nav>  
-  </div>
-</footer>
-
-</div>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-    <script>
-
-
-
-
-
-$(document).ready(function () {
-    
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-    
-
-    var progressBar = document.querySelector('progress');
-    var header = document.querySelector('.floating-header');
-    var title = document.querySelector('.post-full-title');
-
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
-    var ticking = false;
-
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-        requestTick();
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(update);
-        }
-        ticking = true;
-    }
-
-    function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
-
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('resize', onResize, false);
-
-    update();
-});
-</script>
-</body></html>
+  </body>
+</html>
