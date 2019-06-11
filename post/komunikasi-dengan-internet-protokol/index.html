@@ -1,113 +1,386 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <title>
-      
-          Komunikasi Dengan Internet Protokol - Mojokerto FOSS
-      
-  </title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="map[]" />
-  <link rel="shortcut icon" type="image/x-icon" href="https://rootshaxor.github.io/img/go.png">
+<html lang="en-US" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="https://rootshaxor.github.io/style.min.a6cab246517742ad1189b209575fc61556550e663cdfe02a0aab0632b39e978b.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Komunikasi Dengan Internet Protokol &middot; </title>
 
-  
-  
-  <link rel="stylesheet" href="https://rootshaxor.github.io/css/custom.css">
-  
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta property="og:title" content="Komunikasi Dengan Internet Protokol" />
-<meta property="og:description" content="A. PENDAHULUAN
+    <link rel="shortcut icon" href="/img/go.png" />
+    <link rel="canonical" href="/post/komunikasi-dengan-internet-protokol/" />
+
+     <meta name="description" content="A. PENDAHULUAN
 
 1. Pengertian
-VoIP adalah singkatan dari Voice over Internet Protocol. Sering kita kenal dengan istilah Internet telephony, IP Telephony, atau Digital Phone. Proses pengiriman suara pada VoIP adalah dengan cara pengiriman suara melalui protokol internet (IP). Sehingga dengan teknologi VoIP ini memungkinkan percakapan suara jarak jauh melalui media internet. Data suara diubah menjadi kode digital dan dialirkan melalui jaringan yang mengirimkan paket-paket data, dan bukan lewat sirkuit analog telephone biasa (Diunduh dari Wikipedia)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://rootshaxor.github.io/post/komunikasi-dengan-internet-protokol/" />
-<meta property="article:published_time" content="2017-11-03T14:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-11-03T14:00:00&#43;00:00"/>
+VoIP adalah singkatan dari Voice over Internet Protocol. Sering kita kenal dengan istilah Internet telephony, IP Telephony, atau D" /> 
 
-<meta itemprop="name" content="Komunikasi Dengan Internet Protokol">
-<meta itemprop="description" content="A. PENDAHULUAN
-
-1. Pengertian
-VoIP adalah singkatan dari Voice over Internet Protocol. Sering kita kenal dengan istilah Internet telephony, IP Telephony, atau Digital Phone. Proses pengiriman suara pada VoIP adalah dengan cara pengiriman suara melalui protokol internet (IP). Sehingga dengan teknologi VoIP ini memungkinkan percakapan suara jarak jauh melalui media internet. Data suara diubah menjadi kode digital dan dialirkan melalui jaringan yang mengirimkan paket-paket data, dan bukan lewat sirkuit analog telephone biasa (Diunduh dari Wikipedia).">
-
-
-<meta itemprop="datePublished" content="2017-11-03T14:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-11-03T14:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="821">
-
-
-
-<meta itemprop="keywords" content="BLC," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Komunikasi Dengan Internet Protokol"/>
-<meta name="twitter:description" content="A. PENDAHULUAN
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Komunikasi Dengan Internet Protokol"/>
+    <meta name="twitter:description" content="A. PENDAHULUAN
 
 1. Pengertian
-VoIP adalah singkatan dari Voice over Internet Protocol. Sering kita kenal dengan istilah Internet telephony, IP Telephony, atau Digital Phone. Proses pengiriman suara pada VoIP adalah dengan cara pengiriman suara melalui protokol internet (IP). Sehingga dengan teknologi VoIP ini memungkinkan percakapan suara jarak jauh melalui media internet. Data suara diubah menjadi kode digital dan dialirkan melalui jaringan yang mengirimkan paket-paket data, dan bukan lewat sirkuit analog telephone biasa (Diunduh dari Wikipedia)."/>
+VoIP adalah singkatan dari Voice over Internet Protocol. Sering kita kenal dengan istilah Internet telephony, IP Telephony, atau D"/>
+    <meta name="twitter:url" content="/post/komunikasi-dengan-internet-protokol/" />
+    <meta name="twitter:site" content="@rootshaxor"/>
 
-  <!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-  <![endif]-->
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Komunikasi Dengan Internet Protokol &middot; Erwin Kurniawan Blog&#39;s" />
+    <meta property="og:url" content="/post/komunikasi-dengan-internet-protokol/" />
+    <meta property="article:publisher" content="https://www.facebook.com/rootshaxor" />
 
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-  <![endif]-->
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A. PENDAHULUAN
 
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-141046219-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+1. Pengertian
+VoIP adalah singkatan dari Voice over Internet Protocol. Sering kita kenal dengan istilah Internet telephony, IP Telephony, atau D" />
+
+    <meta property="article:published_time" content="2017-11-03T14:00:00Z" />
+    <meta property="article:tag" content="BLC" />
+
+    <meta property="og:image" content="/img/header-blog.jpg"/>
+
+    <meta name="generator" content="Hugo 0.54.0" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
 </head>
 
-  <body>
-    
-  <h1>Komunikasi Dengan Internet Protokol</h1>
-  <header>
-  
-  <div class="avatar">
-    <img class="avatarMask" src="https://rootshaxor.github.io//img/tux.jpg">
-    <a href="https://rootshaxor.github.io/"><img src="https://rootshaxor.github.io//img/avatar-border.svg" }}></a>
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="#"><img src="/img/header-blog.png" alt="Erwin Kurniawan Blog&#39;s" /></a>
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/blc">BLC Telkom</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/programming/">Programming</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/">Categories</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about">About</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg></a>
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/rootshaxor" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
   </div>
-  
-  <h2><a class="author" href="https://rootshaxor.github.io/">Erwin Kurniawan</a></h2>
 </header>
 
-  
-  
-  <p class="date">November 3, 2017</p>
-  
-  <div id="contentBody">
-    <div dir="ltr" style="text-align: left;" trbidi="on"><b>A. PENDAHULUAN</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-6yggkD-TsIM/WZveFBjniXI/AAAAAAAAAeI/Ha1QZfmOV8Mr5MMQf8H6hDJBsAS09Fr2ACLcBGAs/s1600/briker.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="182" data-original-width="447" height="130" src="https://3.bp.blogspot.com/-6yggkD-TsIM/WZveFBjniXI/AAAAAAAAAeI/Ha1QZfmOV8Mr5MMQf8H6hDJBsAS09Fr2ACLcBGAs/s320/briker.jpg" width="320" /></a></div><br />1. Pengertian<br />VoIP adalah singkatan dari Voice over Internet Protocol. Sering  kita kenal dengan istilah Internet telephony, IP Telephony, atau Digital  Phone. Proses pengiriman suara pada VoIP adalah dengan cara pengiriman  suara melalui protokol internet (IP). Sehingga dengan teknologi VoIP ini  memungkinkan percakapan suara jarak jauh melalui media internet. Data  suara diubah menjadi kode digital dan dialirkan melalui jaringan yang  mengirimkan paket-paket data, dan bukan lewat sirkuit analog telephone  biasa (Diunduh dari Wikipedia).<br /><br />Salah satu VoIP berbasis open source lain adalah Briker. Briker  adalah suatu inovasi baru alam bidang kominikasi yang dikembangkan oleh  Anton Raharja. Sama seperti VoIP Rakyat, Briker dikembangkan dengan  basis open source. Briker ini mulai dikembangkan sekitar pertengahan  tahun 2008. Pengembangannya tidak memakan waktu yang terlalu lama. Tidak  sampai setengah tahun, Distro (distribusi) Linux telah menyebar dan  dimanfaatkan banyak orang. Pengembangan dan penyebarannya itu sendiri  juga tidak terlepas dari peran tokoh teknologi ifnormasi lain seperti  Onno W. Purbo dan tim dari PT Infotech Media Nusantara. <br /><br />2. Latar Belakang<br />Jaringan dapat digunakan untuk bertelpon dengan sesama pengguna internet dalam satu jaringan.<br /><br />3. Maksud dan Tujuan<br />Mengetahui apa itu VoIP dan dapat melakukan konfigurasi dan Instalasi Briker dengan Baik dan Benar.<br /><br />4. Hasil yang diharapkan<br />Hasil yang saya harapkan ketika saya melakukan installasi briker yaitu saya dapat melakukan installasi briker ini dengan benar.<br /><br /><b>B.</b> <b>Alat dan Bahan</b><br /><ul><li>Server</li><li>PC/ Laptop</li><li>ISO Briker</li></ul><b>C. Jangka Waktu Pelaksanaan</b><br />20 menit<br /><br /><b>D. Tahapan Pelaksanaan</b><br />1. Pertama - tama kita siapkan VLAN ID untuk instalasi Briker, Setelah  menyiapkan VLAN ID, Lalu kita membuat VM di Proxmox server kita. Hal  terpenting pada saat konfigurasi VM adalah kapasitas Harddisk dan Ram  yang dipergunakan. Ram minimal 1,5 GB dan Harddisk menggunakan diatas  100 GB atau sesuai kebutuhan. Apabila semua telah siap, kita start VM  Briker kita dan Klik Console.<br />2. Pada Instalaltion Menu anda akan menemukan beberapa opsi yang dapat anda pilih. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-hSsuddS3dzI/WZ0C7PyT5mI/AAAAAAAAAgY/NCjIKZlPxHc_W3WZQdDKZwHlkMyzexSYACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-40-49.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-hSsuddS3dzI/WZ0C7PyT5mI/AAAAAAAAAgY/NCjIKZlPxHc_W3WZQdDKZwHlkMyzexSYACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-40-49.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><ol><li>Boot from first harddisk, pilihan ini berguna jika proses installasi sudah selesai.</li><li>Install Briker Base unattended, pilihan ini akan menggunakan  keseluruhan harddisk dan akan menghapus data yang ada dengan mode  otomatis.</li><li>Install Briker Base with wizard, mode installasi ini untuk proses  installasi kostumisasi dengan tampilan grafis yang akan mempermudah  proses installasi. </li></ol>Karena saya ingin menkonfigurasi secara manual, maka saya memilih angka 3  lalu enter. Setelah itu tunggu proses installasi beberapa waktu.<br /><br />3. Selanjutnya pilih lokasi waktu kita berada, pada pilihan ini enter pada bagian select from worldwide list.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-c1t8vnEsJws/WZ0C37kTryI/AAAAAAAAAgQ/fny32Ol0-gcgNrQjjKqXKk2rnZmUCXBwACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-42-04.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-c1t8vnEsJws/WZ0C37kTryI/AAAAAAAAAgQ/fny32Ol0-gcgNrQjjKqXKk2rnZmUCXBwACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-42-04.png" width="320" /></a></div><br /><br />5. Cari dan pilih Jakarta.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-YRdyXJo2qkU/WZ0C75rd8rI/AAAAAAAAAgg/Kbd2AxK5dII8ksWG9B-c4DjT9ch_6sc-QCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-43-15.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-YRdyXJo2qkU/WZ0C75rd8rI/AAAAAAAAAgg/Kbd2AxK5dII8ksWG9B-c4DjT9ch_6sc-QCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-43-15.png" width="320" /></a></div><br /><br />6. Pilih pada bagian Guided - use entire disk and set up LVM.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-3kE-HvPCOZU/WZ0C771lp1I/AAAAAAAAAgc/Z3ZfNDlsae8tInWqyi5wKCTVOal7AUqPACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-43-42.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-3kE-HvPCOZU/WZ0C771lp1I/AAAAAAAAAgc/Z3ZfNDlsae8tInWqyi5wKCTVOal7AUqPACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-43-42.png" width="320" /></a></div><br />7. Pada penyimpanan partisi langsung enter.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-5qS3XzF2SaU/WZ0C8jhlPBI/AAAAAAAAAgk/TqLNBhQ0x8AAXZch4U6cFIxUKrsd8M0vACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-44-04.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-5qS3XzF2SaU/WZ0C8jhlPBI/AAAAAAAAAgk/TqLNBhQ0x8AAXZch4U6cFIxUKrsd8M0vACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-44-04.png" width="320" /></a></div><br />8. Pada pilihan write the changes to disk and configure LVM pilih "Yes".<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-bzOVk49_Zm8/WZ0C8_bs6JI/AAAAAAAAAgo/7irSUtd7hxAqtQyg28Epxebj9QpmMsMgQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-44-23.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://3.bp.blogspot.com/-bzOVk49_Zm8/WZ0C8_bs6JI/AAAAAAAAAgo/7irSUtd7hxAqtQyg28Epxebj9QpmMsMgQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-44-23.png" width="320" /></a></div><br />9. Pada bagian ini anda di minta memasukan kapasitas untuk partisi, langsung saja klik cotinue &gt; enter.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-H0mEh_G8dYY/WZ0C92cnsPI/AAAAAAAAAgs/B0njszdYAgg4YyJunvfUD9oo4IULGbidgCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-44-46.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-H0mEh_G8dYY/WZ0C92cnsPI/AAAAAAAAAgs/B0njszdYAgg4YyJunvfUD9oo4IULGbidgCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-44-46.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br />10. Setelah itu pilih "Yes" lagi.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-sgTO_UxEjjw/WZ0C-UJ4SHI/AAAAAAAAAgw/ODjFIp3Ksbox_Ibh0BytcbrC3IsA9BxbQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-45-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-sgTO_UxEjjw/WZ0C-UJ4SHI/AAAAAAAAAgw/ODjFIp3Ksbox_Ibh0BytcbrC3IsA9BxbQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-45-09.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />11. Pada bagian ini Pilih "Yes".<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />12. Instalasi Briker telah selesai ditandai dengan tampilan berikut.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-A4pde9sPM6A/WZ0DBUBpXKI/AAAAAAAAAhI/7yX_xUAIM0sN-3saEszbXZJF8WVnhBu_QCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-52.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-A4pde9sPM6A/WZ0DBUBpXKI/AAAAAAAAAhI/7yX_xUAIM0sN-3saEszbXZJF8WVnhBu_QCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-52.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />13. Setelah instalasi selesai, kita dapat memulai melakukan konfigurasi dari  console seperti mengganti alamat IP, konfigurasi tanggal dan jam dan  lainnya. Untuk login ke dalam console,masukkan username root dan  password Briker. Sedangkan untuk login menggunakan SSH menggunakan Port  10001 dengan username support dan password Briker. Setelah itu ketikan  perintah su - untuk login menjadi root.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp; Demi keamanan, anda sebaiknya mengganti password default console  login anda dengan cara menjalankan perintah sebagai berikut:<br /><i><b>"masukan user name dan password"</b></i> <br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-O_wifuHvNIA/WZ0DCf-4g0I/AAAAAAAAAhU/dZtlaZ4k6PsSLetVz1qg77c1cK93PwqqQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-59-43.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-O_wifuHvNIA/WZ0DCf-4g0I/AAAAAAAAAhU/dZtlaZ4k6PsSLetVz1qg77c1cK93PwqqQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-59-43.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />14. Alamat IP default Briker adalah 192.168.2.2, pada banyak kondisi  sudah dipastikan kita perlu merubahnya, misal untuk menyesuaikan dengan  topologi jaringan dan pengalamatan IP yang ada.<br />Berikut adalah langkah-langkah untuk mengganti alamat IP dan informasi lainnya berhubungan dengan networks address :<br />a. Pertama kita masuk terlebih dahulu sebagai superuser dengan mengetikan perintah <b>su. </b>Lalu masukan passwordnya.<b> </b><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-H6b8FgExO20/WZ0DCYnl0AI/AAAAAAAAAhQ/bxUhdol0wfIuqYeh76A6sV5_IUJzYnkIQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B11-00-40.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-H6b8FgExO20/WZ0DCYnl0AI/AAAAAAAAAhQ/bxUhdol0wfIuqYeh76A6sV5_IUJzYnkIQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B11-00-40.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />b. Jalankan perintah <b>vi /etc/network/interfaces</b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-3c2EUONkGcs/WZ0DEhrVaxI/AAAAAAAAAhg/-CvCq2gAPtAgyFqDhQb3P0SAhFNQ8u6bwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B11-01-20.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://3.bp.blogspot.com/-3c2EUONkGcs/WZ0DEhrVaxI/AAAAAAAAAhg/-CvCq2gAPtAgyFqDhQb3P0SAhFNQ8u6bwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B11-01-20.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />c. Ubah IP default dengan IP VLAN yang dihubungkan ke VM Briker kita.  Untuk mengubah konfigurasi dapat dilakukan dengan menekan tombol <b>insert </b>dan untuk menyimpannya ketikan perintah <b>:wq. </b>Restart layanan networking untuk mengaktifkan konfigurasi<br /><b>ifdown eth0 &amp;&amp; ifup eth0</b> <br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="625" data-original-width="797" height="250" src="https://4.bp.blogspot.com/-uu0DGVAqUlQ/WYlzpKRZ03I/AAAAAAAABGI/QdhcawTCtCA2QEb8gYHglv6nsToiy1DjwCLcBGAs/s320/15.png" width="320" /></div><br /><code></code> <code></code>15. Selanjutnya kita reboot VM kita dengan Perintah <b>reboot</b>.<br /><code></code><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="629" data-original-width="798" height="252" src="https://2.bp.blogspot.com/-0AoGKZlemoE/WYlzpL97iRI/AAAAAAAABGM/HcDJzgzDztsywRUT4rAW4ZsvPbdGFmtkgCLcBGAs/s320/16.png" width="320" /></div><br />16. Langkah selanjutnya yaitu kita membuka halaman Briker kita melalui  webbrowser dengan mengetikan IP address Briker kita, apabila muncul  peringatan seperti gambar tersebut klik <b>Advanced &gt; Add Exception &gt; Confirm Security Exception</b>.<br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="678" data-original-width="1355" height="160" src="https://3.bp.blogspot.com/-3v4PvG086rg/WYlzp5M_rmI/AAAAAAAABGU/yURREdGHsbo4T7BHImZPk4Ju_EgEKEh-QCLcBGAs/s320/17.png" width="320" /></div><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="485" data-original-width="552" height="281" src="https://1.bp.blogspot.com/-oSOVE63Wroo/WYlzp0pwrOI/AAAAAAAABGQ/IH-G-7pGRIAJ282cG7p-evcMLrj7WhOBwCLcBGAs/s320/18.png" width="320" /></div><br />17. Selanjutnya kita login dengan username Administrator dan  Passwordnya, Password defaultnya apabila belum dirubah biasanya adalah  Briker.<br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="685" data-original-width="1357" height="161" src="https://3.bp.blogspot.com/-J5sANjIAE9A/WYlzpy4_0bI/AAAAAAAABGY/zjSuN4hxzpICep2Zl7Ubk4GLS-exnw7EQCLcBGAs/s320/19.png" width="320" /></div><br />18. Selamat datang di Briker, proses telah selesai.<br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="678" data-original-width="1354" height="160" src="https://3.bp.blogspot.com/-jc4FOrDIz9c/WYlzqbspddI/AAAAAAAABGc/x3_xpRyWVXktu9uXnpAiQU4Er4nmm0aDgCLcBGAs/s320/20.png" width="320" /></div><b>&nbsp;</b> <br /><br /><b>E. Hasil yang didapatkan</b><br />Dapat melakukan instalasi Briker dengan lancar.<br /><br /><b>F. Temuan Permasalahan</b><br />Tidak ada<br /><br /><b>G. Kesimpulan</b><br />Sampai saat ini, Briker sudah dapat diunduh di http:// www.briker.org.<br />Sebenarnya, pengguna Briker sampai saat ini masih sedikit, bahkan jumlah  download belum sampai 1000 pengguna. Hal ini bisa dimaklumi karena  besar file Briker mencapai 300MB.<br /><br />Walaupun masih kecil dibandingkan dengan distro Linux lainnya, tapi  relatif besar untuk didownload oleh masyarakat secara umum. Kebanyakan  pengguna Briker adalah dari kalangan perusahaan.<br />Karena keterbatasan mesin pengembangnya, saat ini, Briker baru bisa  diinstall dengan lancar di komputer yang berprosesor Pentium IV dengan  RAM 256MB. Ke depan, tentunya semakin berkembang dan disiapkan untuk  banyak platform. <br /><br /><b>H. Referensi</b><br /><a href="http://www.briker.org/">http://www.briker.org</a><br /><a href="https://help.briker.org/v/2.0/id/"> https://help.briker.org/v/2.0/id/</a><b><br /></b></div>
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2017-11-03">3 November 2017</time>
+                <span class="date-divider">/</span> <a href="/tags/blc/">#BLC</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Komunikasi Dengan Internet Protokol</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/defimg/7.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><b>A. PENDAHULUAN</b><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-6yggkD-TsIM/WZveFBjniXI/AAAAAAAAAeI/Ha1QZfmOV8Mr5MMQf8H6hDJBsAS09Fr2ACLcBGAs/s1600/briker.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="182" data-original-width="447" height="130" src="https://3.bp.blogspot.com/-6yggkD-TsIM/WZveFBjniXI/AAAAAAAAAeI/Ha1QZfmOV8Mr5MMQf8H6hDJBsAS09Fr2ACLcBGAs/s320/briker.jpg" width="320" /></a></div><br />1. Pengertian<br />VoIP adalah singkatan dari Voice over Internet Protocol. Sering  kita kenal dengan istilah Internet telephony, IP Telephony, atau Digital  Phone. Proses pengiriman suara pada VoIP adalah dengan cara pengiriman  suara melalui protokol internet (IP). Sehingga dengan teknologi VoIP ini  memungkinkan percakapan suara jarak jauh melalui media internet. Data  suara diubah menjadi kode digital dan dialirkan melalui jaringan yang  mengirimkan paket-paket data, dan bukan lewat sirkuit analog telephone  biasa (Diunduh dari Wikipedia).<br /><br />Salah satu VoIP berbasis open source lain adalah Briker. Briker  adalah suatu inovasi baru alam bidang kominikasi yang dikembangkan oleh  Anton Raharja. Sama seperti VoIP Rakyat, Briker dikembangkan dengan  basis open source. Briker ini mulai dikembangkan sekitar pertengahan  tahun 2008. Pengembangannya tidak memakan waktu yang terlalu lama. Tidak  sampai setengah tahun, Distro (distribusi) Linux telah menyebar dan  dimanfaatkan banyak orang. Pengembangan dan penyebarannya itu sendiri  juga tidak terlepas dari peran tokoh teknologi ifnormasi lain seperti  Onno W. Purbo dan tim dari PT Infotech Media Nusantara. <br /><br />2. Latar Belakang<br />Jaringan dapat digunakan untuk bertelpon dengan sesama pengguna internet dalam satu jaringan.<br /><br />3. Maksud dan Tujuan<br />Mengetahui apa itu VoIP dan dapat melakukan konfigurasi dan Instalasi Briker dengan Baik dan Benar.<br /><br />4. Hasil yang diharapkan<br />Hasil yang saya harapkan ketika saya melakukan installasi briker yaitu saya dapat melakukan installasi briker ini dengan benar.<br /><br /><b>B.</b> <b>Alat dan Bahan</b><br /><ul><li>Server</li><li>PC/ Laptop</li><li>ISO Briker</li></ul><b>C. Jangka Waktu Pelaksanaan</b><br />20 menit<br /><br /><b>D. Tahapan Pelaksanaan</b><br />1. Pertama - tama kita siapkan VLAN ID untuk instalasi Briker, Setelah  menyiapkan VLAN ID, Lalu kita membuat VM di Proxmox server kita. Hal  terpenting pada saat konfigurasi VM adalah kapasitas Harddisk dan Ram  yang dipergunakan. Ram minimal 1,5 GB dan Harddisk menggunakan diatas  100 GB atau sesuai kebutuhan. Apabila semua telah siap, kita start VM  Briker kita dan Klik Console.<br />2. Pada Instalaltion Menu anda akan menemukan beberapa opsi yang dapat anda pilih. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-hSsuddS3dzI/WZ0C7PyT5mI/AAAAAAAAAgY/NCjIKZlPxHc_W3WZQdDKZwHlkMyzexSYACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-40-49.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-hSsuddS3dzI/WZ0C7PyT5mI/AAAAAAAAAgY/NCjIKZlPxHc_W3WZQdDKZwHlkMyzexSYACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-40-49.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><ol><li>Boot from first harddisk, pilihan ini berguna jika proses installasi sudah selesai.</li><li>Install Briker Base unattended, pilihan ini akan menggunakan  keseluruhan harddisk dan akan menghapus data yang ada dengan mode  otomatis.</li><li>Install Briker Base with wizard, mode installasi ini untuk proses  installasi kostumisasi dengan tampilan grafis yang akan mempermudah  proses installasi. </li></ol>Karena saya ingin menkonfigurasi secara manual, maka saya memilih angka 3  lalu enter. Setelah itu tunggu proses installasi beberapa waktu.<br /><br />3. Selanjutnya pilih lokasi waktu kita berada, pada pilihan ini enter pada bagian select from worldwide list.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-c1t8vnEsJws/WZ0C37kTryI/AAAAAAAAAgQ/fny32Ol0-gcgNrQjjKqXKk2rnZmUCXBwACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-42-04.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-c1t8vnEsJws/WZ0C37kTryI/AAAAAAAAAgQ/fny32Ol0-gcgNrQjjKqXKk2rnZmUCXBwACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-42-04.png" width="320" /></a></div><br /><br />5. Cari dan pilih Jakarta.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-YRdyXJo2qkU/WZ0C75rd8rI/AAAAAAAAAgg/Kbd2AxK5dII8ksWG9B-c4DjT9ch_6sc-QCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-43-15.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-YRdyXJo2qkU/WZ0C75rd8rI/AAAAAAAAAgg/Kbd2AxK5dII8ksWG9B-c4DjT9ch_6sc-QCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-43-15.png" width="320" /></a></div><br /><br />6. Pilih pada bagian Guided - use entire disk and set up LVM.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-3kE-HvPCOZU/WZ0C771lp1I/AAAAAAAAAgc/Z3ZfNDlsae8tInWqyi5wKCTVOal7AUqPACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-43-42.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-3kE-HvPCOZU/WZ0C771lp1I/AAAAAAAAAgc/Z3ZfNDlsae8tInWqyi5wKCTVOal7AUqPACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-43-42.png" width="320" /></a></div><br />7. Pada penyimpanan partisi langsung enter.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-5qS3XzF2SaU/WZ0C8jhlPBI/AAAAAAAAAgk/TqLNBhQ0x8AAXZch4U6cFIxUKrsd8M0vACLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-44-04.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-5qS3XzF2SaU/WZ0C8jhlPBI/AAAAAAAAAgk/TqLNBhQ0x8AAXZch4U6cFIxUKrsd8M0vACLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-44-04.png" width="320" /></a></div><br />8. Pada pilihan write the changes to disk and configure LVM pilih "Yes".<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-bzOVk49_Zm8/WZ0C8_bs6JI/AAAAAAAAAgo/7irSUtd7hxAqtQyg28Epxebj9QpmMsMgQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-44-23.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://3.bp.blogspot.com/-bzOVk49_Zm8/WZ0C8_bs6JI/AAAAAAAAAgo/7irSUtd7hxAqtQyg28Epxebj9QpmMsMgQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-44-23.png" width="320" /></a></div><br />9. Pada bagian ini anda di minta memasukan kapasitas untuk partisi, langsung saja klik cotinue &gt; enter.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-H0mEh_G8dYY/WZ0C92cnsPI/AAAAAAAAAgs/B0njszdYAgg4YyJunvfUD9oo4IULGbidgCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-44-46.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-H0mEh_G8dYY/WZ0C92cnsPI/AAAAAAAAAgs/B0njszdYAgg4YyJunvfUD9oo4IULGbidgCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-44-46.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br />10. Setelah itu pilih "Yes" lagi.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-sgTO_UxEjjw/WZ0C-UJ4SHI/AAAAAAAAAgw/ODjFIp3Ksbox_Ibh0BytcbrC3IsA9BxbQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-45-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-sgTO_UxEjjw/WZ0C-UJ4SHI/AAAAAAAAAgw/ODjFIp3Ksbox_Ibh0BytcbrC3IsA9BxbQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-45-09.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />11. Pada bagian ini Pilih "Yes".<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />12. Instalasi Briker telah selesai ditandai dengan tampilan berikut.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-A4pde9sPM6A/WZ0DBUBpXKI/AAAAAAAAAhI/7yX_xUAIM0sN-3saEszbXZJF8WVnhBu_QCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-52.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-A4pde9sPM6A/WZ0DBUBpXKI/AAAAAAAAAhI/7yX_xUAIM0sN-3saEszbXZJF8WVnhBu_QCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-52.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />13. Setelah instalasi selesai, kita dapat memulai melakukan konfigurasi dari  console seperti mengganti alamat IP, konfigurasi tanggal dan jam dan  lainnya. Untuk login ke dalam console,masukkan username root dan  password Briker. Sedangkan untuk login menggunakan SSH menggunakan Port  10001 dengan username support dan password Briker. Setelah itu ketikan  perintah su - untuk login menjadi root.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp; Demi keamanan, anda sebaiknya mengganti password default console  login anda dengan cara menjalankan perintah sebagai berikut:<br /><i><b>"masukan user name dan password"</b></i> <br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-O_wifuHvNIA/WZ0DCf-4g0I/AAAAAAAAAhU/dZtlaZ4k6PsSLetVz1qg77c1cK93PwqqQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-59-43.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://4.bp.blogspot.com/-O_wifuHvNIA/WZ0DCf-4g0I/AAAAAAAAAhU/dZtlaZ4k6PsSLetVz1qg77c1cK93PwqqQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-59-43.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />14. Alamat IP default Briker adalah 192.168.2.2, pada banyak kondisi  sudah dipastikan kita perlu merubahnya, misal untuk menyesuaikan dengan  topologi jaringan dan pengalamatan IP yang ada.<br />Berikut adalah langkah-langkah untuk mengganti alamat IP dan informasi lainnya berhubungan dengan networks address :<br />a. Pertama kita masuk terlebih dahulu sebagai superuser dengan mengetikan perintah <b>su. </b>Lalu masukan passwordnya.<b> </b><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-H6b8FgExO20/WZ0DCYnl0AI/AAAAAAAAAhQ/bxUhdol0wfIuqYeh76A6sV5_IUJzYnkIQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B11-00-40.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://1.bp.blogspot.com/-H6b8FgExO20/WZ0DCYnl0AI/AAAAAAAAAhQ/bxUhdol0wfIuqYeh76A6sV5_IUJzYnkIQCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B11-00-40.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />b. Jalankan perintah <b>vi /etc/network/interfaces</b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://2.bp.blogspot.com/-XPimva5FqeE/WZ0DAe8rHeI/AAAAAAAAAhA/V-k1gIy33HMcNV-SqE1x73ouUiose_ORwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B10-52-09.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-3c2EUONkGcs/WZ0DEhrVaxI/AAAAAAAAAhg/-CvCq2gAPtAgyFqDhQb3P0SAhFNQ8u6bwCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-08-12%2B11-01-20.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="179" src="https://3.bp.blogspot.com/-3c2EUONkGcs/WZ0DEhrVaxI/AAAAAAAAAhg/-CvCq2gAPtAgyFqDhQb3P0SAhFNQ8u6bwCLcBGAs/s320/Screenshot%2Bfrom%2B2017-08-12%2B11-01-20.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />c. Ubah IP default dengan IP VLAN yang dihubungkan ke VM Briker kita.  Untuk mengubah konfigurasi dapat dilakukan dengan menekan tombol <b>insert </b>dan untuk menyimpannya ketikan perintah <b>:wq. </b>Restart layanan networking untuk mengaktifkan konfigurasi<br /><b>ifdown eth0 &amp;&amp; ifup eth0</b> <br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="625" data-original-width="797" height="250" src="https://4.bp.blogspot.com/-uu0DGVAqUlQ/WYlzpKRZ03I/AAAAAAAABGI/QdhcawTCtCA2QEb8gYHglv6nsToiy1DjwCLcBGAs/s320/15.png" width="320" /></div><br /><code></code> <code></code>15. Selanjutnya kita reboot VM kita dengan Perintah <b>reboot</b>.<br /><code></code><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="629" data-original-width="798" height="252" src="https://2.bp.blogspot.com/-0AoGKZlemoE/WYlzpL97iRI/AAAAAAAABGM/HcDJzgzDztsywRUT4rAW4ZsvPbdGFmtkgCLcBGAs/s320/16.png" width="320" /></div><br />16. Langkah selanjutnya yaitu kita membuka halaman Briker kita melalui  webbrowser dengan mengetikan IP address Briker kita, apabila muncul  peringatan seperti gambar tersebut klik <b>Advanced &gt; Add Exception &gt; Confirm Security Exception</b>.<br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="678" data-original-width="1355" height="160" src="https://3.bp.blogspot.com/-3v4PvG086rg/WYlzp5M_rmI/AAAAAAAABGU/yURREdGHsbo4T7BHImZPk4Ju_EgEKEh-QCLcBGAs/s320/17.png" width="320" /></div><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="485" data-original-width="552" height="281" src="https://1.bp.blogspot.com/-oSOVE63Wroo/WYlzp0pwrOI/AAAAAAAABGQ/IH-G-7pGRIAJ282cG7p-evcMLrj7WhOBwCLcBGAs/s320/18.png" width="320" /></div><br />17. Selanjutnya kita login dengan username Administrator dan  Passwordnya, Password defaultnya apabila belum dirubah biasanya adalah  Briker.<br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="685" data-original-width="1357" height="161" src="https://3.bp.blogspot.com/-J5sANjIAE9A/WYlzpy4_0bI/AAAAAAAABGY/zjSuN4hxzpICep2Zl7Ubk4GLS-exnw7EQCLcBGAs/s320/19.png" width="320" /></div><br />18. Selamat datang di Briker, proses telah selesai.<br /><div class="separator" style="clear: both; text-align: center;"><img border="0" data-original-height="678" data-original-width="1354" height="160" src="https://3.bp.blogspot.com/-jc4FOrDIz9c/WYlzqbspddI/AAAAAAAABGc/x3_xpRyWVXktu9uXnpAiQU4Er4nmm0aDgCLcBGAs/s320/20.png" width="320" /></div><b>&nbsp;</b> <br /><br /><b>E. Hasil yang didapatkan</b><br />Dapat melakukan instalasi Briker dengan lancar.<br /><br /><b>F. Temuan Permasalahan</b><br />Tidak ada<br /><br /><b>G. Kesimpulan</b><br />Sampai saat ini, Briker sudah dapat diunduh di http:// www.briker.org.<br />Sebenarnya, pengguna Briker sampai saat ini masih sedikit, bahkan jumlah  download belum sampai 1000 pengguna. Hal ini bisa dimaklumi karena  besar file Briker mencapai 300MB.<br /><br />Walaupun masih kecil dibandingkan dengan distro Linux lainnya, tapi  relatif besar untuk didownload oleh masyarakat secara umum. Kebanyakan  pengguna Briker adalah dari kalangan perusahaan.<br />Karena keterbatasan mesin pengembangnya, saat ini, Briker baru bisa  diinstall dengan lancar di komputer yang berprosesor Pentium IV dengan  RAM 256MB. Ke depan, tentunya semakin berkembang dan disiapkan untuk  banyak platform. <br /><br /><b>H. Referensi</b><br /><a href="http://www.briker.org/">http://www.briker.org</a><br /><a href="https://help.briker.org/v/2.0/id/"> https://help.briker.org/v/2.0/id/</a><b><br /></b></div>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/go.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">Erwin Kurniawan</a></h4>
+                <p>Pengguna Linux sebagai keperluan sehari hari</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
 
   </div>
-  <footer>
-  <p>
-  &copy; 2019 Erwin Kurniawan.
-  Powered by <a href="https://gohugo.io/">Hugo</a>
-  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
-  </p>
-</footer><script src="https://rootshaxor.github.io/js/custom.js"></script>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/header-blog.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Erwin Kurniawan Blog&#39;s &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/blc/">#BLC</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/hari-keempat-di-tonggor-pt-widodo-makmur-unggas/">Hari Keempat Di Tonggor | PT Widodo Makmur Unggas</a></li>            
+        
+          <li><a href="/post/instalasi-drupal-di-localhost/">Instalasi Drupal Di Localhost</a></li>            
+        
+          <li><a href="/post/menggunakan-hugo-ala-blogger/">Menggunakan Hugo Ala Blogger</a></li>            
+        
+          <li><a href="/post/install-konfigurasi-mariadb-server-di-freebsd/">Install &#43; Konfigurasi MariaDB-Server di freeBSD</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/blc/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/routing-dynamic-ospf/">
+      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/routing-dynamic-ospf/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Routing Dynamic OSPF</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A. Pendahuluan
+1. Pengertian
+Open Shortest Path First ( OSPF ) adalah protokol routing untuk jaringan Internet Protocol (IP). Ia menggunakan algoritma link state routing (LSR) dan masuk ke dalam kelompok protokol gateway dalam (IGP), beroperasi dalam satu sistem otonom tunggal (AS). Ini didefinisikan sebagai OSPF Versi 2 di RFC 2328 (1998) untuk IPv4 .Pembaruan untuk IPv6 ditetapkan sebagai OSPF Versi 3 di RFC 5340 (2008).
+OSPF mungkin adalah IGP yang paling banyak digunakan di jaringan perusahaan besar. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/management-user-di-proxmox/">
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/management-user-di-proxmox/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #BLC  </span>
+              
+              <h2 class="post-card-title">Management User di Proxmox</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>A.Pendahulan
+Management user adalah pengelompokan hak akses / hak milik setiap user , ini sangat berguna bagi kinerja sistemB.Latar Belakang
+Karena Pengguna VM Saya Di proxmox banyak , dan setiap user akan masuk di proxmox dengan user "root" , maka saya menggunakan management user agar setiap user masuk di proxmox dengan usernya sendiri dan vm yang di akses hanya vm-nya sendiri C.Maksud &amp;&nbsp; Tujuan
+Membuat dan mengatur hak akses user di proxmox (Management User) D. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/go.png" alt="Author" />
+          <span class="post-card-author"><a href="/about">Erwin Kurniawan</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      <img src="/img/header-blog.png" alt="" />
+      <span></span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Komunikasi Dengan Internet Protokol</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Komunikasi%20Dengan%20Internet%20Protokol&amp;url=%2fpost%2fkomunikasi-dengan-internet-protokol%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fkomunikasi-dengan-internet-protokol%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
 
 
 
-  </body>
-</html>
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">rootshaxor</a> © 2019 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="/about">Mojokerto FOSS </a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        <a href="https://www.facebook.com/rootshaxor" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/rootshaxor" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/rootshaxor" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

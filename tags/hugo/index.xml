@@ -17,8 +17,8 @@
       <pubDate>Sat, 10 Nov 2018 23:34:37 +0700</pubDate>
       
       <guid>/post/menggunakan-hugo-ala-blogger/</guid>
-      <description>#Menggunakan Hugo Ala Blogger dengan forestry (github)
-Pendahuluan forestry adalah CMS yang dapat digunakan sebagai editor Jekyll, Hugo atau VuePress Anda.  Bagaimana menggunakannya Kasus kali ini saya deploy site saya di github, jadi di asumsikan menggunakan github
+      <description>Menggunakan Hugo Ala Blogger dengan forestry (github) Pendahuluan forestry adalah CMS yang dapat digunakan sebagai editor Jekyll, Hugo atau VuePress Anda.
+Bagaimana menggunakannya Kasus kali ini saya deploy site saya di github, jadi di asumsikan menggunakan github
  Kunjungi https://forestry.io dan lakukan login menggunakan github Jika sudah melakukan login , klik button add site , pilih Hugo dan klik button NEXT   Selanjutnya pilih github dan klik button NEXT   Kemudian Pilih repository blognya , pilih Branch master dan klik button NEXT</description>
     </item>
     
